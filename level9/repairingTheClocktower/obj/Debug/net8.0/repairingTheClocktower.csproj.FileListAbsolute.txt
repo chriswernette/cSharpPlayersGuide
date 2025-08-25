@@ -1,0 +1,14 @@
+D:\github\cSharpPlayersGuide\level9\repairingTheClocktower\bin\Debug\net8.0\repairingTheClocktower.exe
+D:\github\cSharpPlayersGuide\level9\repairingTheClocktower\bin\Debug\net8.0\repairingTheClocktower.deps.json
+D:\github\cSharpPlayersGuide\level9\repairingTheClocktower\bin\Debug\net8.0\repairingTheClocktower.runtimeconfig.json
+D:\github\cSharpPlayersGuide\level9\repairingTheClocktower\bin\Debug\net8.0\repairingTheClocktower.dll
+D:\github\cSharpPlayersGuide\level9\repairingTheClocktower\bin\Debug\net8.0\repairingTheClocktower.pdb
+D:\github\cSharpPlayersGuide\level9\repairingTheClocktower\obj\Debug\net8.0\repairingTheClocktower.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\level9\repairingTheClocktower\obj\Debug\net8.0\repairingTheClocktower.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\level9\repairingTheClocktower\obj\Debug\net8.0\repairingTheClocktower.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\level9\repairingTheClocktower\obj\Debug\net8.0\repairingTheClocktower.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\level9\repairingTheClocktower\obj\Debug\net8.0\repairingTheClocktower.dll
+D:\github\cSharpPlayersGuide\level9\repairingTheClocktower\obj\Debug\net8.0\refint\repairingTheClocktower.dll
+D:\github\cSharpPlayersGuide\level9\repairingTheClocktower\obj\Debug\net8.0\repairingTheClocktower.pdb
+D:\github\cSharpPlayersGuide\level9\repairingTheClocktower\obj\Debug\net8.0\repairingTheClocktower.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\level9\repairingTheClocktower\obj\Debug\net8.0\ref\repairingTheClocktower.dll

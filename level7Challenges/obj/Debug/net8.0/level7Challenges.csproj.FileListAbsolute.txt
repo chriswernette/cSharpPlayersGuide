@@ -1,0 +1,14 @@
+D:\github\cSharpPlayersGuide\level3\level7Challenges\obj\Debug\net8.0\level7Challenges.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\level3\level7Challenges\obj\Debug\net8.0\level7Challenges.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\level3\level7Challenges\obj\Debug\net8.0\level7Challenges.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\level3\level7Challenges\obj\Debug\net8.0\level7Challenges.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\level3\level7Challenges\bin\Debug\net8.0\level7Challenges.exe
+D:\github\cSharpPlayersGuide\level3\level7Challenges\bin\Debug\net8.0\level7Challenges.deps.json
+D:\github\cSharpPlayersGuide\level3\level7Challenges\bin\Debug\net8.0\level7Challenges.runtimeconfig.json
+D:\github\cSharpPlayersGuide\level3\level7Challenges\bin\Debug\net8.0\level7Challenges.dll
+D:\github\cSharpPlayersGuide\level3\level7Challenges\bin\Debug\net8.0\level7Challenges.pdb
+D:\github\cSharpPlayersGuide\level3\level7Challenges\obj\Debug\net8.0\level7Challenges.dll
+D:\github\cSharpPlayersGuide\level3\level7Challenges\obj\Debug\net8.0\refint\level7Challenges.dll
+D:\github\cSharpPlayersGuide\level3\level7Challenges\obj\Debug\net8.0\level7Challenges.pdb
+D:\github\cSharpPlayersGuide\level3\level7Challenges\obj\Debug\net8.0\level7Challenges.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\level3\level7Challenges\obj\Debug\net8.0\ref\level7Challenges.dll

@@ -1,0 +1,14 @@
+D:\github\cSharpPlayersGuide\level3\level8\level8TheDefenseOfConsolas\bin\Debug\net8.0\level8TheDefenseOfConsolas.exe
+D:\github\cSharpPlayersGuide\level3\level8\level8TheDefenseOfConsolas\bin\Debug\net8.0\level8TheDefenseOfConsolas.deps.json
+D:\github\cSharpPlayersGuide\level3\level8\level8TheDefenseOfConsolas\bin\Debug\net8.0\level8TheDefenseOfConsolas.runtimeconfig.json
+D:\github\cSharpPlayersGuide\level3\level8\level8TheDefenseOfConsolas\bin\Debug\net8.0\level8TheDefenseOfConsolas.dll
+D:\github\cSharpPlayersGuide\level3\level8\level8TheDefenseOfConsolas\bin\Debug\net8.0\level8TheDefenseOfConsolas.pdb
+D:\github\cSharpPlayersGuide\level3\level8\level8TheDefenseOfConsolas\obj\Debug\net8.0\level8TheDefenseOfConsolas.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\level3\level8\level8TheDefenseOfConsolas\obj\Debug\net8.0\level8TheDefenseOfConsolas.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\level3\level8\level8TheDefenseOfConsolas\obj\Debug\net8.0\level8TheDefenseOfConsolas.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\level3\level8\level8TheDefenseOfConsolas\obj\Debug\net8.0\level8TheDefenseOfConsolas.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\level3\level8\level8TheDefenseOfConsolas\obj\Debug\net8.0\level8TheDefenseOfConsolas.dll
+D:\github\cSharpPlayersGuide\level3\level8\level8TheDefenseOfConsolas\obj\Debug\net8.0\refint\level8TheDefenseOfConsolas.dll
+D:\github\cSharpPlayersGuide\level3\level8\level8TheDefenseOfConsolas\obj\Debug\net8.0\level8TheDefenseOfConsolas.pdb
+D:\github\cSharpPlayersGuide\level3\level8\level8TheDefenseOfConsolas\obj\Debug\net8.0\level8TheDefenseOfConsolas.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\level3\level8\level8TheDefenseOfConsolas\obj\Debug\net8.0\ref\level8TheDefenseOfConsolas.dll

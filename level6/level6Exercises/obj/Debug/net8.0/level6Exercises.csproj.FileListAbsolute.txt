@@ -1,0 +1,14 @@
+D:\github\cSharpPlayersGuide\level3\level6Exercises\obj\Debug\net8.0\level6Exercises.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\level3\level6Exercises\obj\Debug\net8.0\level6Exercises.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\level3\level6Exercises\obj\Debug\net8.0\level6Exercises.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\level3\level6Exercises\obj\Debug\net8.0\level6Exercises.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\level3\level6Exercises\bin\Debug\net8.0\level6Exercises.exe
+D:\github\cSharpPlayersGuide\level3\level6Exercises\bin\Debug\net8.0\level6Exercises.deps.json
+D:\github\cSharpPlayersGuide\level3\level6Exercises\bin\Debug\net8.0\level6Exercises.runtimeconfig.json
+D:\github\cSharpPlayersGuide\level3\level6Exercises\bin\Debug\net8.0\level6Exercises.dll
+D:\github\cSharpPlayersGuide\level3\level6Exercises\bin\Debug\net8.0\level6Exercises.pdb
+D:\github\cSharpPlayersGuide\level3\level6Exercises\obj\Debug\net8.0\level6Exercises.dll
+D:\github\cSharpPlayersGuide\level3\level6Exercises\obj\Debug\net8.0\refint\level6Exercises.dll
+D:\github\cSharpPlayersGuide\level3\level6Exercises\obj\Debug\net8.0\level6Exercises.pdb
+D:\github\cSharpPlayersGuide\level3\level6Exercises\obj\Debug\net8.0\level6Exercises.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\level3\level6Exercises\obj\Debug\net8.0\ref\level6Exercises.dll

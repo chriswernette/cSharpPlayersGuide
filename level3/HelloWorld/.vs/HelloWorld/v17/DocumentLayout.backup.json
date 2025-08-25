@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\github\\cSharpPlayersGuide\\level3\\HelloWorld\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B63CEA1F-CB78-42D1-A5E5-DBEFFB56E9CA}|..\\level7Challenges\\level7Challenges.csproj|d:\\github\\csharpplayersguide\\level3\\level7challenges\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{116175C2-2C53-4B42-97C4-B2AEDEA735B8}|..\\level6Exercises\\level6Exercises.csproj|d:\\github\\csharpplayersguide\\level3\\level6exercises\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{116175C2-2C53-4B42-97C4-B2AEDEA735B8}|..\\level6Exercises\\level6Exercises.csproj|d:\\github\\csharpplayersguide\\level3\\level6exercises\\level6exercises.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4924726-3BEF-430E-843E-BCB66BF8580A}|HelloWorld.csproj|d:\\github\\csharpplayersguide\\level3\\helloworld\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4924726-3BEF-430E-843E-BCB66BF8580A}|HelloWorld.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "level6Exercises",
+              "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\level3\\level6Exercises\\level6Exercises.csproj",
+              "RelativeDocumentMoniker": "..\\level6Exercises\\level6Exercises.csproj",
+              "ToolTip": "D:\\github\\cSharpPlayersGuide\\level3\\level6Exercises\\level6Exercises.csproj",
+              "RelativeToolTip": "..\\level6Exercises\\level6Exercises.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-23T22:06:48.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\level3\\level7Challenges\\Program.cs",
+              "RelativeDocumentMoniker": "..\\level7Challenges\\Program.cs",
+              "ToolTip": "D:\\github\\cSharpPlayersGuide\\level3\\level7Challenges\\Program.cs",
+              "RelativeToolTip": "..\\level7Challenges\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T21:56:20.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\level3\\level6Exercises\\Program.cs",
+              "RelativeDocumentMoniker": "..\\level6Exercises\\Program.cs",
+              "ToolTip": "D:\\github\\cSharpPlayersGuide\\level3\\level6Exercises\\Program.cs",
+              "RelativeToolTip": "..\\level6Exercises\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T12:50:01.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\level3\\HelloWorld\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\github\\cSharpPlayersGuide\\level3\\HelloWorld\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T12:40:13.453Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

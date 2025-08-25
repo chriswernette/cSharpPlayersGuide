@@ -1,0 +1,14 @@
+D:\github\cSharpPlayersGuide\level9\Watchtower\bin\Debug\net8.0\Watchtower.exe
+D:\github\cSharpPlayersGuide\level9\Watchtower\bin\Debug\net8.0\Watchtower.deps.json
+D:\github\cSharpPlayersGuide\level9\Watchtower\bin\Debug\net8.0\Watchtower.runtimeconfig.json
+D:\github\cSharpPlayersGuide\level9\Watchtower\bin\Debug\net8.0\Watchtower.dll
+D:\github\cSharpPlayersGuide\level9\Watchtower\bin\Debug\net8.0\Watchtower.pdb
+D:\github\cSharpPlayersGuide\level9\Watchtower\obj\Debug\net8.0\Watchtower.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\level9\Watchtower\obj\Debug\net8.0\Watchtower.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\level9\Watchtower\obj\Debug\net8.0\Watchtower.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\level9\Watchtower\obj\Debug\net8.0\Watchtower.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\level9\Watchtower\obj\Debug\net8.0\Watchtower.dll
+D:\github\cSharpPlayersGuide\level9\Watchtower\obj\Debug\net8.0\refint\Watchtower.dll
+D:\github\cSharpPlayersGuide\level9\Watchtower\obj\Debug\net8.0\Watchtower.pdb
+D:\github\cSharpPlayersGuide\level9\Watchtower\obj\Debug\net8.0\Watchtower.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\level9\Watchtower\obj\Debug\net8.0\ref\Watchtower.dll
