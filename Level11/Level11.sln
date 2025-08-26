@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36408.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "thePrototype", "thePrototype\thePrototype.csproj", "{F253A481-EB37-488F-A0B3-71D1ACA59E81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theMagicCannon", "theMagicCannon\theMagicCannon.csproj", "{7C85599D-602E-472E-B23E-AE674DE5BC07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F253A481-EB37-488F-A0B3-71D1ACA59E81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F253A481-EB37-488F-A0B3-71D1ACA59E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F253A481-EB37-488F-A0B3-71D1ACA59E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F253A481-EB37-488F-A0B3-71D1ACA59E81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C85599D-602E-472E-B23E-AE674DE5BC07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C85599D-602E-472E-B23E-AE674DE5BC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C85599D-602E-472E-B23E-AE674DE5BC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C85599D-602E-472E-B23E-AE674DE5BC07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD5908E9-C97E-4C62-AACB-3B502CAEFC75}
+	EndGlobalSection
+EndGlobal

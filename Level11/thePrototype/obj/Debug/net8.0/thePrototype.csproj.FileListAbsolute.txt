@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\level9\Level11\thePrototype\bin\Debug\net8.0\thePrototype.exe
+D:\github\cSharpPlayersGuide\level9\Level11\thePrototype\bin\Debug\net8.0\thePrototype.deps.json
+D:\github\cSharpPlayersGuide\level9\Level11\thePrototype\bin\Debug\net8.0\thePrototype.runtimeconfig.json
+D:\github\cSharpPlayersGuide\level9\Level11\thePrototype\bin\Debug\net8.0\thePrototype.dll
+D:\github\cSharpPlayersGuide\level9\Level11\thePrototype\bin\Debug\net8.0\thePrototype.pdb
+D:\github\cSharpPlayersGuide\level9\Level11\thePrototype\obj\Debug\net8.0\thePrototype.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\level9\Level11\thePrototype\obj\Debug\net8.0\thePrototype.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\level9\Level11\thePrototype\obj\Debug\net8.0\thePrototype.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\level9\Level11\thePrototype\obj\Debug\net8.0\thePrototype.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\level9\Level11\thePrototype\obj\Debug\net8.0\thePrototype.sourcelink.json
+D:\github\cSharpPlayersGuide\level9\Level11\thePrototype\obj\Debug\net8.0\thePrototype.dll
+D:\github\cSharpPlayersGuide\level9\Level11\thePrototype\obj\Debug\net8.0\refint\thePrototype.dll
+D:\github\cSharpPlayersGuide\level9\Level11\thePrototype\obj\Debug\net8.0\thePrototype.pdb
+D:\github\cSharpPlayersGuide\level9\Level11\thePrototype\obj\Debug\net8.0\thePrototype.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\level9\Level11\thePrototype\obj\Debug\net8.0\ref\thePrototype.dll

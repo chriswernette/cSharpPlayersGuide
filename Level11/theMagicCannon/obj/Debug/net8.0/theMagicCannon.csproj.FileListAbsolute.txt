@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\level9\Level11\theMagicCannon\obj\Debug\net8.0\theMagicCannon.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\level9\Level11\theMagicCannon\obj\Debug\net8.0\theMagicCannon.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\level9\Level11\theMagicCannon\obj\Debug\net8.0\theMagicCannon.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\level9\Level11\theMagicCannon\obj\Debug\net8.0\theMagicCannon.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\level9\Level11\theMagicCannon\obj\Debug\net8.0\theMagicCannon.sourcelink.json
+D:\github\cSharpPlayersGuide\level9\Level11\theMagicCannon\bin\Debug\net8.0\theMagicCannon.exe
+D:\github\cSharpPlayersGuide\level9\Level11\theMagicCannon\bin\Debug\net8.0\theMagicCannon.deps.json
+D:\github\cSharpPlayersGuide\level9\Level11\theMagicCannon\bin\Debug\net8.0\theMagicCannon.runtimeconfig.json
+D:\github\cSharpPlayersGuide\level9\Level11\theMagicCannon\bin\Debug\net8.0\theMagicCannon.dll
+D:\github\cSharpPlayersGuide\level9\Level11\theMagicCannon\bin\Debug\net8.0\theMagicCannon.pdb
+D:\github\cSharpPlayersGuide\level9\Level11\theMagicCannon\obj\Debug\net8.0\theMagicCannon.dll
+D:\github\cSharpPlayersGuide\level9\Level11\theMagicCannon\obj\Debug\net8.0\refint\theMagicCannon.dll
+D:\github\cSharpPlayersGuide\level9\Level11\theMagicCannon\obj\Debug\net8.0\theMagicCannon.pdb
+D:\github\cSharpPlayersGuide\level9\Level11\theMagicCannon\obj\Debug\net8.0\theMagicCannon.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\level9\Level11\theMagicCannon\obj\Debug\net8.0\ref\theMagicCannon.dll
