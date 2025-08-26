@@ -1,0 +1,15 @@
+C:\github\cSharpPlayersGuide\level10\level10exercises\buyingInventory\bin\Debug\net8.0\buyingInventory.exe
+C:\github\cSharpPlayersGuide\level10\level10exercises\buyingInventory\bin\Debug\net8.0\buyingInventory.deps.json
+C:\github\cSharpPlayersGuide\level10\level10exercises\buyingInventory\bin\Debug\net8.0\buyingInventory.runtimeconfig.json
+C:\github\cSharpPlayersGuide\level10\level10exercises\buyingInventory\bin\Debug\net8.0\buyingInventory.dll
+C:\github\cSharpPlayersGuide\level10\level10exercises\buyingInventory\bin\Debug\net8.0\buyingInventory.pdb
+C:\github\cSharpPlayersGuide\level10\level10exercises\buyingInventory\obj\Debug\net8.0\buyingInventory.GeneratedMSBuildEditorConfig.editorconfig
+C:\github\cSharpPlayersGuide\level10\level10exercises\buyingInventory\obj\Debug\net8.0\buyingInventory.AssemblyInfoInputs.cache
+C:\github\cSharpPlayersGuide\level10\level10exercises\buyingInventory\obj\Debug\net8.0\buyingInventory.AssemblyInfo.cs
+C:\github\cSharpPlayersGuide\level10\level10exercises\buyingInventory\obj\Debug\net8.0\buyingInventory.csproj.CoreCompileInputs.cache
+C:\github\cSharpPlayersGuide\level10\level10exercises\buyingInventory\obj\Debug\net8.0\buyingInventory.sourcelink.json
+C:\github\cSharpPlayersGuide\level10\level10exercises\buyingInventory\obj\Debug\net8.0\buyingInventory.dll
+C:\github\cSharpPlayersGuide\level10\level10exercises\buyingInventory\obj\Debug\net8.0\refint\buyingInventory.dll
+C:\github\cSharpPlayersGuide\level10\level10exercises\buyingInventory\obj\Debug\net8.0\buyingInventory.pdb
+C:\github\cSharpPlayersGuide\level10\level10exercises\buyingInventory\obj\Debug\net8.0\buyingInventory.genruntimeconfig.cache
+C:\github\cSharpPlayersGuide\level10\level10exercises\buyingInventory\obj\Debug\net8.0\ref\buyingInventory.dll
