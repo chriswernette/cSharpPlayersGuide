@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "theReplicatorOfD'To/1.0.0": {
+        "runtime": {
+          "theReplicatorOfD'To.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "theReplicatorOfD'To/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

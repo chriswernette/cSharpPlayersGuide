@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\level13\level13Exercises\takingANumber\bin\Debug\net8.0\takingANumber.exe
+D:\github\cSharpPlayersGuide\level13\level13Exercises\takingANumber\bin\Debug\net8.0\takingANumber.deps.json
+D:\github\cSharpPlayersGuide\level13\level13Exercises\takingANumber\bin\Debug\net8.0\takingANumber.runtimeconfig.json
+D:\github\cSharpPlayersGuide\level13\level13Exercises\takingANumber\bin\Debug\net8.0\takingANumber.dll
+D:\github\cSharpPlayersGuide\level13\level13Exercises\takingANumber\bin\Debug\net8.0\takingANumber.pdb
+D:\github\cSharpPlayersGuide\level13\level13Exercises\takingANumber\obj\Debug\net8.0\takingANumber.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\level13\level13Exercises\takingANumber\obj\Debug\net8.0\takingANumber.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\level13\level13Exercises\takingANumber\obj\Debug\net8.0\takingANumber.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\level13\level13Exercises\takingANumber\obj\Debug\net8.0\takingANumber.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\level13\level13Exercises\takingANumber\obj\Debug\net8.0\takingANumber.sourcelink.json
+D:\github\cSharpPlayersGuide\level13\level13Exercises\takingANumber\obj\Debug\net8.0\takingANumber.dll
+D:\github\cSharpPlayersGuide\level13\level13Exercises\takingANumber\obj\Debug\net8.0\refint\takingANumber.dll
+D:\github\cSharpPlayersGuide\level13\level13Exercises\takingANumber\obj\Debug\net8.0\takingANumber.pdb
+D:\github\cSharpPlayersGuide\level13\level13Exercises\takingANumber\obj\Debug\net8.0\takingANumber.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\level13\level13Exercises\takingANumber\obj\Debug\net8.0\ref\takingANumber.dll
