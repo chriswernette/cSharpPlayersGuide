@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\github\\cSharpPlayersGuide\\level13\\level13Exercises\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{51F9847D-714A-4A42-9AA1-D7A69B369BD6}|countdown\\countdown.csproj|d:\\github\\csharpplayersguide\\level13\\level13exercises\\countdown\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51F9847D-714A-4A42-9AA1-D7A69B369BD6}|countdown\\countdown.csproj|solutionrelative:countdown\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D3925F67-B86A-4225-9D6D-5A80074A5DCD}|takingANumber\\takingANumber.csproj|d:\\github\\csharpplayersguide\\level13\\level13exercises\\takinganumber\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D3925F67-B86A-4225-9D6D-5A80074A5DCD}|takingANumber\\takingANumber.csproj|solutionrelative:takinganumber\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -23,6 +27,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\level13\\level13Exercises\\countdown\\Program.cs",
+              "RelativeDocumentMoniker": "countdown\\Program.cs",
+              "ToolTip": "D:\\github\\cSharpPlayersGuide\\level13\\level13Exercises\\countdown\\Program.cs",
+              "RelativeToolTip": "countdown\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-27T14:24:44.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\level13\\level13Exercises\\takingANumber\\Program.cs",
               "RelativeDocumentMoniker": "takingANumber\\Program.cs",

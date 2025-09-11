@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\level17\simulasSoup\bin\Debug\net8.0\simulasSoup.exe
+D:\github\cSharpPlayersGuide\level17\simulasSoup\bin\Debug\net8.0\simulasSoup.deps.json
+D:\github\cSharpPlayersGuide\level17\simulasSoup\bin\Debug\net8.0\simulasSoup.runtimeconfig.json
+D:\github\cSharpPlayersGuide\level17\simulasSoup\bin\Debug\net8.0\simulasSoup.dll
+D:\github\cSharpPlayersGuide\level17\simulasSoup\bin\Debug\net8.0\simulasSoup.pdb
+D:\github\cSharpPlayersGuide\level17\simulasSoup\obj\Debug\net8.0\simulasSoup.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\level17\simulasSoup\obj\Debug\net8.0\simulasSoup.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\level17\simulasSoup\obj\Debug\net8.0\simulasSoup.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\level17\simulasSoup\obj\Debug\net8.0\simulasSoup.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\level17\simulasSoup\obj\Debug\net8.0\simulasSoup.sourcelink.json
+D:\github\cSharpPlayersGuide\level17\simulasSoup\obj\Debug\net8.0\simulasSoup.dll
+D:\github\cSharpPlayersGuide\level17\simulasSoup\obj\Debug\net8.0\refint\simulasSoup.dll
+D:\github\cSharpPlayersGuide\level17\simulasSoup\obj\Debug\net8.0\simulasSoup.pdb
+D:\github\cSharpPlayersGuide\level17\simulasSoup\obj\Debug\net8.0\simulasSoup.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\level17\simulasSoup\obj\Debug\net8.0\ref\simulasSoup.dll

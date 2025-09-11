@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\github\\cSharpPlayersGuide\\level16exercises\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2E44DB7F-C747-4D50-8916-2D8A5E7B7721}|simulasTest\\simulasTest.csproj|d:\\github\\csharpplayersguide\\level16exercises\\simulastest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E44DB7F-C747-4D50-8916-2D8A5E7B7721}|simulasTest\\simulasTest.csproj|solutionrelative:simulastest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\level16exercises\\simulasTest\\Program.cs",
+              "RelativeDocumentMoniker": "simulasTest\\Program.cs",
+              "ToolTip": "D:\\github\\cSharpPlayersGuide\\level16exercises\\simulasTest\\Program.cs",
+              "RelativeToolTip": "simulasTest\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADgvxIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T23:30:27.461Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
