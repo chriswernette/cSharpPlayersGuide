@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\level16exercises\simulasTest\obj\Debug\net8.0\simulasTest.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\level16exercises\simulasTest\obj\Debug\net8.0\simulasTest.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\level16exercises\simulasTest\obj\Debug\net8.0\simulasTest.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\level16exercises\simulasTest\obj\Debug\net8.0\simulasTest.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\level16exercises\simulasTest\obj\Debug\net8.0\simulasTest.sourcelink.json
+D:\github\cSharpPlayersGuide\level16exercises\simulasTest\bin\Debug\net8.0\simulasTest.exe
+D:\github\cSharpPlayersGuide\level16exercises\simulasTest\bin\Debug\net8.0\simulasTest.deps.json
+D:\github\cSharpPlayersGuide\level16exercises\simulasTest\bin\Debug\net8.0\simulasTest.runtimeconfig.json
+D:\github\cSharpPlayersGuide\level16exercises\simulasTest\bin\Debug\net8.0\simulasTest.dll
+D:\github\cSharpPlayersGuide\level16exercises\simulasTest\bin\Debug\net8.0\simulasTest.pdb
+D:\github\cSharpPlayersGuide\level16exercises\simulasTest\obj\Debug\net8.0\simulasTest.dll
+D:\github\cSharpPlayersGuide\level16exercises\simulasTest\obj\Debug\net8.0\refint\simulasTest.dll
+D:\github\cSharpPlayersGuide\level16exercises\simulasTest\obj\Debug\net8.0\simulasTest.pdb
+D:\github\cSharpPlayersGuide\level16exercises\simulasTest\obj\Debug\net8.0\simulasTest.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\level16exercises\simulasTest\obj\Debug\net8.0\ref\simulasTest.dll

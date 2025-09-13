@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\level14\level14BossFight\huntingTheManticore\bin\Debug\net8.0\huntingTheManticore.exe
+D:\github\cSharpPlayersGuide\level14\level14BossFight\huntingTheManticore\bin\Debug\net8.0\huntingTheManticore.deps.json
+D:\github\cSharpPlayersGuide\level14\level14BossFight\huntingTheManticore\bin\Debug\net8.0\huntingTheManticore.runtimeconfig.json
+D:\github\cSharpPlayersGuide\level14\level14BossFight\huntingTheManticore\bin\Debug\net8.0\huntingTheManticore.dll
+D:\github\cSharpPlayersGuide\level14\level14BossFight\huntingTheManticore\bin\Debug\net8.0\huntingTheManticore.pdb
+D:\github\cSharpPlayersGuide\level14\level14BossFight\huntingTheManticore\obj\Debug\net8.0\huntingTheManticore.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\level14\level14BossFight\huntingTheManticore\obj\Debug\net8.0\huntingTheManticore.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\level14\level14BossFight\huntingTheManticore\obj\Debug\net8.0\huntingTheManticore.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\level14\level14BossFight\huntingTheManticore\obj\Debug\net8.0\huntingTheManticore.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\level14\level14BossFight\huntingTheManticore\obj\Debug\net8.0\huntingTheManticore.sourcelink.json
+D:\github\cSharpPlayersGuide\level14\level14BossFight\huntingTheManticore\obj\Debug\net8.0\huntingTheManticore.dll
+D:\github\cSharpPlayersGuide\level14\level14BossFight\huntingTheManticore\obj\Debug\net8.0\refint\huntingTheManticore.dll
+D:\github\cSharpPlayersGuide\level14\level14BossFight\huntingTheManticore\obj\Debug\net8.0\huntingTheManticore.pdb
+D:\github\cSharpPlayersGuide\level14\level14BossFight\huntingTheManticore\obj\Debug\net8.0\huntingTheManticore.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\level14\level14BossFight\huntingTheManticore\obj\Debug\net8.0\ref\huntingTheManticore.dll

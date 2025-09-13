@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\level13\level13Exercises\countdown\bin\Debug\net8.0\countdown.exe
+D:\github\cSharpPlayersGuide\level13\level13Exercises\countdown\bin\Debug\net8.0\countdown.deps.json
+D:\github\cSharpPlayersGuide\level13\level13Exercises\countdown\bin\Debug\net8.0\countdown.runtimeconfig.json
+D:\github\cSharpPlayersGuide\level13\level13Exercises\countdown\bin\Debug\net8.0\countdown.dll
+D:\github\cSharpPlayersGuide\level13\level13Exercises\countdown\bin\Debug\net8.0\countdown.pdb
+D:\github\cSharpPlayersGuide\level13\level13Exercises\countdown\obj\Debug\net8.0\countdown.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\level13\level13Exercises\countdown\obj\Debug\net8.0\countdown.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\level13\level13Exercises\countdown\obj\Debug\net8.0\countdown.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\level13\level13Exercises\countdown\obj\Debug\net8.0\countdown.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\level13\level13Exercises\countdown\obj\Debug\net8.0\countdown.sourcelink.json
+D:\github\cSharpPlayersGuide\level13\level13Exercises\countdown\obj\Debug\net8.0\countdown.dll
+D:\github\cSharpPlayersGuide\level13\level13Exercises\countdown\obj\Debug\net8.0\refint\countdown.dll
+D:\github\cSharpPlayersGuide\level13\level13Exercises\countdown\obj\Debug\net8.0\countdown.pdb
+D:\github\cSharpPlayersGuide\level13\level13Exercises\countdown\obj\Debug\net8.0\countdown.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\level13\level13Exercises\countdown\obj\Debug\net8.0\ref\countdown.dll

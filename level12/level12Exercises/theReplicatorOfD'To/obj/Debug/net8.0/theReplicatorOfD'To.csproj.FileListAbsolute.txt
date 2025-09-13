@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theReplicatorOfD'To\obj\Debug\net8.0\theReplicatorOfD'To.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theReplicatorOfD'To\obj\Debug\net8.0\theReplicatorOfD'To.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theReplicatorOfD'To\obj\Debug\net8.0\theReplicatorOfD'To.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theReplicatorOfD'To\obj\Debug\net8.0\theReplicatorOfD'To.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theReplicatorOfD'To\obj\Debug\net8.0\theReplicatorOfD'To.sourcelink.json
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theReplicatorOfD'To\bin\Debug\net8.0\theReplicatorOfD'To.exe
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theReplicatorOfD'To\bin\Debug\net8.0\theReplicatorOfD'To.deps.json
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theReplicatorOfD'To\bin\Debug\net8.0\theReplicatorOfD'To.runtimeconfig.json
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theReplicatorOfD'To\bin\Debug\net8.0\theReplicatorOfD'To.dll
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theReplicatorOfD'To\bin\Debug\net8.0\theReplicatorOfD'To.pdb
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theReplicatorOfD'To\obj\Debug\net8.0\theReplicatorOfD'To.dll
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theReplicatorOfD'To\obj\Debug\net8.0\refint\theReplicatorOfD'To.dll
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theReplicatorOfD'To\obj\Debug\net8.0\theReplicatorOfD'To.pdb
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theReplicatorOfD'To\obj\Debug\net8.0\theReplicatorOfD'To.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theReplicatorOfD'To\obj\Debug\net8.0\ref\theReplicatorOfD'To.dll

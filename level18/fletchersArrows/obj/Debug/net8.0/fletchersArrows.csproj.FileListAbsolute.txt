@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\level18\fletchersArrows\obj\Debug\net8.0\fletchersArrows.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\level18\fletchersArrows\obj\Debug\net8.0\fletchersArrows.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\level18\fletchersArrows\obj\Debug\net8.0\fletchersArrows.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\level18\fletchersArrows\obj\Debug\net8.0\fletchersArrows.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\level18\fletchersArrows\obj\Debug\net8.0\fletchersArrows.sourcelink.json
+D:\github\cSharpPlayersGuide\level18\fletchersArrows\bin\Debug\net8.0\fletchersArrows.exe
+D:\github\cSharpPlayersGuide\level18\fletchersArrows\bin\Debug\net8.0\fletchersArrows.deps.json
+D:\github\cSharpPlayersGuide\level18\fletchersArrows\bin\Debug\net8.0\fletchersArrows.runtimeconfig.json
+D:\github\cSharpPlayersGuide\level18\fletchersArrows\bin\Debug\net8.0\fletchersArrows.dll
+D:\github\cSharpPlayersGuide\level18\fletchersArrows\bin\Debug\net8.0\fletchersArrows.pdb
+D:\github\cSharpPlayersGuide\level18\fletchersArrows\obj\Debug\net8.0\fletchersArrows.dll
+D:\github\cSharpPlayersGuide\level18\fletchersArrows\obj\Debug\net8.0\refint\fletchersArrows.dll
+D:\github\cSharpPlayersGuide\level18\fletchersArrows\obj\Debug\net8.0\fletchersArrows.pdb
+D:\github\cSharpPlayersGuide\level18\fletchersArrows\obj\Debug\net8.0\fletchersArrows.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\level18\fletchersArrows\obj\Debug\net8.0\ref\fletchersArrows.dll

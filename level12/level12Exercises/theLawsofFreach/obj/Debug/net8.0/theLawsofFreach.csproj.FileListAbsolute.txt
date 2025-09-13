@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theLawsofFreach\bin\Debug\net8.0\theLawsofFreach.exe
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theLawsofFreach\bin\Debug\net8.0\theLawsofFreach.deps.json
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theLawsofFreach\bin\Debug\net8.0\theLawsofFreach.runtimeconfig.json
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theLawsofFreach\bin\Debug\net8.0\theLawsofFreach.dll
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theLawsofFreach\bin\Debug\net8.0\theLawsofFreach.pdb
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theLawsofFreach\obj\Debug\net8.0\theLawsofFreach.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theLawsofFreach\obj\Debug\net8.0\theLawsofFreach.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theLawsofFreach\obj\Debug\net8.0\theLawsofFreach.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theLawsofFreach\obj\Debug\net8.0\theLawsofFreach.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theLawsofFreach\obj\Debug\net8.0\theLawsofFreach.sourcelink.json
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theLawsofFreach\obj\Debug\net8.0\theLawsofFreach.dll
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theLawsofFreach\obj\Debug\net8.0\refint\theLawsofFreach.dll
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theLawsofFreach\obj\Debug\net8.0\theLawsofFreach.pdb
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theLawsofFreach\obj\Debug\net8.0\theLawsofFreach.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\level12\level12Exercises\theLawsofFreach\obj\Debug\net8.0\ref\theLawsofFreach.dll
