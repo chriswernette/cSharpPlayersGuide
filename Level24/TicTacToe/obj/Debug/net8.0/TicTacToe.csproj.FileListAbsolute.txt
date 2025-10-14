@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level24\TicTacToe\bin\Debug\net8.0\TicTacToe.exe
+D:\github\cSharpPlayersGuide\Level24\TicTacToe\bin\Debug\net8.0\TicTacToe.deps.json
+D:\github\cSharpPlayersGuide\Level24\TicTacToe\bin\Debug\net8.0\TicTacToe.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level24\TicTacToe\bin\Debug\net8.0\TicTacToe.dll
+D:\github\cSharpPlayersGuide\Level24\TicTacToe\bin\Debug\net8.0\TicTacToe.pdb
+D:\github\cSharpPlayersGuide\Level24\TicTacToe\obj\Debug\net8.0\TicTacToe.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level24\TicTacToe\obj\Debug\net8.0\TicTacToe.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level24\TicTacToe\obj\Debug\net8.0\TicTacToe.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level24\TicTacToe\obj\Debug\net8.0\TicTacToe.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level24\TicTacToe\obj\Debug\net8.0\TicTacToe.sourcelink.json
+D:\github\cSharpPlayersGuide\Level24\TicTacToe\obj\Debug\net8.0\TicTacToe.dll
+D:\github\cSharpPlayersGuide\Level24\TicTacToe\obj\Debug\net8.0\refint\TicTacToe.dll
+D:\github\cSharpPlayersGuide\Level24\TicTacToe\obj\Debug\net8.0\TicTacToe.pdb
+D:\github\cSharpPlayersGuide\Level24\TicTacToe\obj\Debug\net8.0\TicTacToe.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level24\TicTacToe\obj\Debug\net8.0\ref\TicTacToe.dll

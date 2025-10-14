@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36408.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThePoint", "ThePoint\ThePoint.csproj", "{137A48BA-DEA3-45FB-AFDE-FC2AF7999FF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheColor", "TheColor\TheColor.csproj", "{B934046F-F5F2-4CDE-AE80-FFA61D503B7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheCard", "TheCard\TheCard.csproj", "{20F94175-D324-4B75-BA53-AA3B6E412BEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheDoor", "TheDoor\TheDoor.csproj", "{8686D7EF-38C0-4224-A775-BF66486E7019}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThePasswordValidator", "ThePasswordValidator\ThePasswordValidator.csproj", "{723CC519-D6CC-47E8-A65E-444E10D6DDF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe", "TicTacToe\TicTacToe.csproj", "{4789B54F-76A4-482C-8F0D-699C78F0285B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{137A48BA-DEA3-45FB-AFDE-FC2AF7999FF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{137A48BA-DEA3-45FB-AFDE-FC2AF7999FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{137A48BA-DEA3-45FB-AFDE-FC2AF7999FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{137A48BA-DEA3-45FB-AFDE-FC2AF7999FF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B934046F-F5F2-4CDE-AE80-FFA61D503B7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B934046F-F5F2-4CDE-AE80-FFA61D503B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B934046F-F5F2-4CDE-AE80-FFA61D503B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B934046F-F5F2-4CDE-AE80-FFA61D503B7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20F94175-D324-4B75-BA53-AA3B6E412BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20F94175-D324-4B75-BA53-AA3B6E412BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20F94175-D324-4B75-BA53-AA3B6E412BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20F94175-D324-4B75-BA53-AA3B6E412BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8686D7EF-38C0-4224-A775-BF66486E7019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8686D7EF-38C0-4224-A775-BF66486E7019}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8686D7EF-38C0-4224-A775-BF66486E7019}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8686D7EF-38C0-4224-A775-BF66486E7019}.Release|Any CPU.Build.0 = Release|Any CPU
+		{723CC519-D6CC-47E8-A65E-444E10D6DDF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{723CC519-D6CC-47E8-A65E-444E10D6DDF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{723CC519-D6CC-47E8-A65E-444E10D6DDF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{723CC519-D6CC-47E8-A65E-444E10D6DDF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4789B54F-76A4-482C-8F0D-699C78F0285B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4789B54F-76A4-482C-8F0D-699C78F0285B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4789B54F-76A4-482C-8F0D-699C78F0285B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4789B54F-76A4-482C-8F0D-699C78F0285B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93B964AE-D69C-41E4-9852-2AA9871824E9}
+	EndGlobalSection
+EndGlobal

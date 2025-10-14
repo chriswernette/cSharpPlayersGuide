@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level24\TheDoor\bin\Debug\net8.0\TheDoor.exe
+D:\github\cSharpPlayersGuide\Level24\TheDoor\bin\Debug\net8.0\TheDoor.deps.json
+D:\github\cSharpPlayersGuide\Level24\TheDoor\bin\Debug\net8.0\TheDoor.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level24\TheDoor\bin\Debug\net8.0\TheDoor.dll
+D:\github\cSharpPlayersGuide\Level24\TheDoor\bin\Debug\net8.0\TheDoor.pdb
+D:\github\cSharpPlayersGuide\Level24\TheDoor\obj\Debug\net8.0\TheDoor.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level24\TheDoor\obj\Debug\net8.0\TheDoor.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level24\TheDoor\obj\Debug\net8.0\TheDoor.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level24\TheDoor\obj\Debug\net8.0\TheDoor.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level24\TheDoor\obj\Debug\net8.0\TheDoor.sourcelink.json
+D:\github\cSharpPlayersGuide\Level24\TheDoor\obj\Debug\net8.0\TheDoor.dll
+D:\github\cSharpPlayersGuide\Level24\TheDoor\obj\Debug\net8.0\refint\TheDoor.dll
+D:\github\cSharpPlayersGuide\Level24\TheDoor\obj\Debug\net8.0\TheDoor.pdb
+D:\github\cSharpPlayersGuide\Level24\TheDoor\obj\Debug\net8.0\TheDoor.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level24\TheDoor\obj\Debug\net8.0\ref\TheDoor.dll

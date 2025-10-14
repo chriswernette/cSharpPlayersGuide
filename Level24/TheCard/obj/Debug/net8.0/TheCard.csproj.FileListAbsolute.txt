@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level24\TheCard\bin\Debug\net8.0\TheCard.exe
+D:\github\cSharpPlayersGuide\Level24\TheCard\bin\Debug\net8.0\TheCard.deps.json
+D:\github\cSharpPlayersGuide\Level24\TheCard\bin\Debug\net8.0\TheCard.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level24\TheCard\bin\Debug\net8.0\TheCard.dll
+D:\github\cSharpPlayersGuide\Level24\TheCard\bin\Debug\net8.0\TheCard.pdb
+D:\github\cSharpPlayersGuide\Level24\TheCard\obj\Debug\net8.0\TheCard.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level24\TheCard\obj\Debug\net8.0\TheCard.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level24\TheCard\obj\Debug\net8.0\TheCard.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level24\TheCard\obj\Debug\net8.0\TheCard.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level24\TheCard\obj\Debug\net8.0\TheCard.sourcelink.json
+D:\github\cSharpPlayersGuide\Level24\TheCard\obj\Debug\net8.0\TheCard.dll
+D:\github\cSharpPlayersGuide\Level24\TheCard\obj\Debug\net8.0\refint\TheCard.dll
+D:\github\cSharpPlayersGuide\Level24\TheCard\obj\Debug\net8.0\TheCard.pdb
+D:\github\cSharpPlayersGuide\Level24\TheCard\obj\Debug\net8.0\TheCard.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level24\TheCard\obj\Debug\net8.0\ref\TheCard.dll

@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level24\TheColor\bin\Debug\net8.0\TheColor.exe
+D:\github\cSharpPlayersGuide\Level24\TheColor\bin\Debug\net8.0\TheColor.deps.json
+D:\github\cSharpPlayersGuide\Level24\TheColor\bin\Debug\net8.0\TheColor.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level24\TheColor\bin\Debug\net8.0\TheColor.dll
+D:\github\cSharpPlayersGuide\Level24\TheColor\bin\Debug\net8.0\TheColor.pdb
+D:\github\cSharpPlayersGuide\Level24\TheColor\obj\Debug\net8.0\TheColor.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level24\TheColor\obj\Debug\net8.0\TheColor.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level24\TheColor\obj\Debug\net8.0\TheColor.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level24\TheColor\obj\Debug\net8.0\TheColor.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level24\TheColor\obj\Debug\net8.0\TheColor.sourcelink.json
+D:\github\cSharpPlayersGuide\Level24\TheColor\obj\Debug\net8.0\TheColor.dll
+D:\github\cSharpPlayersGuide\Level24\TheColor\obj\Debug\net8.0\refint\TheColor.dll
+D:\github\cSharpPlayersGuide\Level24\TheColor\obj\Debug\net8.0\TheColor.pdb
+D:\github\cSharpPlayersGuide\Level24\TheColor\obj\Debug\net8.0\TheColor.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level24\TheColor\obj\Debug\net8.0\ref\TheColor.dll
