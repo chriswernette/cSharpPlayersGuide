@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level24\ThePoint\obj\Debug\net8.0\ThePoint.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level24\ThePoint\obj\Debug\net8.0\ThePoint.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level24\ThePoint\obj\Debug\net8.0\ThePoint.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level24\ThePoint\obj\Debug\net8.0\ThePoint.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level24\ThePoint\obj\Debug\net8.0\ThePoint.sourcelink.json
+D:\github\cSharpPlayersGuide\Level24\ThePoint\bin\Debug\net8.0\ThePoint.exe
+D:\github\cSharpPlayersGuide\Level24\ThePoint\bin\Debug\net8.0\ThePoint.deps.json
+D:\github\cSharpPlayersGuide\Level24\ThePoint\bin\Debug\net8.0\ThePoint.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level24\ThePoint\bin\Debug\net8.0\ThePoint.dll
+D:\github\cSharpPlayersGuide\Level24\ThePoint\bin\Debug\net8.0\ThePoint.pdb
+D:\github\cSharpPlayersGuide\Level24\ThePoint\obj\Debug\net8.0\ThePoint.dll
+D:\github\cSharpPlayersGuide\Level24\ThePoint\obj\Debug\net8.0\refint\ThePoint.dll
+D:\github\cSharpPlayersGuide\Level24\ThePoint\obj\Debug\net8.0\ThePoint.pdb
+D:\github\cSharpPlayersGuide\Level24\ThePoint\obj\Debug\net8.0\ThePoint.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level24\ThePoint\obj\Debug\net8.0\ref\ThePoint.dll

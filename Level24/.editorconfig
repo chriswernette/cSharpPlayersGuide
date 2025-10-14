@@ -1,0 +1,7 @@
+    # All files
+    [*]
+    guidelines = 80
+
+    # For C# or VB files specifically
+    [*.{cs,vb}]
+    guidelines = 80
