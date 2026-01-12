@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level34\BetterRandom\obj\Debug\net8.0\BetterRandom.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level34\BetterRandom\obj\Debug\net8.0\BetterRandom.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level34\BetterRandom\obj\Debug\net8.0\BetterRandom.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level34\BetterRandom\obj\Debug\net8.0\BetterRandom.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level34\BetterRandom\obj\Debug\net8.0\BetterRandom.sourcelink.json
+D:\github\cSharpPlayersGuide\Level34\BetterRandom\bin\Debug\net8.0\BetterRandom.exe
+D:\github\cSharpPlayersGuide\Level34\BetterRandom\bin\Debug\net8.0\BetterRandom.deps.json
+D:\github\cSharpPlayersGuide\Level34\BetterRandom\bin\Debug\net8.0\BetterRandom.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level34\BetterRandom\bin\Debug\net8.0\BetterRandom.dll
+D:\github\cSharpPlayersGuide\Level34\BetterRandom\bin\Debug\net8.0\BetterRandom.pdb
+D:\github\cSharpPlayersGuide\Level34\BetterRandom\obj\Debug\net8.0\BetterRandom.dll
+D:\github\cSharpPlayersGuide\Level34\BetterRandom\obj\Debug\net8.0\refint\BetterRandom.dll
+D:\github\cSharpPlayersGuide\Level34\BetterRandom\obj\Debug\net8.0\BetterRandom.pdb
+D:\github\cSharpPlayersGuide\Level34\BetterRandom\obj\Debug\net8.0\BetterRandom.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level34\BetterRandom\obj\Debug\net8.0\ref\BetterRandom.dll

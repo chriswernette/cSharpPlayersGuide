@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level27\RoboticInterface\obj\Debug\net8.0\RoboticInterface.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level27\RoboticInterface\obj\Debug\net8.0\RoboticInterface.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level27\RoboticInterface\obj\Debug\net8.0\RoboticInterface.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level27\RoboticInterface\obj\Debug\net8.0\RoboticInterface.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level27\RoboticInterface\obj\Debug\net8.0\RoboticInterface.sourcelink.json
+D:\github\cSharpPlayersGuide\Level27\RoboticInterface\bin\Debug\net8.0\RoboticInterface.exe
+D:\github\cSharpPlayersGuide\Level27\RoboticInterface\bin\Debug\net8.0\RoboticInterface.deps.json
+D:\github\cSharpPlayersGuide\Level27\RoboticInterface\bin\Debug\net8.0\RoboticInterface.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level27\RoboticInterface\bin\Debug\net8.0\RoboticInterface.dll
+D:\github\cSharpPlayersGuide\Level27\RoboticInterface\bin\Debug\net8.0\RoboticInterface.pdb
+D:\github\cSharpPlayersGuide\Level27\RoboticInterface\obj\Debug\net8.0\RoboticInterface.dll
+D:\github\cSharpPlayersGuide\Level27\RoboticInterface\obj\Debug\net8.0\refint\RoboticInterface.dll
+D:\github\cSharpPlayersGuide\Level27\RoboticInterface\obj\Debug\net8.0\RoboticInterface.pdb
+D:\github\cSharpPlayersGuide\Level27\RoboticInterface\obj\Debug\net8.0\RoboticInterface.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level27\RoboticInterface\obj\Debug\net8.0\ref\RoboticInterface.dll

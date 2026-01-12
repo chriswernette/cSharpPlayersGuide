@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level38\SieveLambdas\bin\Debug\net8.0\SieveLambdas.exe
+D:\github\cSharpPlayersGuide\Level38\SieveLambdas\bin\Debug\net8.0\SieveLambdas.deps.json
+D:\github\cSharpPlayersGuide\Level38\SieveLambdas\bin\Debug\net8.0\SieveLambdas.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level38\SieveLambdas\bin\Debug\net8.0\SieveLambdas.dll
+D:\github\cSharpPlayersGuide\Level38\SieveLambdas\bin\Debug\net8.0\SieveLambdas.pdb
+D:\github\cSharpPlayersGuide\Level38\SieveLambdas\obj\Debug\net8.0\SieveLambdas.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level38\SieveLambdas\obj\Debug\net8.0\SieveLambdas.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level38\SieveLambdas\obj\Debug\net8.0\SieveLambdas.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level38\SieveLambdas\obj\Debug\net8.0\SieveLambdas.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level38\SieveLambdas\obj\Debug\net8.0\SieveLambdas.sourcelink.json
+D:\github\cSharpPlayersGuide\Level38\SieveLambdas\obj\Debug\net8.0\SieveLambdas.dll
+D:\github\cSharpPlayersGuide\Level38\SieveLambdas\obj\Debug\net8.0\refint\SieveLambdas.dll
+D:\github\cSharpPlayersGuide\Level38\SieveLambdas\obj\Debug\net8.0\SieveLambdas.pdb
+D:\github\cSharpPlayersGuide\Level38\SieveLambdas\obj\Debug\net8.0\SieveLambdas.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level38\SieveLambdas\obj\Debug\net8.0\ref\SieveLambdas.dll

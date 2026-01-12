@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level29\WarPreparations\bin\Debug\net8.0\WarPreparations.exe
+D:\github\cSharpPlayersGuide\Level29\WarPreparations\bin\Debug\net8.0\WarPreparations.deps.json
+D:\github\cSharpPlayersGuide\Level29\WarPreparations\bin\Debug\net8.0\WarPreparations.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level29\WarPreparations\bin\Debug\net8.0\WarPreparations.dll
+D:\github\cSharpPlayersGuide\Level29\WarPreparations\bin\Debug\net8.0\WarPreparations.pdb
+D:\github\cSharpPlayersGuide\Level29\WarPreparations\obj\Debug\net8.0\WarPreparations.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level29\WarPreparations\obj\Debug\net8.0\WarPreparations.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level29\WarPreparations\obj\Debug\net8.0\WarPreparations.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level29\WarPreparations\obj\Debug\net8.0\WarPreparations.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level29\WarPreparations\obj\Debug\net8.0\WarPreparations.sourcelink.json
+D:\github\cSharpPlayersGuide\Level29\WarPreparations\obj\Debug\net8.0\WarPreparations.dll
+D:\github\cSharpPlayersGuide\Level29\WarPreparations\obj\Debug\net8.0\refint\WarPreparations.dll
+D:\github\cSharpPlayersGuide\Level29\WarPreparations\obj\Debug\net8.0\WarPreparations.pdb
+D:\github\cSharpPlayersGuide\Level29\WarPreparations\obj\Debug\net8.0\WarPreparations.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level29\WarPreparations\obj\Debug\net8.0\ref\WarPreparations.dll

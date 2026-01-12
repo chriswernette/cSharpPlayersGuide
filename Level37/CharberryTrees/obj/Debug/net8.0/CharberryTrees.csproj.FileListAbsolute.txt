@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level37\CharberryTrees\bin\Debug\net8.0\CharberryTrees.exe
+D:\github\cSharpPlayersGuide\Level37\CharberryTrees\bin\Debug\net8.0\CharberryTrees.deps.json
+D:\github\cSharpPlayersGuide\Level37\CharberryTrees\bin\Debug\net8.0\CharberryTrees.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level37\CharberryTrees\bin\Debug\net8.0\CharberryTrees.dll
+D:\github\cSharpPlayersGuide\Level37\CharberryTrees\bin\Debug\net8.0\CharberryTrees.pdb
+D:\github\cSharpPlayersGuide\Level37\CharberryTrees\obj\Debug\net8.0\CharberryTrees.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level37\CharberryTrees\obj\Debug\net8.0\CharberryTrees.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level37\CharberryTrees\obj\Debug\net8.0\CharberryTrees.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level37\CharberryTrees\obj\Debug\net8.0\CharberryTrees.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level37\CharberryTrees\obj\Debug\net8.0\CharberryTrees.sourcelink.json
+D:\github\cSharpPlayersGuide\Level37\CharberryTrees\obj\Debug\net8.0\CharberryTrees.dll
+D:\github\cSharpPlayersGuide\Level37\CharberryTrees\obj\Debug\net8.0\refint\CharberryTrees.dll
+D:\github\cSharpPlayersGuide\Level37\CharberryTrees\obj\Debug\net8.0\CharberryTrees.pdb
+D:\github\cSharpPlayersGuide\Level37\CharberryTrees\obj\Debug\net8.0\CharberryTrees.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level37\CharberryTrees\obj\Debug\net8.0\ref\CharberryTrees.dll

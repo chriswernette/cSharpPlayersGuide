@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level41\OperandCity\obj\Debug\net8.0\OperandCity.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level41\OperandCity\obj\Debug\net8.0\OperandCity.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level41\OperandCity\obj\Debug\net8.0\OperandCity.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level41\OperandCity\obj\Debug\net8.0\OperandCity.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level41\OperandCity\obj\Debug\net8.0\OperandCity.sourcelink.json
+D:\github\cSharpPlayersGuide\Level41\OperandCity\bin\Debug\net8.0\OperandCity.exe
+D:\github\cSharpPlayersGuide\Level41\OperandCity\bin\Debug\net8.0\OperandCity.deps.json
+D:\github\cSharpPlayersGuide\Level41\OperandCity\bin\Debug\net8.0\OperandCity.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level41\OperandCity\bin\Debug\net8.0\OperandCity.dll
+D:\github\cSharpPlayersGuide\Level41\OperandCity\bin\Debug\net8.0\OperandCity.pdb
+D:\github\cSharpPlayersGuide\Level41\OperandCity\obj\Debug\net8.0\OperandCity.dll
+D:\github\cSharpPlayersGuide\Level41\OperandCity\obj\Debug\net8.0\refint\OperandCity.dll
+D:\github\cSharpPlayersGuide\Level41\OperandCity\obj\Debug\net8.0\OperandCity.pdb
+D:\github\cSharpPlayersGuide\Level41\OperandCity\obj\Debug\net8.0\OperandCity.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level41\OperandCity\obj\Debug\net8.0\ref\OperandCity.dll

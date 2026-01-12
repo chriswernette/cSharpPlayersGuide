@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level40\ThePotionMastersOfPattern\obj\Debug\net8.0\ThePotionMastersOfPattern.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level40\ThePotionMastersOfPattern\obj\Debug\net8.0\ThePotionMastersOfPattern.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level40\ThePotionMastersOfPattern\obj\Debug\net8.0\ThePotionMastersOfPattern.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level40\ThePotionMastersOfPattern\obj\Debug\net8.0\ThePotionMastersOfPattern.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level40\ThePotionMastersOfPattern\obj\Debug\net8.0\ThePotionMastersOfPattern.sourcelink.json
+D:\github\cSharpPlayersGuide\Level40\ThePotionMastersOfPattern\bin\Debug\net8.0\ThePotionMastersOfPattern.exe
+D:\github\cSharpPlayersGuide\Level40\ThePotionMastersOfPattern\bin\Debug\net8.0\ThePotionMastersOfPattern.deps.json
+D:\github\cSharpPlayersGuide\Level40\ThePotionMastersOfPattern\bin\Debug\net8.0\ThePotionMastersOfPattern.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level40\ThePotionMastersOfPattern\bin\Debug\net8.0\ThePotionMastersOfPattern.dll
+D:\github\cSharpPlayersGuide\Level40\ThePotionMastersOfPattern\bin\Debug\net8.0\ThePotionMastersOfPattern.pdb
+D:\github\cSharpPlayersGuide\Level40\ThePotionMastersOfPattern\obj\Debug\net8.0\ThePotionMastersOfPattern.dll
+D:\github\cSharpPlayersGuide\Level40\ThePotionMastersOfPattern\obj\Debug\net8.0\refint\ThePotionMastersOfPattern.dll
+D:\github\cSharpPlayersGuide\Level40\ThePotionMastersOfPattern\obj\Debug\net8.0\ThePotionMastersOfPattern.pdb
+D:\github\cSharpPlayersGuide\Level40\ThePotionMastersOfPattern\obj\Debug\net8.0\ThePotionMastersOfPattern.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level40\ThePotionMastersOfPattern\obj\Debug\net8.0\ref\ThePotionMastersOfPattern.dll

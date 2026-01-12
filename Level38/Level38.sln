@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36717.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SieveLambdas", "SieveLambdas\SieveLambdas.csproj", "{6C5DCE2C-DFF5-417E-B61C-5E29A85F805C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C5DCE2C-DFF5-417E-B61C-5E29A85F805C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C5DCE2C-DFF5-417E-B61C-5E29A85F805C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C5DCE2C-DFF5-417E-B61C-5E29A85F805C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C5DCE2C-DFF5-417E-B61C-5E29A85F805C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E67698BD-418B-4EC1-B8DE-3BB54F459DB2}
+	EndGlobalSection
+EndGlobal

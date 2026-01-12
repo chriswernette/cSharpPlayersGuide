@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeNumberCrunching", "SafeNumberCrunching\SafeNumberCrunching.csproj", "{51759DF3-A94D-43BC-8FA7-82D52AB5AD27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterRandom", "BetterRandom\BetterRandom.csproj", "{7F05BE77-22AA-4E06-B366-2D364AE2BD8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51759DF3-A94D-43BC-8FA7-82D52AB5AD27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51759DF3-A94D-43BC-8FA7-82D52AB5AD27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51759DF3-A94D-43BC-8FA7-82D52AB5AD27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51759DF3-A94D-43BC-8FA7-82D52AB5AD27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F05BE77-22AA-4E06-B366-2D364AE2BD8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F05BE77-22AA-4E06-B366-2D364AE2BD8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F05BE77-22AA-4E06-B366-2D364AE2BD8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F05BE77-22AA-4E06-B366-2D364AE2BD8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {28AEE15D-443E-48C0-807E-490A18873882}
+	EndGlobalSection
+EndGlobal

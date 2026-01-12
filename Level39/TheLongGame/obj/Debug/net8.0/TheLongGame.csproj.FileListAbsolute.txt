@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level39\TheLongGame\bin\Debug\net8.0\TheLongGame.exe
+D:\github\cSharpPlayersGuide\Level39\TheLongGame\bin\Debug\net8.0\TheLongGame.deps.json
+D:\github\cSharpPlayersGuide\Level39\TheLongGame\bin\Debug\net8.0\TheLongGame.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level39\TheLongGame\bin\Debug\net8.0\TheLongGame.dll
+D:\github\cSharpPlayersGuide\Level39\TheLongGame\bin\Debug\net8.0\TheLongGame.pdb
+D:\github\cSharpPlayersGuide\Level39\TheLongGame\obj\Debug\net8.0\TheLongGame.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level39\TheLongGame\obj\Debug\net8.0\TheLongGame.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level39\TheLongGame\obj\Debug\net8.0\TheLongGame.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level39\TheLongGame\obj\Debug\net8.0\TheLongGame.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level39\TheLongGame\obj\Debug\net8.0\TheLongGame.sourcelink.json
+D:\github\cSharpPlayersGuide\Level39\TheLongGame\obj\Debug\net8.0\TheLongGame.dll
+D:\github\cSharpPlayersGuide\Level39\TheLongGame\obj\Debug\net8.0\refint\TheLongGame.dll
+D:\github\cSharpPlayersGuide\Level39\TheLongGame\obj\Debug\net8.0\TheLongGame.pdb
+D:\github\cSharpPlayersGuide\Level39\TheLongGame\obj\Debug\net8.0\TheLongGame.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level39\TheLongGame\obj\Debug\net8.0\ref\TheLongGame.dll

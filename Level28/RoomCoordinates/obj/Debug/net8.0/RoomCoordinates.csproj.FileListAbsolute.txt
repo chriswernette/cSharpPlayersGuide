@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level28\RoomCoordinates\bin\Debug\net8.0\RoomCoordinates.exe
+D:\github\cSharpPlayersGuide\Level28\RoomCoordinates\bin\Debug\net8.0\RoomCoordinates.deps.json
+D:\github\cSharpPlayersGuide\Level28\RoomCoordinates\bin\Debug\net8.0\RoomCoordinates.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level28\RoomCoordinates\bin\Debug\net8.0\RoomCoordinates.dll
+D:\github\cSharpPlayersGuide\Level28\RoomCoordinates\bin\Debug\net8.0\RoomCoordinates.pdb
+D:\github\cSharpPlayersGuide\Level28\RoomCoordinates\obj\Debug\net8.0\RoomCoordinates.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level28\RoomCoordinates\obj\Debug\net8.0\RoomCoordinates.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level28\RoomCoordinates\obj\Debug\net8.0\RoomCoordinates.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level28\RoomCoordinates\obj\Debug\net8.0\RoomCoordinates.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level28\RoomCoordinates\obj\Debug\net8.0\RoomCoordinates.sourcelink.json
+D:\github\cSharpPlayersGuide\Level28\RoomCoordinates\obj\Debug\net8.0\RoomCoordinates.dll
+D:\github\cSharpPlayersGuide\Level28\RoomCoordinates\obj\Debug\net8.0\refint\RoomCoordinates.dll
+D:\github\cSharpPlayersGuide\Level28\RoomCoordinates\obj\Debug\net8.0\RoomCoordinates.pdb
+D:\github\cSharpPlayersGuide\Level28\RoomCoordinates\obj\Debug\net8.0\RoomCoordinates.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level28\RoomCoordinates\obj\Debug\net8.0\ref\RoomCoordinates.dll

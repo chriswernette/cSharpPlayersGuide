@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Chapter25\PackingInventory\bin\Debug\net8.0\PackingInventory.exe
+D:\github\cSharpPlayersGuide\Chapter25\PackingInventory\bin\Debug\net8.0\PackingInventory.deps.json
+D:\github\cSharpPlayersGuide\Chapter25\PackingInventory\bin\Debug\net8.0\PackingInventory.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Chapter25\PackingInventory\bin\Debug\net8.0\PackingInventory.dll
+D:\github\cSharpPlayersGuide\Chapter25\PackingInventory\bin\Debug\net8.0\PackingInventory.pdb
+D:\github\cSharpPlayersGuide\Chapter25\PackingInventory\obj\Debug\net8.0\PackingInventory.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Chapter25\PackingInventory\obj\Debug\net8.0\PackingInventory.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Chapter25\PackingInventory\obj\Debug\net8.0\PackingInventory.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Chapter25\PackingInventory\obj\Debug\net8.0\PackingInventory.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Chapter25\PackingInventory\obj\Debug\net8.0\PackingInventory.sourcelink.json
+D:\github\cSharpPlayersGuide\Chapter25\PackingInventory\obj\Debug\net8.0\PackingInventory.dll
+D:\github\cSharpPlayersGuide\Chapter25\PackingInventory\obj\Debug\net8.0\refint\PackingInventory.dll
+D:\github\cSharpPlayersGuide\Chapter25\PackingInventory\obj\Debug\net8.0\PackingInventory.pdb
+D:\github\cSharpPlayersGuide\Chapter25\PackingInventory\obj\Debug\net8.0\PackingInventory.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Chapter25\PackingInventory\obj\Debug\net8.0\ref\PackingInventory.dll

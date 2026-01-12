@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level34\SafeNumberCrunching\bin\Debug\net8.0\SafeNumberCrunching.exe
+D:\github\cSharpPlayersGuide\Level34\SafeNumberCrunching\bin\Debug\net8.0\SafeNumberCrunching.deps.json
+D:\github\cSharpPlayersGuide\Level34\SafeNumberCrunching\bin\Debug\net8.0\SafeNumberCrunching.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level34\SafeNumberCrunching\bin\Debug\net8.0\SafeNumberCrunching.dll
+D:\github\cSharpPlayersGuide\Level34\SafeNumberCrunching\bin\Debug\net8.0\SafeNumberCrunching.pdb
+D:\github\cSharpPlayersGuide\Level34\SafeNumberCrunching\obj\Debug\net8.0\SafeNumberCrunching.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level34\SafeNumberCrunching\obj\Debug\net8.0\SafeNumberCrunching.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level34\SafeNumberCrunching\obj\Debug\net8.0\SafeNumberCrunching.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level34\SafeNumberCrunching\obj\Debug\net8.0\SafeNumberCrunching.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level34\SafeNumberCrunching\obj\Debug\net8.0\SafeNumberCrunching.sourcelink.json
+D:\github\cSharpPlayersGuide\Level34\SafeNumberCrunching\obj\Debug\net8.0\SafeNumberCrunching.dll
+D:\github\cSharpPlayersGuide\Level34\SafeNumberCrunching\obj\Debug\net8.0\refint\SafeNumberCrunching.dll
+D:\github\cSharpPlayersGuide\Level34\SafeNumberCrunching\obj\Debug\net8.0\SafeNumberCrunching.pdb
+D:\github\cSharpPlayersGuide\Level34\SafeNumberCrunching\obj\Debug\net8.0\SafeNumberCrunching.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level34\SafeNumberCrunching\obj\Debug\net8.0\ref\SafeNumberCrunching.dll

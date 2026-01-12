@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level33\TheFeud\obj\Debug\net8.0\TheFeud.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level33\TheFeud\obj\Debug\net8.0\TheFeud.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level33\TheFeud\obj\Debug\net8.0\TheFeud.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level33\TheFeud\obj\Debug\net8.0\TheFeud.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level33\TheFeud\obj\Debug\net8.0\TheFeud.sourcelink.json
+D:\github\cSharpPlayersGuide\Level33\TheFeud\bin\Debug\net8.0\TheFeud.exe
+D:\github\cSharpPlayersGuide\Level33\TheFeud\bin\Debug\net8.0\TheFeud.deps.json
+D:\github\cSharpPlayersGuide\Level33\TheFeud\bin\Debug\net8.0\TheFeud.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level33\TheFeud\bin\Debug\net8.0\TheFeud.dll
+D:\github\cSharpPlayersGuide\Level33\TheFeud\bin\Debug\net8.0\TheFeud.pdb
+D:\github\cSharpPlayersGuide\Level33\TheFeud\obj\Debug\net8.0\TheFeud.dll
+D:\github\cSharpPlayersGuide\Level33\TheFeud\obj\Debug\net8.0\refint\TheFeud.dll
+D:\github\cSharpPlayersGuide\Level33\TheFeud\obj\Debug\net8.0\TheFeud.pdb
+D:\github\cSharpPlayersGuide\Level33\TheFeud\obj\Debug\net8.0\TheFeud.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level33\TheFeud\obj\Debug\net8.0\ref\TheFeud.dll

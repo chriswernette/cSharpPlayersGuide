@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level35\ExeptisGame\bin\Debug\net8.0\ExeptisGame.exe
+D:\github\cSharpPlayersGuide\Level35\ExeptisGame\bin\Debug\net8.0\ExeptisGame.deps.json
+D:\github\cSharpPlayersGuide\Level35\ExeptisGame\bin\Debug\net8.0\ExeptisGame.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level35\ExeptisGame\bin\Debug\net8.0\ExeptisGame.dll
+D:\github\cSharpPlayersGuide\Level35\ExeptisGame\bin\Debug\net8.0\ExeptisGame.pdb
+D:\github\cSharpPlayersGuide\Level35\ExeptisGame\obj\Debug\net8.0\ExeptisGame.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level35\ExeptisGame\obj\Debug\net8.0\ExeptisGame.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level35\ExeptisGame\obj\Debug\net8.0\ExeptisGame.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level35\ExeptisGame\obj\Debug\net8.0\ExeptisGame.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level35\ExeptisGame\obj\Debug\net8.0\ExeptisGame.sourcelink.json
+D:\github\cSharpPlayersGuide\Level35\ExeptisGame\obj\Debug\net8.0\ExeptisGame.dll
+D:\github\cSharpPlayersGuide\Level35\ExeptisGame\obj\Debug\net8.0\refint\ExeptisGame.dll
+D:\github\cSharpPlayersGuide\Level35\ExeptisGame\obj\Debug\net8.0\ExeptisGame.pdb
+D:\github\cSharpPlayersGuide\Level35\ExeptisGame\obj\Debug\net8.0\ExeptisGame.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level35\ExeptisGame\obj\Debug\net8.0\ref\ExeptisGame.dll

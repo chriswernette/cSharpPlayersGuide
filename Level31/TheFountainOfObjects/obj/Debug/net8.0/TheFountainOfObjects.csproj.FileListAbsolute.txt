@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level31\TheFountainOfObjects\bin\Debug\net8.0\TheFountainOfObjects.exe
+D:\github\cSharpPlayersGuide\Level31\TheFountainOfObjects\bin\Debug\net8.0\TheFountainOfObjects.deps.json
+D:\github\cSharpPlayersGuide\Level31\TheFountainOfObjects\bin\Debug\net8.0\TheFountainOfObjects.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level31\TheFountainOfObjects\bin\Debug\net8.0\TheFountainOfObjects.dll
+D:\github\cSharpPlayersGuide\Level31\TheFountainOfObjects\bin\Debug\net8.0\TheFountainOfObjects.pdb
+D:\github\cSharpPlayersGuide\Level31\TheFountainOfObjects\obj\Debug\net8.0\TheFountainOfObjects.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level31\TheFountainOfObjects\obj\Debug\net8.0\TheFountainOfObjects.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level31\TheFountainOfObjects\obj\Debug\net8.0\TheFountainOfObjects.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level31\TheFountainOfObjects\obj\Debug\net8.0\TheFountainOfObjects.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level31\TheFountainOfObjects\obj\Debug\net8.0\TheFountainOfObjects.sourcelink.json
+D:\github\cSharpPlayersGuide\Level31\TheFountainOfObjects\obj\Debug\net8.0\TheFountainOfObjects.dll
+D:\github\cSharpPlayersGuide\Level31\TheFountainOfObjects\obj\Debug\net8.0\refint\TheFountainOfObjects.dll
+D:\github\cSharpPlayersGuide\Level31\TheFountainOfObjects\obj\Debug\net8.0\TheFountainOfObjects.pdb
+D:\github\cSharpPlayersGuide\Level31\TheFountainOfObjects\obj\Debug\net8.0\TheFountainOfObjects.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level31\TheFountainOfObjects\obj\Debug\net8.0\ref\TheFountainOfObjects.dll

@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level36\TheSieve\bin\Debug\net8.0\TheSieve.exe
+D:\github\cSharpPlayersGuide\Level36\TheSieve\bin\Debug\net8.0\TheSieve.deps.json
+D:\github\cSharpPlayersGuide\Level36\TheSieve\bin\Debug\net8.0\TheSieve.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level36\TheSieve\bin\Debug\net8.0\TheSieve.dll
+D:\github\cSharpPlayersGuide\Level36\TheSieve\bin\Debug\net8.0\TheSieve.pdb
+D:\github\cSharpPlayersGuide\Level36\TheSieve\obj\Debug\net8.0\TheSieve.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level36\TheSieve\obj\Debug\net8.0\TheSieve.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level36\TheSieve\obj\Debug\net8.0\TheSieve.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level36\TheSieve\obj\Debug\net8.0\TheSieve.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level36\TheSieve\obj\Debug\net8.0\TheSieve.sourcelink.json
+D:\github\cSharpPlayersGuide\Level36\TheSieve\obj\Debug\net8.0\TheSieve.dll
+D:\github\cSharpPlayersGuide\Level36\TheSieve\obj\Debug\net8.0\refint\TheSieve.dll
+D:\github\cSharpPlayersGuide\Level36\TheSieve\obj\Debug\net8.0\TheSieve.pdb
+D:\github\cSharpPlayersGuide\Level36\TheSieve\obj\Debug\net8.0\TheSieve.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level36\TheSieve\obj\Debug\net8.0\ref\TheSieve.dll

@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level26\TheOldRobot\obj\Debug\net8.0\TheOldRobot.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level26\TheOldRobot\obj\Debug\net8.0\TheOldRobot.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level26\TheOldRobot\obj\Debug\net8.0\TheOldRobot.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level26\TheOldRobot\obj\Debug\net8.0\TheOldRobot.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level26\TheOldRobot\obj\Debug\net8.0\TheOldRobot.sourcelink.json
+D:\github\cSharpPlayersGuide\Level26\TheOldRobot\bin\Debug\net8.0\TheOldRobot.exe
+D:\github\cSharpPlayersGuide\Level26\TheOldRobot\bin\Debug\net8.0\TheOldRobot.deps.json
+D:\github\cSharpPlayersGuide\Level26\TheOldRobot\bin\Debug\net8.0\TheOldRobot.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level26\TheOldRobot\bin\Debug\net8.0\TheOldRobot.dll
+D:\github\cSharpPlayersGuide\Level26\TheOldRobot\bin\Debug\net8.0\TheOldRobot.pdb
+D:\github\cSharpPlayersGuide\Level26\TheOldRobot\obj\Debug\net8.0\TheOldRobot.dll
+D:\github\cSharpPlayersGuide\Level26\TheOldRobot\obj\Debug\net8.0\refint\TheOldRobot.dll
+D:\github\cSharpPlayersGuide\Level26\TheOldRobot\obj\Debug\net8.0\TheOldRobot.pdb
+D:\github\cSharpPlayersGuide\Level26\TheOldRobot\obj\Debug\net8.0\TheOldRobot.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level26\TheOldRobot\obj\Debug\net8.0\ref\TheOldRobot.dll
