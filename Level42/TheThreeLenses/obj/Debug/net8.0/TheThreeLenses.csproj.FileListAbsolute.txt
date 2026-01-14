@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level42\TheThreeLenses\obj\Debug\net8.0\TheThreeLenses.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level42\TheThreeLenses\obj\Debug\net8.0\TheThreeLenses.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level42\TheThreeLenses\obj\Debug\net8.0\TheThreeLenses.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level42\TheThreeLenses\obj\Debug\net8.0\TheThreeLenses.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level42\TheThreeLenses\obj\Debug\net8.0\TheThreeLenses.sourcelink.json
+D:\github\cSharpPlayersGuide\Level42\TheThreeLenses\bin\Debug\net8.0\TheThreeLenses.exe
+D:\github\cSharpPlayersGuide\Level42\TheThreeLenses\bin\Debug\net8.0\TheThreeLenses.deps.json
+D:\github\cSharpPlayersGuide\Level42\TheThreeLenses\bin\Debug\net8.0\TheThreeLenses.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level42\TheThreeLenses\bin\Debug\net8.0\TheThreeLenses.dll
+D:\github\cSharpPlayersGuide\Level42\TheThreeLenses\bin\Debug\net8.0\TheThreeLenses.pdb
+D:\github\cSharpPlayersGuide\Level42\TheThreeLenses\obj\Debug\net8.0\TheThreeLenses.dll
+D:\github\cSharpPlayersGuide\Level42\TheThreeLenses\obj\Debug\net8.0\refint\TheThreeLenses.dll
+D:\github\cSharpPlayersGuide\Level42\TheThreeLenses\obj\Debug\net8.0\TheThreeLenses.pdb
+D:\github\cSharpPlayersGuide\Level42\TheThreeLenses\obj\Debug\net8.0\TheThreeLenses.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level42\TheThreeLenses\obj\Debug\net8.0\ref\TheThreeLenses.dll
