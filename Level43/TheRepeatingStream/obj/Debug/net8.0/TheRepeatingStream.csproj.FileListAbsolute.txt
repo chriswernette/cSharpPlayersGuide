@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level43\TheRepeatingStream\bin\Debug\net8.0\TheRepeatingStream.exe
+D:\github\cSharpPlayersGuide\Level43\TheRepeatingStream\bin\Debug\net8.0\TheRepeatingStream.deps.json
+D:\github\cSharpPlayersGuide\Level43\TheRepeatingStream\bin\Debug\net8.0\TheRepeatingStream.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level43\TheRepeatingStream\bin\Debug\net8.0\TheRepeatingStream.dll
+D:\github\cSharpPlayersGuide\Level43\TheRepeatingStream\bin\Debug\net8.0\TheRepeatingStream.pdb
+D:\github\cSharpPlayersGuide\Level43\TheRepeatingStream\obj\Debug\net8.0\TheRepeatingStream.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level43\TheRepeatingStream\obj\Debug\net8.0\TheRepeatingStream.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level43\TheRepeatingStream\obj\Debug\net8.0\TheRepeatingStream.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level43\TheRepeatingStream\obj\Debug\net8.0\TheRepeatingStream.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level43\TheRepeatingStream\obj\Debug\net8.0\TheRepeatingStream.sourcelink.json
+D:\github\cSharpPlayersGuide\Level43\TheRepeatingStream\obj\Debug\net8.0\TheRepeatingStream.dll
+D:\github\cSharpPlayersGuide\Level43\TheRepeatingStream\obj\Debug\net8.0\refint\TheRepeatingStream.dll
+D:\github\cSharpPlayersGuide\Level43\TheRepeatingStream\obj\Debug\net8.0\TheRepeatingStream.pdb
+D:\github\cSharpPlayersGuide\Level43\TheRepeatingStream\obj\Debug\net8.0\TheRepeatingStream.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level43\TheRepeatingStream\obj\Debug\net8.0\ref\TheRepeatingStream.dll
