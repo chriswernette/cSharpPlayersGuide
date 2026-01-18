@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\github\\cSharpPlayersGuide\\Level45\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{95D1AC02-A232-4CB5-AED9-C82D09E02C25}|TheRobotFactory\\TheRobotFactory.csproj|d:\\github\\csharpplayersguide\\level45\\therobotfactory\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95D1AC02-A232-4CB5-AED9-C82D09E02C25}|TheRobotFactory\\TheRobotFactory.csproj|solutionrelative:therobotfactory\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{26773ED6-16E0-4503-85AC-064CE21201EF}|UniterOfAdds\\UniterOfAdds.csproj|d:\\github\\csharpplayersguide\\level45\\uniterofadds\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26773ED6-16E0-4503-85AC-064CE21201EF}|UniterOfAdds\\UniterOfAdds.csproj|solutionrelative:uniterofadds\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,29 +18,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{c6f34f0d-7ae5-4f3a-be61-fe0c21ae9eb8}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\Level45\\TheRobotFactory\\Program.cs",
+              "RelativeDocumentMoniker": "TheRobotFactory\\Program.cs",
+              "ToolTip": "D:\\github\\cSharpPlayersGuide\\Level45\\TheRobotFactory\\Program.cs",
+              "RelativeToolTip": "TheRobotFactory\\Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADIAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T15:48:52.01Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\Level45\\UniterOfAdds\\Program.cs",
               "RelativeDocumentMoniker": "UniterOfAdds\\Program.cs",
               "ToolTip": "D:\\github\\cSharpPlayersGuide\\Level45\\UniterOfAdds\\Program.cs",
               "RelativeToolTip": "UniterOfAdds\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-18T14:11:57.51Z",
               "EditorCaption": ""

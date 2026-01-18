@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level45\TheRobotFactory\bin\Debug\net10.0\TheRobotFactory.exe
+D:\github\cSharpPlayersGuide\Level45\TheRobotFactory\bin\Debug\net10.0\TheRobotFactory.deps.json
+D:\github\cSharpPlayersGuide\Level45\TheRobotFactory\bin\Debug\net10.0\TheRobotFactory.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level45\TheRobotFactory\bin\Debug\net10.0\TheRobotFactory.dll
+D:\github\cSharpPlayersGuide\Level45\TheRobotFactory\bin\Debug\net10.0\TheRobotFactory.pdb
+D:\github\cSharpPlayersGuide\Level45\TheRobotFactory\obj\Debug\net10.0\TheRobotFactory.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level45\TheRobotFactory\obj\Debug\net10.0\TheRobotFactory.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level45\TheRobotFactory\obj\Debug\net10.0\TheRobotFactory.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level45\TheRobotFactory\obj\Debug\net10.0\TheRobotFactory.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level45\TheRobotFactory\obj\Debug\net10.0\TheRobotFactory.sourcelink.json
+D:\github\cSharpPlayersGuide\Level45\TheRobotFactory\obj\Debug\net10.0\TheRobotFactory.dll
+D:\github\cSharpPlayersGuide\Level45\TheRobotFactory\obj\Debug\net10.0\refint\TheRobotFactory.dll
+D:\github\cSharpPlayersGuide\Level45\TheRobotFactory\obj\Debug\net10.0\TheRobotFactory.pdb
+D:\github\cSharpPlayersGuide\Level45\TheRobotFactory\obj\Debug\net10.0\TheRobotFactory.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level45\TheRobotFactory\obj\Debug\net10.0\ref\TheRobotFactory.dll
