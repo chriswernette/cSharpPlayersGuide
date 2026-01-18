@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\Level45\UniterOfAdds\bin\Debug\net8.0\UniterOfAdds.exe
+D:\github\cSharpPlayersGuide\Level45\UniterOfAdds\bin\Debug\net8.0\UniterOfAdds.deps.json
+D:\github\cSharpPlayersGuide\Level45\UniterOfAdds\bin\Debug\net8.0\UniterOfAdds.runtimeconfig.json
+D:\github\cSharpPlayersGuide\Level45\UniterOfAdds\bin\Debug\net8.0\UniterOfAdds.dll
+D:\github\cSharpPlayersGuide\Level45\UniterOfAdds\bin\Debug\net8.0\UniterOfAdds.pdb
+D:\github\cSharpPlayersGuide\Level45\UniterOfAdds\obj\Debug\net8.0\UniterOfAdds.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\Level45\UniterOfAdds\obj\Debug\net8.0\UniterOfAdds.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\Level45\UniterOfAdds\obj\Debug\net8.0\UniterOfAdds.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\Level45\UniterOfAdds\obj\Debug\net8.0\UniterOfAdds.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\Level45\UniterOfAdds\obj\Debug\net8.0\UniterOfAdds.sourcelink.json
+D:\github\cSharpPlayersGuide\Level45\UniterOfAdds\obj\Debug\net8.0\UniterOfAdds.dll
+D:\github\cSharpPlayersGuide\Level45\UniterOfAdds\obj\Debug\net8.0\refint\UniterOfAdds.dll
+D:\github\cSharpPlayersGuide\Level45\UniterOfAdds\obj\Debug\net8.0\UniterOfAdds.pdb
+D:\github\cSharpPlayersGuide\Level45\UniterOfAdds\obj\Debug\net8.0\UniterOfAdds.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\Level45\UniterOfAdds\obj\Debug\net8.0\ref\UniterOfAdds.dll

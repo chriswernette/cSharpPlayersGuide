@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\github\\cSharpPlayersGuide\\Level45\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{26773ED6-16E0-4503-85AC-064CE21201EF}|UniterOfAdds\\UniterOfAdds.csproj|d:\\github\\csharpplayersguide\\level45\\uniterofadds\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26773ED6-16E0-4503-85AC-064CE21201EF}|UniterOfAdds\\UniterOfAdds.csproj|solutionrelative:uniterofadds\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c6f34f0d-7ae5-4f3a-be61-fe0c21ae9eb8}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\Level45\\UniterOfAdds\\Program.cs",
+              "RelativeDocumentMoniker": "UniterOfAdds\\Program.cs",
+              "ToolTip": "D:\\github\\cSharpPlayersGuide\\Level45\\UniterOfAdds\\Program.cs*",
+              "RelativeToolTip": "UniterOfAdds\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T14:11:57.51Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
