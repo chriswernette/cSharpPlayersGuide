@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\github\\cSharpPlayersGuide\\FountainOfObjectsFinal\\5thEdition\\Level31-TheFountainOfObjects\\CombinedGame\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0D7B19B8-C6DF-4E2C-AC3D-F1E41A8F789D}|CombinedGame.csproj|d:\\github\\csharpplayersguide\\fountainofobjectsfinal\\5thedition\\level31-thefountainofobjects\\combinedgame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D7B19B8-C6DF-4E2C-AC3D-F1E41A8F789D}|CombinedGame.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D7B19B8-C6DF-4E2C-AC3D-F1E41A8F789D}|CombinedGame.csproj|d:\\github\\csharpplayersguide\\fountainofobjectsfinal\\5thedition\\level31-thefountainofobjects\\combinedgame\\combinedgame.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{0D7B19B8-C6DF-4E2C-AC3D-F1E41A8F789D}|CombinedGame.csproj|solutionrelative:combinedgame.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CombinedGame",
+              "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\FountainOfObjectsFinal\\5thEdition\\Level31-TheFountainOfObjects\\CombinedGame\\CombinedGame.csproj",
+              "RelativeDocumentMoniker": "CombinedGame.csproj",
+              "ToolTip": "D:\\github\\cSharpPlayersGuide\\FountainOfObjectsFinal\\5thEdition\\Level31-TheFountainOfObjects\\CombinedGame\\CombinedGame.csproj",
+              "RelativeToolTip": "CombinedGame.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-21T21:41:43.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\FountainOfObjectsFinal\\5thEdition\\Level31-TheFountainOfObjects\\CombinedGame\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\github\\cSharpPlayersGuide\\FountainOfObjectsFinal\\5thEdition\\Level31-TheFountainOfObjects\\CombinedGame\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T14:54:02.964Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

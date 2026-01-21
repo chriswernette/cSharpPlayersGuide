@@ -1,0 +1,15 @@
+D:\github\cSharpPlayersGuide\FountainOfObjectsFinal\5thEdition\Level31-TheFountainOfObjects\CombinedGame\bin\Debug\net10.0\CombinedGame.exe
+D:\github\cSharpPlayersGuide\FountainOfObjectsFinal\5thEdition\Level31-TheFountainOfObjects\CombinedGame\bin\Debug\net10.0\CombinedGame.deps.json
+D:\github\cSharpPlayersGuide\FountainOfObjectsFinal\5thEdition\Level31-TheFountainOfObjects\CombinedGame\bin\Debug\net10.0\CombinedGame.runtimeconfig.json
+D:\github\cSharpPlayersGuide\FountainOfObjectsFinal\5thEdition\Level31-TheFountainOfObjects\CombinedGame\bin\Debug\net10.0\CombinedGame.dll
+D:\github\cSharpPlayersGuide\FountainOfObjectsFinal\5thEdition\Level31-TheFountainOfObjects\CombinedGame\bin\Debug\net10.0\CombinedGame.pdb
+D:\github\cSharpPlayersGuide\FountainOfObjectsFinal\5thEdition\Level31-TheFountainOfObjects\CombinedGame\obj\Debug\net10.0\CombinedGame.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\cSharpPlayersGuide\FountainOfObjectsFinal\5thEdition\Level31-TheFountainOfObjects\CombinedGame\obj\Debug\net10.0\CombinedGame.AssemblyInfoInputs.cache
+D:\github\cSharpPlayersGuide\FountainOfObjectsFinal\5thEdition\Level31-TheFountainOfObjects\CombinedGame\obj\Debug\net10.0\CombinedGame.AssemblyInfo.cs
+D:\github\cSharpPlayersGuide\FountainOfObjectsFinal\5thEdition\Level31-TheFountainOfObjects\CombinedGame\obj\Debug\net10.0\CombinedGame.csproj.CoreCompileInputs.cache
+D:\github\cSharpPlayersGuide\FountainOfObjectsFinal\5thEdition\Level31-TheFountainOfObjects\CombinedGame\obj\Debug\net10.0\CombinedGame.sourcelink.json
+D:\github\cSharpPlayersGuide\FountainOfObjectsFinal\5thEdition\Level31-TheFountainOfObjects\CombinedGame\obj\Debug\net10.0\CombinedGame.dll
+D:\github\cSharpPlayersGuide\FountainOfObjectsFinal\5thEdition\Level31-TheFountainOfObjects\CombinedGame\obj\Debug\net10.0\refint\CombinedGame.dll
+D:\github\cSharpPlayersGuide\FountainOfObjectsFinal\5thEdition\Level31-TheFountainOfObjects\CombinedGame\obj\Debug\net10.0\CombinedGame.pdb
+D:\github\cSharpPlayersGuide\FountainOfObjectsFinal\5thEdition\Level31-TheFountainOfObjects\CombinedGame\obj\Debug\net10.0\CombinedGame.genruntimeconfig.cache
+D:\github\cSharpPlayersGuide\FountainOfObjectsFinal\5thEdition\Level31-TheFountainOfObjects\CombinedGame\obj\Debug\net10.0\ref\CombinedGame.dll
