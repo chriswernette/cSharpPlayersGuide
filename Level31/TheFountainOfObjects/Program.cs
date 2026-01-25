@@ -59,6 +59,15 @@
  * 
  * 
  */
+
+public class FountainOfObjects
+{
+  public Player? player;
+  public Map? map;
+
+}
+
+
 public class Player
 {
   public Location playerLocation = new Location(0,0);
@@ -77,7 +86,7 @@ public class Player
   //returns list of senses and prints out messages for each
   public List<Sense> SenseNearbyRooms(Map map)
   {
-    ConsoleHelper helper = new ConsoleHelper();
+    
     List<Sense> senses = new List<Sense>();
 
     for (int i = playerLocation.X - 1; i > playerLocation.X; i++)
@@ -87,26 +96,30 @@ public class Player
         if (map.Rooms[i, j] == RoomType.Pit)
         {
           senses.Add(Sense.Pit);
-          helper.printLine("You feel a draft. There is a pit in a nearby room.", ConsoleColor.White); // what if multiple pits? This will print multiple times? OK?
+          ConsoleHelper.printLine("You feel a draft. There is a pit in a nearby room.", ConsoleColor.White); // what if multiple pits? This will print multiple times? OK?
         }
       }
     }
     if (map.Rooms[playerLocation.X, playerLocation.Y] == RoomType.Entrance)
     {
       senses.Add(Sense.Light);
-      helper.printLine("You see light coming from the cavern entrance.", ConsoleColor.Yellow);
+      ConsoleHelper.printLine("You see light coming from the cavern entrance.", ConsoleColor.Yellow);
     }
     if (map.Rooms[playerLocation.X, playerLocation.Y] == RoomType.Fountain)
     {
       senses.Add(Sense.Fountain);
       if(map.CheckFountainEnabled() == false)
-        helper.printLine("You hear water dripping in this room. The fountain of objects is here!", ConsoleColor.Blue);
+        ConsoleHelper.printLine("You hear water dripping in this room. The fountain of objects is here!", ConsoleColor.Blue);
       if (map.CheckFountainEnabled() == true)
-        helper.printLine("You hear the rushing waters from the fountain of objects. It has been reactivated!", ConsoleColor.Blue); //Should we also print something like this when they reactivate?
+        ConsoleHelper.printLine("You hear the rushing waters from the fountain of objects. It has been reactivated!", ConsoleColor.Blue); //Should we also print something like this when they reactivate?
     }
     return senses;
   }
 
+  public bool checkForDeath()
+  {
+    return this.isAlive;
+  }
 
   public void GetKilled(string reasonYouDied)
   {
@@ -129,25 +142,19 @@ public class Player
   {
     if(value < min || value > max)
     {
-      ConsoleHelper helper = new ConsoleHelper();
-      helper.printLine("You tried to walk off the edge of the map! Resetting your position.", ConsoleColor.Red);
-      helper.blockLine();
+      ConsoleHelper.printLine("You tried to walk off the edge of the map! Resetting your position.", ConsoleColor.Red);
+      ConsoleHelper.blockLine();
     }
     return Math.Clamp(value, min, max);
   }
 
-  public bool checkForDeath()
-  {
-    return this.isAlive;
-  }
+
 
   public void FireArrow(Direction dir)
   {
     this.arrowsRemaining--;
     //TODO add direction and monsters
   }
-
-
 
 }
 
@@ -164,6 +171,12 @@ public class Map
     Column = column;
     FountainEnabled = false;
   }
+  
+  public RoomType CheckRoomType(Location location)
+  {
+    return this.Rooms[location.X, location.Y];
+  }
+  
   public bool CheckFountainEnabled()
   {
     return FountainEnabled;
@@ -172,21 +185,34 @@ public class Map
   {
     FountainEnabled = true;
   }
+
+  public bool CheckOnMap(Location location)
+  {
+    if(location.X > Row || location.Y > Column || location.X < 0 || location.Y < 0)
+      return false;
+    else
+      return true;
+  }
 }
 
-public class ConsoleHelper
+public static class ConsoleHelper
 {
-  public void printLine(string line, ConsoleColor color)
+  public static void printLine(string line, ConsoleColor color)
   {
     Console.ForegroundColor = color;
     Console.WriteLine(line);
   }
-  public void blockLine()
+  public static void printLine(string line) //commonly printing white lines
+  {
+    Console.ForegroundColor = ConsoleColor.White;
+    Console.WriteLine(line);
+  }
+  public static void blockLine()
   {
     Console.WriteLine("--------------------------------------------------------------");
   }
 
-  public void startGameText()
+  public static void startGameText()
   {
     Console.WriteLine("You enter the Cavern of Objects, a maze of rooms filled with dangerous pits in search of the Fountain of Objects.");
     Console.WriteLine("Light is visible only in the entrance, and no other light is seen anywhere in the caverns.");
@@ -198,7 +224,16 @@ public class ConsoleHelper
     Console.WriteLine("Amoraks roam the caverns. Encountering one is certain death, but you can smell their rotten stench in nearby rooms.");
     Console.WriteLine("You carry with you a bow and a quiver of arrows. You can use them to shoot monsters in the caverns but be warned you have a limited supply.");
   }
-  public void helpText()
+}
+
+public interface ICommand
+{
+  void Execute(FountainOfObjects game);
+}
+
+public class HelpCommand : ICommand
+{
+  public void Execute(FountainOfObjects game)
   {
     Console.WriteLine("There are four main forms of commands: typing 'help' displays this message");
     Console.WriteLine("Typing 'enable fountain' attempts to enable the fountain of objects, but will only work if you are in the fountain room");
@@ -206,6 +241,76 @@ public class ConsoleHelper
     Console.WriteLine("Typing 'shoot' + a direction will attempt to fire an arrow in that direction. Be warned that you have a limited number of arrows!");
     Console.WriteLine("Typing anything else will have no affect.");
   }
+}
+
+public class EnableFountainCommand : ICommand
+{
+  public void Execute(FountainOfObjects game)
+  {
+    Location pLoc = game.player.playerLocation;
+    Map gameMap = game.map;
+    if (gameMap.CheckRoomType(pLoc) == RoomType.Fountain)
+    {
+      gameMap.EnableFountain();
+      ConsoleHelper.printLine("You hear the rushing waters from the Fountain of Objects. It has been reactivated!", ConsoleColor.Blue);
+    }
+    else
+      ConsoleHelper.printLine("You are not in the fountain room you dummy!", ConsoleColor.White);
+  }
+}
+
+public class MoveCommand : ICommand
+{
+  public Direction direction {  get; }
+
+  public MoveCommand(Direction dir)
+  {
+    direction = dir;
+  }
+  public void Execute(FountainOfObjects game)
+  {
+    Location pLoc = game.player.playerLocation;
+    Map gameMap = game.map;
+    Location newLoc = pLoc;
+    if(this.direction == Direction.North) 
+      newLoc = new Location(pLoc.X, pLoc.Y -1);
+    if (this.direction == Direction.East)
+      newLoc = new Location(pLoc.X + 1, pLoc.Y);
+    if (this.direction == Direction.South)
+      newLoc = new Location(pLoc.X, pLoc.Y + 1);
+    if(this.direction == Direction.West)
+      newLoc = new Location(pLoc.X -1 , pLoc.Y);
+
+    if (gameMap.CheckOnMap(newLoc))
+    {
+      game.player.playerLocation = newLoc;
+    }
+    else
+    {
+      ConsoleHelper.printLine("You hit a wall! You can't move there!", ConsoleColor.White);
+    }
+      
+  }
+}
+
+public class ShootCommand : ICommand
+{
+  public Direction direction { get; }
+
+  public ShootCommand(Direction dir)
+  {
+    direction = dir;
+  }
+  public void Execute(FountainOfObjects game)
+  {
+    //TODO check for monster in the shooting direction, and update it's life to 0 if shot
+    //TODO decrement player arrow
+  }
+}
+
+public interface ISense
+{
+  void Sense(FountainOfObjects game);
 }
 
 public struct Location
