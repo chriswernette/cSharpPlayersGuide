@@ -60,17 +60,32 @@
  * 
  */
 
+using System.ComponentModel.DataAnnotations.Schema;
+
 public class FountainOfObjects
 {
-  public Player? player;
-  public Map? map;
+  public Player player;
+  public Map map;
+  //TODO Add monsters hehe
+
+  public FountainOfObjects (string gameSize)
+  {
+    map = new Map(3, 3);
+    map.AddRoom(RoomType.Fountain, 0, 2);
+    map.AddRoom(RoomType.Entrance, 0, 0);
+    player = new Player(0, 0);
+
+    //TODO add medium and large games
+  }
+
+  //TODO add the flow of logic of the game from the flowchart, add functions that call other class methods etc.
 
 }
 
 
 public class Player
 {
-  public Location playerLocation = new Location(0,0);
+  public Location playerLocation = new Location(0, 0);
   public bool isAlive;
   public string deathCause;
   public int arrowsRemaining;
@@ -83,10 +98,10 @@ public class Player
     deathCause = string.Empty;
     arrowsRemaining = 5;
   }
-  //returns list of senses and prints out messages for each
+  //TODO check if I can remove this and salvage any useful code from this section
   public List<Sense> SenseNearbyRooms(Map map)
   {
-    
+
     List<Sense> senses = new List<Sense>();
 
     for (int i = playerLocation.X - 1; i > playerLocation.X; i++)
@@ -108,7 +123,7 @@ public class Player
     if (map.Rooms[playerLocation.X, playerLocation.Y] == RoomType.Fountain)
     {
       senses.Add(Sense.Fountain);
-      if(map.CheckFountainEnabled() == false)
+      if (map.CheckFountainEnabled() == false)
         ConsoleHelper.printLine("You hear water dripping in this room. The fountain of objects is here!", ConsoleColor.Blue);
       if (map.CheckFountainEnabled() == true)
         ConsoleHelper.printLine("You hear the rushing waters from the fountain of objects. It has been reactivated!", ConsoleColor.Blue); //Should we also print something like this when they reactivate?
@@ -116,7 +131,7 @@ public class Player
     return senses;
   }
 
-  public bool checkForDeath()
+  public bool CheckForDeath()
   {
     return this.isAlive;
   }
@@ -126,29 +141,6 @@ public class Player
     this.isAlive = false;
     this.deathCause = reasonYouDied;
   }
-
-  public void MoveCommand(Direction dir, int mapSize)
-  {
-    if (dir == Direction.North)
-      playerLocation.Y = ClampAndReport(playerLocation.Y - 1, 0, mapSize);
-    if (dir == Direction.East)
-      playerLocation.X = ClampAndReport(playerLocation.X + 1, 0, mapSize);
-    if (dir == Direction.South)
-      playerLocation.Y = ClampAndReport(playerLocation.Y + 1, 0, mapSize);
-    if(dir == Direction.West)
-      playerLocation.X = ClampAndReport(playerLocation.X - 1, 0, mapSize);
-  }
-  private int ClampAndReport(int value, int min, int max)
-  {
-    if(value < min || value > max)
-    {
-      ConsoleHelper.printLine("You tried to walk off the edge of the map! Resetting your position.", ConsoleColor.Red);
-      ConsoleHelper.blockLine();
-    }
-    return Math.Clamp(value, min, max);
-  }
-
-
 
   public void FireArrow(Direction dir)
   {
@@ -172,19 +164,36 @@ public class Map
     FountainEnabled = false;
   }
   
-  public RoomType CheckRoomType(Location location)
-  {
-    return this.Rooms[location.X, location.Y];
-  }
+  public void AddRoom(RoomType type, int row, int col) => this.Rooms[row,col] = type;
+
+  public RoomType GetRoomType(Location location) => this.Rooms[location.X, location.Y];
+
+  public bool IsRoomType(Location location, RoomType room) => this.Rooms[location.X, location.Y] == room;
   
-  public bool CheckFountainEnabled()
+  public bool CheckNeighboringRooms(Location location, RoomType room)
   {
-    return FountainEnabled;
+    bool result = false;
+    int westX = Math.Clamp(location.X - 1, 0, this.Row);
+    int eastX = Math.Clamp(location.X + 1, 0, this.Row);
+    int northY = Math.Clamp(location.Y - 1, 0, this.Column);
+    int southY = Math.Clamp(location.Y + 1, 0, this.Column);
+    for (int i = westX; i <= eastX; i++)
+    {
+      for (int j = northY; j <= southY; j++)
+      {
+        if (i == location.X && j == location.Y) //do nothing, this is the same as current location
+        { }
+        if (this.Rooms[i, j] == room)
+        {
+          result = true;
+        }
+      }
+    }
+    return result;
   }
-  public void EnableFountain()
-  {
-    FountainEnabled = true;
-  }
+
+  public bool CheckFountainEnabled() => this.FountainEnabled;
+  public void EnableFountain() => FountainEnabled = true;
 
   public bool CheckOnMap(Location location)
   {
@@ -249,7 +258,7 @@ public class EnableFountainCommand : ICommand
   {
     Location pLoc = game.player.playerLocation;
     Map gameMap = game.map;
-    if (gameMap.CheckRoomType(pLoc) == RoomType.Fountain)
+    if (gameMap.GetRoomType(pLoc) == RoomType.Fountain)
     {
       gameMap.EnableFountain();
       ConsoleHelper.printLine("You hear the rushing waters from the Fountain of Objects. It has been reactivated!", ConsoleColor.Blue);
@@ -310,7 +319,40 @@ public class ShootCommand : ICommand
 
 public interface ISense
 {
-  void Sense(FountainOfObjects game);
+  bool Sense(FountainOfObjects game);
+  void DisplaySense(FountainOfObjects game);
+}
+
+public class FountainSense : ISense
+{
+  public bool Sense(FountainOfObjects game)
+  {
+    Location pLoc = game.player.playerLocation;
+    bool result = game.map.IsRoomType(pLoc, RoomType.Fountain);
+    return result;
+  }
+
+  public void DisplaySense(FountainOfObjects game)
+  {
+    if (game.map.CheckFountainEnabled())
+      ConsoleHelper.printLine("You hear the rushing waters from the Fountain of Objects. It has been reactivated!", ConsoleColor.Blue);
+    else
+      ConsoleHelper.printLine("You hear water dripping in this room. The Fountain of Objects is here!", ConsoleColor.Blue);
+  }
+
+}
+
+public class PitSense : ISense
+{
+  public bool Sense(FountainOfObjects game)
+  {
+    Location pLoc = game.player.playerLocation;
+    bool pitSensed = game.map.CheckNeighboringRooms(pLoc, RoomType.Pit);
+    return pitSensed;
+  }
+
+  public void DisplaySense(FountainOfObjects game) => ConsoleHelper.printLine("You feel a draft. There is a pit in a nearby room.");
+
 }
 
 public struct Location
@@ -324,5 +366,6 @@ public struct Location
   }
 };
 public enum Direction { North, East, South, West}
+//TODO Delete/salvage this enum
 public enum Sense { NoSense, Light, Fountain, Pit}
 public enum RoomType { Empty, Entrance, Fountain, Pit}
