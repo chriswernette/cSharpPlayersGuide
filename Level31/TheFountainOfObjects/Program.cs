@@ -60,12 +60,43 @@
  * 
  */
 
-using System.ComponentModel.DataAnnotations.Schema;
+
+using System.Security.Cryptography.X509Certificates;
+
+ConsoleHelper.startGameText();
+ConsoleHelper.blockLine();
+HelpCommand startingHelp = new HelpCommand();
+startingHelp.Execute();
+ConsoleHelper.blockLine();
+
+FountainOfObjects myFountain = new FountainOfObjects("small");
+while (true) 
+{
+  /*
+  try
+  {
+    myFountain.Run();
+  }
+  catch
+  {
+    //TODO put in exceptions
+    ConsoleHelper.blockLine(); 
+  }
+  finally
+  {
+    //TODO cleanup text, print win or lose message, stats like how many moves, how many arrows fired, how many monsters killed etc.
+    ConsoleHelper.blockLine();
+  }*/
+}
+
 
 public class FountainOfObjects
 {
+  //TODO understand fields vs properties and if these should be capitalized or not
   public Player player;
   public Map map;
+  public ICommand playerCommand;
+  public ISense playerSense;
   //TODO Add monsters hehe
 
   public FountainOfObjects (string gameSize)
@@ -74,21 +105,90 @@ public class FountainOfObjects
     map.AddRoom(RoomType.Fountain, 0, 2);
     map.AddRoom(RoomType.Entrance, 0, 0);
     player = new Player(0, 0);
+    playerCommand = new NoCommand(); //These two are only used to avoid warnings about unitialized members... is there a better way around this?
+    playerSense = new NoSense();
 
     //TODO add medium and large games
   }
 
+  public void Run()
+  {
+    this.CurrentStats();
+    this.SenseMap();
+    playerCommand = this.GetCommand();
+    playerCommand.Execute(this);
+  }
+
+  public void CurrentStats()
+  {
+    ConsoleHelper.printLine($"You are in the room at (Row={player.playerLocation.X}, Column={player.playerLocation.Y}");
+    ConsoleHelper.printLine($"You have {player.Arrows} arrows remaining.");
+  }
+
+  public ICommand GetCommand()
+  {
+    ICommand returnCommand = new NoCommand();
+    ConsoleHelper.printLine("What do you want to do?", newLine: false);
+
+    while (true)
+    {
+      string? stringCommand = Console.ReadLine();
+      if (stringCommand == null || stringCommand == "") //try again, not letting null thru
+        continue;
+      stringCommand = stringCommand.ToLower().Trim();
+      if (stringCommand == "Move north")
+        returnCommand = new MoveCommand(Direction.North);
+      if (stringCommand == "move east")
+        returnCommand = new MoveCommand(Direction.East);
+      if (stringCommand == "move south")
+        returnCommand = new MoveCommand(Direction.South);
+      if (stringCommand == "move west")
+        returnCommand = new MoveCommand(Direction.West);
+      if (stringCommand == "help")
+        returnCommand = new HelpCommand();
+      if (stringCommand == "shoot north")
+        returnCommand = new ShootCommand(Direction.North);
+      if (stringCommand == "shoot east")
+        returnCommand = new ShootCommand(Direction.East);
+      if (stringCommand == "shoot south")
+        returnCommand = new ShootCommand(Direction.South);
+      if (stringCommand == "shoot west")
+        returnCommand = new ShootCommand(Direction.West);
+
+      return returnCommand;
+    }
+  }
+
+    //this should check all the nearby rooms for pits and monsters, and the current room for entrance, pit (death), or fountain
+    public void SenseMap()
+    {
+      //check each sense one by one, for example
+      this.playerSense = new EntranceSense();
+      if (this.playerSense.Sense(this))
+        playerSense.DisplaySense(this);
+
+      this.playerSense = new FountainSense();
+      if (playerSense.Sense(this))
+        playerSense.DisplaySense(this);
+
+      this.playerSense = new PitSense();
+      if (playerSense.Sense(this))
+        playerSense.DisplaySense(this);
+
+    }
+ 
+  
   //TODO add the flow of logic of the game from the flowchart, add functions that call other class methods etc.
 
 }
 
-
+//TODO clean up fields/parameters, should they be all caps? Provide getters and setters? Re-read that portion of book
 public class Player
 {
   public Location playerLocation = new Location(0, 0);
   public bool isAlive;
   public string deathCause;
-  public int arrowsRemaining;
+  public int Arrows;
 
   //initializer
   public Player(int row, int col)
@@ -96,7 +196,7 @@ public class Player
     playerLocation = new Location(row, col);
     isAlive = true;
     deathCause = string.Empty;
-    arrowsRemaining = 5;
+    Arrows = 5;
   }
   //TODO check if I can remove this and salvage any useful code from this section
   public List<Sense> SenseNearbyRooms(Map map)
@@ -144,7 +244,7 @@ public class Player
 
   public void FireArrow(Direction dir)
   {
-    this.arrowsRemaining--;
+    this.Arrows--;
     //TODO add direction and monsters
   }
 
@@ -206,16 +306,21 @@ public class Map
 
 public static class ConsoleHelper
 {
-  public static void printLine(string line, ConsoleColor color)
+  public static void printLine(string line, ConsoleColor color = ConsoleColor.White, bool newLine = true)
   {
     Console.ForegroundColor = color;
-    Console.WriteLine(line);
+    if(newLine)
+      Console.WriteLine(line);
+    else
+      Console.Write(line);
   }
-  public static void printLine(string line) //commonly printing white lines
+  
+  //I think the above definition is *better*, allows you to put in those params or not, has defaults
+  /*public static void printLine(string line) //commonly printing white lines
   {
     Console.ForegroundColor = ConsoleColor.White;
     Console.WriteLine(line);
-  }
+  }*/
   public static void blockLine()
   {
     Console.WriteLine("--------------------------------------------------------------");
@@ -229,7 +334,7 @@ public static class ConsoleHelper
     Console.WriteLine("Find the Fountain of Objects, activate it, and return to the entrance.");
     Console.WriteLine("Look out for pits. You will feel a breeze if a pit is in an adjacent room.");
     Console.WriteLine("Maelstroms are violent forces of sentient wind. Entering a room with one could transport you to any other location in the caverns." +
-      "You will be able to hear their growling and groaning in nearby rooms.");
+      " You will be able to hear their growling and groaning in nearby rooms.");
     Console.WriteLine("Amoraks roam the caverns. Encountering one is certain death, but you can smell their rotten stench in nearby rooms.");
     Console.WriteLine("You carry with you a bow and a quiver of arrows. You can use them to shoot monsters in the caverns but be warned you have a limited supply.");
   }
@@ -238,6 +343,11 @@ public static class ConsoleHelper
 public interface ICommand
 {
   void Execute(FountainOfObjects game);
+}
+
+public class NoCommand : ICommand
+{
+  public void Execute(FountainOfObjects game) { }
 }
 
 public class HelpCommand : ICommand
@@ -250,7 +360,16 @@ public class HelpCommand : ICommand
     Console.WriteLine("Typing 'shoot' + a direction will attempt to fire an arrow in that direction. Be warned that you have a limited number of arrows!");
     Console.WriteLine("Typing anything else will have no affect.");
   }
+  public void Execute() //research if there's a better way to do this, the FoO game is really an optional arg/not needed for help, but we need it to fully implement the interface...
+  {
+    Console.WriteLine("There are four main forms of commands: typing 'help' displays this message");
+    Console.WriteLine("Typing 'enable fountain' attempts to enable the fountain of objects, but will only work if you are in the fountain room");
+    Console.WriteLine("Typing 'move' + a direction will attempt to move you in that direction, for example 'move east'. But you cannot walk off the map.");
+    Console.WriteLine("Typing 'shoot' + a direction will attempt to fire an arrow in that direction. Be warned that you have a limited number of arrows!");
+    Console.WriteLine("Typing anything else will have no affect.");
+  }
 }
+
 
 public class EnableFountainCommand : ICommand
 {
@@ -323,6 +442,11 @@ public interface ISense
   void DisplaySense(FountainOfObjects game);
 }
 
+public class NoSense : ISense
+{
+  public bool Sense(FountainOfObjects game) => false;
+  public void DisplaySense(FountainOfObjects game) { }
+}
 public class FountainSense : ISense
 {
   public bool Sense(FountainOfObjects game)
@@ -339,8 +463,13 @@ public class FountainSense : ISense
     else
       ConsoleHelper.printLine("You hear water dripping in this room. The Fountain of Objects is here!", ConsoleColor.Blue);
   }
-
 }
+
+  public class EntranceSense : ISense
+  {
+    public bool Sense(FountainOfObjects game) => game.map.IsRoomType(game.player.playerLocation, RoomType.Entrance);
+    public void DisplaySense(FountainOfObjects game) => ConsoleHelper.printLine("You see light coming from the cavern entrance.", ConsoleColor.Yellow);
+  }
 
 public class PitSense : ISense
 {
@@ -350,10 +479,13 @@ public class PitSense : ISense
     bool pitSensed = game.map.CheckNeighboringRooms(pLoc, RoomType.Pit);
     return pitSensed;
   }
+  public bool InPit(FountainOfObjects game) => game.map.IsRoomType(game.player.playerLocation, RoomType.Pit);
 
   public void DisplaySense(FountainOfObjects game) => ConsoleHelper.printLine("You feel a draft. There is a pit in a nearby room.");
 
 }
+
+
 
 public struct Location
 {
