@@ -61,33 +61,32 @@
  */
 
 
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 
-ConsoleHelper.startGameText();
-ConsoleHelper.blockLine();
+ConsoleHelper.StartGameText();
 HelpCommand startingHelp = new HelpCommand();
 startingHelp.Execute();
-ConsoleHelper.blockLine();
 
 FountainOfObjects myFountain = new FountainOfObjects("small");
-while (true) 
+myFountain.Run();
+
+/*
+try
 {
-  /*
-  try
-  {
-    myFountain.Run();
-  }
-  catch
-  {
-    //TODO put in exceptions
-    ConsoleHelper.blockLine(); 
-  }
-  finally
-  {
-    //TODO cleanup text, print win or lose message, stats like how many moves, how many arrows fired, how many monsters killed etc.
-    ConsoleHelper.blockLine();
-  }*/
+  myFountain.Run();
 }
+catch
+{
+  //TODO put in exceptions
+  ConsoleHelper.BlockLine(); 
+}
+finally
+{
+  //TODO cleanup text, print win or lose message, stats like how many moves, how many arrows fired, how many monsters killed etc.
+  ConsoleHelper.BlockLine();
+} 
+*/
 
 
 public class FountainOfObjects
@@ -101,7 +100,7 @@ public class FountainOfObjects
 
   public FountainOfObjects (string gameSize)
   {
-    map = new Map(3, 3);
+    map = new Map(4, 4);
     map.AddRoom(RoomType.Fountain, 0, 2);
     map.AddRoom(RoomType.Entrance, 0, 0);
     player = new Player(0, 0);
@@ -113,22 +112,34 @@ public class FountainOfObjects
 
   public void Run()
   {
-    this.CurrentStats();
-    this.SenseMap();
-    playerCommand = this.GetCommand();
-    playerCommand.Execute(this);
+    while (true)
+    {
+      this.CurrentStats();
+      this.SenseMap();
+      playerCommand = this.GetCommand();
+      playerCommand.Execute(this);
+      if (PitSense.InPit(this)) // maybe this is an OK way to work around the pit sense issue?
+        player.GetKilled("Oops, you fell into a pit of death!");
+      if (player.CheckForDeath())
+        Console.WriteLine(player.deathCause, ConsoleColor.Red);
+      if (CheckForWin(this.map, this.player.playerLocation, this.map.CheckFountainEnabled()))
+      {
+        ConsoleHelper.WinMessage(this);
+        return;
+      }
+    }
   }
 
   public void CurrentStats()
   {
-    ConsoleHelper.printLine($"You are in the room at (Row={player.playerLocation.X}, Column={player.playerLocation.Y}");
-    ConsoleHelper.printLine($"You have {player.Arrows} arrows remaining.");
+    ConsoleHelper.PrintLine($"You are in the room at (Row={player.playerLocation.X}, Column={player.playerLocation.Y})");
+    ConsoleHelper.PrintLine($"You have {player.Arrows} arrows remaining.");
   }
 
   public ICommand GetCommand()
   {
     ICommand returnCommand = new NoCommand();
-    ConsoleHelper.printLine("What do you want to do?", newLine: false);
+    ConsoleHelper.PrintLine("What do you want to do? ", newLine: false);
 
     while (true)
     {
@@ -159,26 +170,32 @@ public class FountainOfObjects
     }
   }
 
-    //this should check all the nearby rooms for pits and monsters, and the current room for entrance, pit (death), or fountain
-    public void SenseMap()
-    {
-      //check each sense one by one, for example
-      this.playerSense = new EntranceSense();
-      if (this.playerSense.Sense(this))
-        playerSense.DisplaySense(this);
+  //this should check all the nearby rooms for pits and monsters, and the current room for entrance, pit (death), or fountain
+  public void SenseMap()
+  {
+    //check each sense one by one, for example
+    this.playerSense = new EntranceSense();
+    if (this.playerSense.Sense(this))
+      playerSense.DisplaySense(this);
 
-      this.playerSense = new FountainSense();
-      if (playerSense.Sense(this))
-        playerSense.DisplaySense(this);
+    this.playerSense = new FountainSense();
+    if (playerSense.Sense(this))
+      playerSense.DisplaySense(this);
 
-      this.playerSense = new PitSense();
-      if (playerSense.Sense(this))
-        playerSense.DisplaySense(this);
+    this.playerSense = new PitSense();
+    if (playerSense.Sense(this))
+      playerSense.DisplaySense(this);
 
-    }
+  }
  
-  
-  //TODO add the flow of logic of the game from the flowchart, add functions that call other class methods etc.
+  //TODO Add CHeckForWin
+  public bool CheckForWin(Map map, Location playerLocation, bool fountainEnabled)
+  {
+    if (map.GetRoomType(playerLocation) == RoomType.Entrance && fountainEnabled)
+        return true;
+    else
+      return false;
+  }
 
 }
 
@@ -211,30 +228,27 @@ public class Player
         if (map.Rooms[i, j] == RoomType.Pit)
         {
           senses.Add(Sense.Pit);
-          ConsoleHelper.printLine("You feel a draft. There is a pit in a nearby room.", ConsoleColor.White); // what if multiple pits? This will print multiple times? OK?
+          ConsoleHelper.PrintLine("You feel a draft. There is a pit in a nearby room.", ConsoleColor.White); // what if multiple pits? This will print multiple times? OK?
         }
       }
     }
     if (map.Rooms[playerLocation.X, playerLocation.Y] == RoomType.Entrance)
     {
       senses.Add(Sense.Light);
-      ConsoleHelper.printLine("You see light coming from the cavern entrance.", ConsoleColor.Yellow);
+      ConsoleHelper.PrintLine("You see light coming from the cavern entrance.", ConsoleColor.Yellow);
     }
     if (map.Rooms[playerLocation.X, playerLocation.Y] == RoomType.Fountain)
     {
       senses.Add(Sense.Fountain);
       if (map.CheckFountainEnabled() == false)
-        ConsoleHelper.printLine("You hear water dripping in this room. The fountain of objects is here!", ConsoleColor.Blue);
+        ConsoleHelper.PrintLine("You hear water dripping in this room. The fountain of objects is here!", ConsoleColor.Blue);
       if (map.CheckFountainEnabled() == true)
-        ConsoleHelper.printLine("You hear the rushing waters from the fountain of objects. It has been reactivated!", ConsoleColor.Blue); //Should we also print something like this when they reactivate?
+        ConsoleHelper.PrintLine("You hear the rushing waters from the fountain of objects. It has been reactivated!", ConsoleColor.Blue); //Should we also print something like this when they reactivate?
     }
     return senses;
   }
 
-  public bool CheckForDeath()
-  {
-    return this.isAlive;
-  }
+  public bool CheckForDeath() => this.isAlive == false;
 
   public void GetKilled(string reasonYouDied)
   {
@@ -273,10 +287,10 @@ public class Map
   public bool CheckNeighboringRooms(Location location, RoomType room)
   {
     bool result = false;
-    int westX = Math.Clamp(location.X - 1, 0, this.Row);
-    int eastX = Math.Clamp(location.X + 1, 0, this.Row);
-    int northY = Math.Clamp(location.Y - 1, 0, this.Column);
-    int southY = Math.Clamp(location.Y + 1, 0, this.Column);
+    int westX = Math.Clamp(location.X - 1, 0, this.Row - 1);
+    int eastX = Math.Clamp(location.X + 1, 0, this.Row - 1);
+    int northY = Math.Clamp(location.Y - 1, 0, this.Column - 1);
+    int southY = Math.Clamp(location.Y + 1, 0, this.Column - 1);
     for (int i = westX; i <= eastX; i++)
     {
       for (int j = northY; j <= southY; j++)
@@ -306,7 +320,7 @@ public class Map
 
 public static class ConsoleHelper
 {
-  public static void printLine(string line, ConsoleColor color = ConsoleColor.White, bool newLine = true)
+  public static void PrintLine(string line, ConsoleColor color = ConsoleColor.White, bool newLine = true)
   {
     Console.ForegroundColor = color;
     if(newLine)
@@ -321,12 +335,12 @@ public static class ConsoleHelper
     Console.ForegroundColor = ConsoleColor.White;
     Console.WriteLine(line);
   }*/
-  public static void blockLine()
+  public static void BlockLine()
   {
     Console.WriteLine("--------------------------------------------------------------");
   }
 
-  public static void startGameText()
+  public static void StartGameText()
   {
     Console.WriteLine("You enter the Cavern of Objects, a maze of rooms filled with dangerous pits in search of the Fountain of Objects.");
     Console.WriteLine("Light is visible only in the entrance, and no other light is seen anywhere in the caverns.");
@@ -337,6 +351,14 @@ public static class ConsoleHelper
       " You will be able to hear their growling and groaning in nearby rooms.");
     Console.WriteLine("Amoraks roam the caverns. Encountering one is certain death, but you can smell their rotten stench in nearby rooms.");
     Console.WriteLine("You carry with you a bow and a quiver of arrows. You can use them to shoot monsters in the caverns but be warned you have a limited supply.");
+    BlockLine();
+  }
+
+  public static void WinMessage(FountainOfObjects game)
+  {
+    game.CurrentStats();
+    PrintLine("The Fountain of Objects has been reactivated, and you have escaped with your life!", ConsoleColor.Green);
+    PrintLine("You win!", ConsoleColor.Green);
   }
 }
 
@@ -359,6 +381,7 @@ public class HelpCommand : ICommand
     Console.WriteLine("Typing 'move' + a direction will attempt to move you in that direction, for example 'move east'. But you cannot walk off the map.");
     Console.WriteLine("Typing 'shoot' + a direction will attempt to fire an arrow in that direction. Be warned that you have a limited number of arrows!");
     Console.WriteLine("Typing anything else will have no affect.");
+    ConsoleHelper.BlockLine();
   }
   public void Execute() //research if there's a better way to do this, the FoO game is really an optional arg/not needed for help, but we need it to fully implement the interface...
   {
@@ -367,6 +390,7 @@ public class HelpCommand : ICommand
     Console.WriteLine("Typing 'move' + a direction will attempt to move you in that direction, for example 'move east'. But you cannot walk off the map.");
     Console.WriteLine("Typing 'shoot' + a direction will attempt to fire an arrow in that direction. Be warned that you have a limited number of arrows!");
     Console.WriteLine("Typing anything else will have no affect.");
+    ConsoleHelper.BlockLine();
   }
 }
 
@@ -380,10 +404,10 @@ public class EnableFountainCommand : ICommand
     if (gameMap.GetRoomType(pLoc) == RoomType.Fountain)
     {
       gameMap.EnableFountain();
-      ConsoleHelper.printLine("You hear the rushing waters from the Fountain of Objects. It has been reactivated!", ConsoleColor.Blue);
+      ConsoleHelper.PrintLine("You hear the rushing waters from the Fountain of Objects. It has been reactivated!", ConsoleColor.Blue);
     }
     else
-      ConsoleHelper.printLine("You are not in the fountain room you dummy!", ConsoleColor.White);
+      ConsoleHelper.PrintLine("You are not in the fountain room you dummy!", ConsoleColor.White);
   }
 }
 
@@ -415,7 +439,7 @@ public class MoveCommand : ICommand
     }
     else
     {
-      ConsoleHelper.printLine("You hit a wall! You can't move there!", ConsoleColor.White);
+      ConsoleHelper.PrintLine("You hit a wall! You can't move there!", ConsoleColor.White);
     }
       
   }
@@ -459,16 +483,16 @@ public class FountainSense : ISense
   public void DisplaySense(FountainOfObjects game)
   {
     if (game.map.CheckFountainEnabled())
-      ConsoleHelper.printLine("You hear the rushing waters from the Fountain of Objects. It has been reactivated!", ConsoleColor.Blue);
+      ConsoleHelper.PrintLine("You hear the rushing waters from the Fountain of Objects. It has been reactivated!", ConsoleColor.Blue);
     else
-      ConsoleHelper.printLine("You hear water dripping in this room. The Fountain of Objects is here!", ConsoleColor.Blue);
+      ConsoleHelper.PrintLine("You hear water dripping in this room. The Fountain of Objects is here!", ConsoleColor.Blue);
   }
 }
 
   public class EntranceSense : ISense
   {
     public bool Sense(FountainOfObjects game) => game.map.IsRoomType(game.player.playerLocation, RoomType.Entrance);
-    public void DisplaySense(FountainOfObjects game) => ConsoleHelper.printLine("You see light coming from the cavern entrance.", ConsoleColor.Yellow);
+    public void DisplaySense(FountainOfObjects game) => ConsoleHelper.PrintLine("You see light coming from the cavern entrance.", ConsoleColor.Yellow);
   }
 
 public class PitSense : ISense
@@ -479,9 +503,9 @@ public class PitSense : ISense
     bool pitSensed = game.map.CheckNeighboringRooms(pLoc, RoomType.Pit);
     return pitSensed;
   }
-  public bool InPit(FountainOfObjects game) => game.map.IsRoomType(game.player.playerLocation, RoomType.Pit);
+  public static bool InPit(FountainOfObjects game) => game.map.IsRoomType(game.player.playerLocation, RoomType.Pit);
 
-  public void DisplaySense(FountainOfObjects game) => ConsoleHelper.printLine("You feel a draft. There is a pit in a nearby room.");
+  public void DisplaySense(FountainOfObjects game) => ConsoleHelper.PrintLine("You feel a draft. There is a pit in a nearby room.");
 
 }
 
