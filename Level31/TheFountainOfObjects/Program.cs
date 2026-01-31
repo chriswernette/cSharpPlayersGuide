@@ -93,6 +93,7 @@ public class FountainOfObjects
 {
   //TODO understand fields vs properties and if these should be capitalized or not
   public Player player;
+  public Monster[] Monsters { get; }
   public Map map;
   public ICommand playerCommand;
   public ISense playerSense;
@@ -100,14 +101,53 @@ public class FountainOfObjects
 
   public FountainOfObjects (string gameSize)
   {
-    map = new Map(4, 4);
-    map.AddRoom(RoomType.Fountain, 0, 2);
-    map.AddRoom(RoomType.Entrance, 0, 0);
-    map.AddRoom(RoomType.Pit, 0, 1);
-    map.AddRoom(RoomType.Pit, 3, 3); 
-    player = new Player(0, 0);
     playerCommand = new NoCommand(); //These two are only used to avoid warnings about unitialized members... is there a better way around this?
     playerSense = new NoSense();
+    gameSize = gameSize.Trim().ToLower();
+
+    switch (gameSize)
+    {
+      case "small":
+        map = new Map(4, 4);
+        map.AddRoom(RoomType.Fountain, 0, 2);
+        map.AddRoom(RoomType.Entrance, 0, 0);
+        map.AddRoom(RoomType.Pit, 0, 1);
+        Monsters = new Monster[]{
+          new Maelstrom(new Location(2,2)) };
+        player = new Player(0, 0);
+        break;
+      case "medium":
+        map = new Map(6, 6);
+        map.AddRoom(RoomType.Fountain, 0, 4);
+        map.AddRoom(RoomType.Entrance, 3, 4);
+        map.AddRoom(RoomType.Pit, 0, 0);
+        map.AddRoom(RoomType.Pit, 5, 3);
+        Monsters = new Monster[]{
+          new Maelstrom(new Location(3,2)) };
+        player = new Player(3, 4);
+        break;
+      case "large":
+        map = new Map(8, 8);
+        map.AddRoom(RoomType.Fountain, 3, 4);
+        map.AddRoom(RoomType.Entrance, 6, 2);
+        map.AddRoom(RoomType.Pit, 0, 0);
+        map.AddRoom(RoomType.Pit, 5, 3);
+        map.AddRoom(RoomType.Pit, 1, 4);
+        map.AddRoom(RoomType.Pit, 2, 3);
+        Monsters = new Monster[]{
+          new Maelstrom(new Location(2,2)), 
+          new Maelstrom(new Location(3,4))};
+        player = new Player(6, 2);
+        break;
+      default:
+        map = new Map(4, 4);
+        map.AddRoom(RoomType.Fountain, 0, 2);
+        map.AddRoom(RoomType.Entrance, 0, 0);
+        map.AddRoom(RoomType.Pit, 0, 1);
+        player = new Player(0, 0);
+        break;
+    }
+    
 
     //TODO add medium and large games
   }
@@ -215,38 +255,6 @@ public class Player
     deathCause = string.Empty;
     Arrows = 5;
   }
-  //TODO check if I can remove this and salvage any useful code from this section
-  public List<Sense> SenseNearbyRooms(Map map)
-  {
-
-    List<Sense> senses = new List<Sense>();
-
-    for (int i = playerLocation.X - 1; i > playerLocation.X; i++)
-    {
-      for (int j = playerLocation.Y - 1; j > playerLocation.Y; j++)
-      {
-        if (map.Rooms[i, j] == RoomType.Pit)
-        {
-          senses.Add(Sense.Pit);
-          ConsoleHelper.PrintLine("You feel a draft. There is a pit in a nearby room.", ConsoleColor.White); // what if multiple pits? This will print multiple times? OK?
-        }
-      }
-    }
-    if (map.Rooms[playerLocation.X, playerLocation.Y] == RoomType.Entrance)
-    {
-      senses.Add(Sense.Light);
-      ConsoleHelper.PrintLine("You see light coming from the cavern entrance.", ConsoleColor.Yellow);
-    }
-    if (map.Rooms[playerLocation.X, playerLocation.Y] == RoomType.Fountain)
-    {
-      senses.Add(Sense.Fountain);
-      if (map.CheckFountainEnabled() == false)
-        ConsoleHelper.PrintLine("You hear water dripping in this room. The fountain of objects is here!", ConsoleColor.Blue);
-      if (map.CheckFountainEnabled() == true)
-        ConsoleHelper.PrintLine("You hear the rushing waters from the fountain of objects. It has been reactivated!", ConsoleColor.Blue); //Should we also print something like this when they reactivate?
-    }
-    return senses;
-  }
 
   public bool CheckForDeath() => this.isAlive == false;
 
@@ -264,10 +272,72 @@ public class Player
 
 }
 
+public abstract class Monster
+{
+  public bool IsAlive;
+  public Location MonsterLocation;
+
+  public Monster(Location startingLocation)
+  {
+    MonsterLocation = startingLocation;
+    IsAlive = true;
+  }
+
+  public void GetKilled()
+  {
+    this.IsAlive = false;
+  }
+
+  public abstract void Activate(FountainOfObjects game);
+
+}
+
+/* if player and Maelstrom location are in the same room, player moves 1N 2E. MS moves 1S 2W, clamp to map
+       place 1 in medium, 2 in large game  
+     */
+public class Maelstrom : Monster
+{
+
+  public Maelstrom(Location startingLocation) : base(startingLocation) { }
+
+  public override void Activate(FountainOfObjects game)
+  {
+    Location pLoc = game.player.playerLocation;
+    
+    int newPX = Math.Clamp(pLoc.X + 2, 0, game.map.Row - 1);
+    int newPY = Math.Clamp(pLoc.Y - 1, 0, game.map.Column - 1);
+    int newMX = Math.Clamp(MonsterLocation.X - 2, 0, game.map.Row - 1);
+    int newMY = Math.Clamp(MonsterLocation.Y + 1, 0, game.map.Column - 1);
+
+    game.player.playerLocation.X = newPX;
+    game.player.playerLocation.Y = newPY;
+
+    MonsterLocation.X = newMX; 
+    MonsterLocation.Y = newMY;
+
+    ConsoleHelper.PrintLine("You are swept away by a maelstrom!", ConsoleColor.Magenta);
+
+  }
+}
+
+/* if player and Amarok are in the same room, player dies
+       place 1 in small, 2 in medium, 3 in large  
+     */
+public class Amarok : Monster
+{
+
+  public Amarok(Location startingLocation) : base(startingLocation) { }
+
+  public override void Activate(FountainOfObjects game)
+  {
+    game.player.GetKilled("You met your untimely end with an Amarok. He ate you alive.");
+  }
+}
+
 public class Map 
 {
-  int Row {  get; }
-  int Column { get; }
+  public int Row {  get; }
+  public int Column { get; }
   bool FountainEnabled { get; set; }
   public RoomType [,] Rooms;
   public Map(int row, int column)
@@ -399,8 +469,6 @@ public class HelpCommand : ICommand
     ConsoleHelper.BlockLine();
   }
 }
-
-
 public class EnableFountainCommand : ICommand
 {
   public void Execute(FountainOfObjects game)
@@ -512,9 +580,96 @@ public class PitSense : ISense
 
 }
 
+public class MaelstromSense : ISense
+{
+  public bool Sense(FountainOfObjects game)
+  {
+    Location pLoc = game.player.playerLocation;
+    bool maelstromSensed = false;
+
+    foreach (Monster monster in game.Monsters)
+    {
+      if(monster.GetType() == typeof(Maelstrom))
+      {
+        Location mLoc = monster.MonsterLocation;
+        maelstromSensed = maelstromSensed || CheckNeighboringRooms(pLoc, mLoc);
+      }
+    }
+    return maelstromSensed;
+  }
+
+  public bool CheckNeighboringRooms(Location playerLocation, Location monsterLocation)
+  {
+    bool result = false;
+
+    int xDist = Math.Abs(playerLocation.X - monsterLocation.X);
+    int yDist = Math.Abs(playerLocation.Y - monsterLocation.Y);
+
+    if(xDist == 0 && yDist == 1)
+    {
+      result = true;
+    }
+    else if(xDist == 1 && yDist == 0)
+    {
+      result = true;
+    }
+    else if(xDist == 1 && yDist == 1)
+    {
+      result = true;
+    }
+    return result;
+  }
+
+  public void DisplaySense(FountainOfObjects game) => ConsoleHelper.PrintLine("You hear the growling and groaning of a maelstrom nearby.", ConsoleColor.Cyan);
+}
+
+public class AmarokSense : ISense
+{
+  public bool Sense(FountainOfObjects game)
+  {
+    Location pLoc = game.player.playerLocation;
+    bool amarokSensed = false;
+
+    foreach (Monster monster in game.Monsters)
+    {
+      if (monster.GetType() == typeof(Amarok))
+      {
+        Location mLoc = monster.MonsterLocation;
+        amarokSensed = amarokSensed || CheckNeighboringRooms(pLoc, mLoc);
+      }
+    }
+    return amarokSensed;
+  }
+
+  public bool CheckNeighboringRooms(Location playerLocation, Location monsterLocation)
+  {
+    bool result = false;
+
+    int xDist = Math.Abs(playerLocation.X - monsterLocation.X);
+    int yDist = Math.Abs(playerLocation.Y - monsterLocation.Y);
+
+    if (xDist == 0 && yDist == 1)
+    {
+      result = true;
+    }
+    else if (xDist == 1 && yDist == 0)
+    {
+      result = true;
+    }
+    else if (xDist == 1 && yDist == 1)
+    {
+      result = true;
+    }
+    return result;
+  }
+
+  public void DisplaySense(FountainOfObjects game) => ConsoleHelper.PrintLine("You hear the growling and groaning of a maelstrom nearby.", ConsoleColor.Cyan);
 
 
-public struct Location
+}
+
+
+public class Location
 {
   public int X { get; set; }
   public int Y { get; set; }
@@ -523,6 +678,8 @@ public struct Location
     X = x;
     Y = y;
   }
+  public static bool operator ==(Location a, Location b) => (a.X == b.X) && (a.Y == b.Y); 
+  public static bool operator !=(Location a, Location b) => (a.X != b.X) || (a.Y != b.Y);
 };
 public enum Direction { North, East, South, West}
 //TODO Delete/salvage this enum
