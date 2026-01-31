@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TheFountainOfObjects": {
+      "commandName": "Project",
+      "commandLineArgs": "/optimize-"
+    }
+  }
+}

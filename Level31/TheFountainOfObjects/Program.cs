@@ -103,6 +103,8 @@ public class FountainOfObjects
     map = new Map(4, 4);
     map.AddRoom(RoomType.Fountain, 0, 2);
     map.AddRoom(RoomType.Entrance, 0, 0);
+    map.AddRoom(RoomType.Pit, 0, 1);
+    map.AddRoom(RoomType.Pit, 3, 3); 
     player = new Player(0, 0);
     playerCommand = new NoCommand(); //These two are only used to avoid warnings about unitialized members... is there a better way around this?
     playerSense = new NoSense();
@@ -121,18 +123,22 @@ public class FountainOfObjects
       if (PitSense.InPit(this)) // maybe this is an OK way to work around the pit sense issue?
         player.GetKilled("Oops, you fell into a pit of death!");
       if (player.CheckForDeath())
-        Console.WriteLine(player.deathCause, ConsoleColor.Red);
+      {
+        ConsoleHelper.PrintLine(player.deathCause, ConsoleColor.Red);
+        return;
+      }
       if (CheckForWin(this.map, this.player.playerLocation, this.map.CheckFountainEnabled()))
       {
         ConsoleHelper.WinMessage(this);
         return;
       }
+      ConsoleHelper.BlockLine();
     }
   }
 
   public void CurrentStats()
   {
-    ConsoleHelper.PrintLine($"You are in the room at (Row={player.playerLocation.X}, Column={player.playerLocation.Y})");
+    ConsoleHelper.PrintLine($"You are in the room at (Row={player.playerLocation.Y}, Column={player.playerLocation.X})");
     ConsoleHelper.PrintLine($"You have {player.Arrows} arrows remaining.");
   }
 
@@ -147,26 +153,20 @@ public class FountainOfObjects
       if (stringCommand == null || stringCommand == "") //try again, not letting null thru
         continue;
       stringCommand = stringCommand.ToLower().Trim();
-      if (stringCommand == "Move north")
-        returnCommand = new MoveCommand(Direction.North);
-      if (stringCommand == "move east")
-        returnCommand = new MoveCommand(Direction.East);
-      if (stringCommand == "move south")
-        returnCommand = new MoveCommand(Direction.South);
-      if (stringCommand == "move west")
-        returnCommand = new MoveCommand(Direction.West);
-      if (stringCommand == "help")
-        returnCommand = new HelpCommand();
-      if (stringCommand == "shoot north")
-        returnCommand = new ShootCommand(Direction.North);
-      if (stringCommand == "shoot east")
-        returnCommand = new ShootCommand(Direction.East);
-      if (stringCommand == "shoot south")
-        returnCommand = new ShootCommand(Direction.South);
-      if (stringCommand == "shoot west")
-        returnCommand = new ShootCommand(Direction.West);
-
-      return returnCommand;
+      returnCommand = stringCommand switch
+      {
+        "move north" => returnCommand = new MoveCommand(Direction.North),
+        "move east" => returnCommand = new MoveCommand(Direction.East),
+        "move south" => returnCommand = new MoveCommand(Direction.South),
+        "move west" => returnCommand = new MoveCommand(Direction.West),
+        "shoot north" => returnCommand = new MoveCommand(Direction.North),
+        "shoot east" => returnCommand = new MoveCommand(Direction.East),
+        "shoot south" => returnCommand = new MoveCommand(Direction.South),
+        "shoot west" => returnCommand = new MoveCommand(Direction.West),
+        "enable fountain" => returnCommand = new EnableFountainCommand(),
+        _ => returnCommand = new InvalidCommand(),
+      }; 
+     return returnCommand;
     }
   }
 
@@ -188,7 +188,7 @@ public class FountainOfObjects
 
   }
  
-  //TODO Add CHeckForWin
+  //TODO Add CheckForWin
   public bool CheckForWin(Map map, Location playerLocation, bool fountainEnabled)
   {
     if (map.GetRoomType(playerLocation) == RoomType.Entrance && fountainEnabled)
@@ -311,7 +311,7 @@ public class Map
 
   public bool CheckOnMap(Location location)
   {
-    if(location.X > Row || location.Y > Column || location.X < 0 || location.Y < 0)
+    if(location.X > (Row-1) || location.Y > (Column-1) || location.X < 0 || location.Y < 0)
       return false;
     else
       return true;
@@ -359,6 +359,7 @@ public static class ConsoleHelper
     game.CurrentStats();
     PrintLine("The Fountain of Objects has been reactivated, and you have escaped with your life!", ConsoleColor.Green);
     PrintLine("You win!", ConsoleColor.Green);
+    Console.ForegroundColor = ConsoleColor.White; // for the next round
   }
 }
 
@@ -370,6 +371,11 @@ public interface ICommand
 public class NoCommand : ICommand
 {
   public void Execute(FountainOfObjects game) { }
+}
+
+public class InvalidCommand: ICommand
+{
+  public void Execute(FountainOfObjects game) => ConsoleHelper.PrintLine("You did not enter a valid command. Try again.");
 }
 
 public class HelpCommand : ICommand
@@ -420,28 +426,25 @@ public class MoveCommand : ICommand
     direction = dir;
   }
   public void Execute(FountainOfObjects game)
-  {
+  {    
     Location pLoc = game.player.playerLocation;
     Map gameMap = game.map;
     Location newLoc = pLoc;
     if(this.direction == Direction.North) 
-      newLoc = new Location(pLoc.X, pLoc.Y -1);
+      newLoc = new Location(pLoc.X, pLoc.Y - 1);
     if (this.direction == Direction.East)
       newLoc = new Location(pLoc.X + 1, pLoc.Y);
     if (this.direction == Direction.South)
       newLoc = new Location(pLoc.X, pLoc.Y + 1);
     if(this.direction == Direction.West)
-      newLoc = new Location(pLoc.X -1 , pLoc.Y);
+      newLoc = new Location(pLoc.X - 1, pLoc.Y);
 
+    //if it's a valid move, make it, otherwise send message they tried to walk off the map
     if (gameMap.CheckOnMap(newLoc))
-    {
       game.player.playerLocation = newLoc;
-    }
     else
-    {
-      ConsoleHelper.PrintLine("You hit a wall! You can't move there!", ConsoleColor.White);
-    }
-      
+      ConsoleHelper.PrintLine("You hit a wall! You can't move there!");
+
   }
 }
 
