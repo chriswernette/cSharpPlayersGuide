@@ -28,47 +28,13 @@
  * input from user = cyan, text describing the entrance light = yellow, messages about the fountain = blue/
  */
 
-
-/*TODO
- * Try to make the game more object oriented... make classes for monsters, maybe make a map class or a location type for each square
- * Make a command class, activation for square class, monsters class and derive different monsters from them etc.
- * 
- * Re-read object oriented chapters and take some notes in a notepad/text file
- * Watch some youtubes about each of the Object Oriented concepts
- * Re-read the solution code
- * Redo the game as is, but more object oriented - change the start location for different game sizes too!
- * Once tested the redesigned game, add 2 more expansion packs! Maelstrom and arrow?
- */
-
-
-
-/*CLASS LIST
- * Game - contains map (small, med, large), monsters, player, fountain enabled
- * Map - nxn set of rooms
- * Room - contains roomtype, monster or no monster, fountain or no fountain? 
- * Console helper - can write message to console or print those break line things?
- * 
- * 
- */
-
-/*METHOD LIST
- * Console helper - prints things to the console in pretty formats/colors, also takes user input and formats it or re-prompts?
- * 
- * 
- * 
- * 
- * 
- */
-
-
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-
 ConsoleHelper.StartGameText();
 HelpCommand startingHelp = new HelpCommand();
 startingHelp.Execute();
 
-FountainOfObjects myFountain = new FountainOfObjects("small");
+string gameSize = ConsoleHelper.PromptForGameSize();
+
+FountainOfObjects myFountain = new FountainOfObjects(gameSize);
 myFountain.Run();
 
 /*
@@ -112,8 +78,9 @@ public class FountainOfObjects
         map.AddRoom(RoomType.Fountain, 0, 2);
         map.AddRoom(RoomType.Entrance, 0, 0);
         map.AddRoom(RoomType.Pit, 0, 1);
-        Monsters = new Monster[]{
-          new Maelstrom(new Location(2,2)) };
+        Monsters = [
+                    new Maelstrom(new Location(2,2)) 
+                    ];
         player = new Player(0, 0);
         break;
       case "medium":
@@ -122,8 +89,9 @@ public class FountainOfObjects
         map.AddRoom(RoomType.Entrance, 3, 4);
         map.AddRoom(RoomType.Pit, 0, 0);
         map.AddRoom(RoomType.Pit, 5, 3);
-        Monsters = new Monster[]{
-          new Maelstrom(new Location(3,2)) };
+        Monsters = [
+                    new Maelstrom(new Location(3,2)) 
+                    ];
         player = new Player(3, 4);
         break;
       case "large":
@@ -134,9 +102,10 @@ public class FountainOfObjects
         map.AddRoom(RoomType.Pit, 5, 3);
         map.AddRoom(RoomType.Pit, 1, 4);
         map.AddRoom(RoomType.Pit, 2, 3);
-        Monsters = new Monster[]{
-          new Maelstrom(new Location(2,2)), 
-          new Maelstrom(new Location(3,4))};
+        Monsters = [
+                    new Maelstrom(new Location(2,2)), 
+                    new Maelstrom(new Location(3,4))
+                    ];
         player = new Player(6, 2);
         break;
       default:
@@ -160,6 +129,10 @@ public class FountainOfObjects
       this.SenseMap();
       playerCommand = this.GetCommand();
       playerCommand.Execute(this);
+      foreach (Monster Monster in Monsters)
+        if (Monster.MonsterLocation == player.playerLocation)
+          Monster.Activate(this);
+
       if (PitSense.InPit(this)) // maybe this is an OK way to work around the pit sense issue?
         player.GetKilled("Oops, you fell into a pit of death!");
       if (player.CheckForDeath())
@@ -226,6 +199,9 @@ public class FountainOfObjects
     if (playerSense.Sense(this))
       playerSense.DisplaySense(this);
 
+    this.playerSense = new MaelstromSense();
+    if(playerSense.Sense(this))
+      playerSense.DisplaySense(this);
   }
  
   //TODO Add CheckForWin
@@ -304,10 +280,10 @@ public class Maelstrom : Monster
   {
     Location pLoc = game.player.playerLocation;
     
-    int newPX = Math.Clamp(pLoc.X + 2, 0, game.map.Row - 1);
-    int newPY = Math.Clamp(pLoc.Y - 1, 0, game.map.Column - 1);
-    int newMX = Math.Clamp(MonsterLocation.X - 2, 0, game.map.Row - 1);
-    int newMY = Math.Clamp(MonsterLocation.Y + 1, 0, game.map.Column - 1);
+    int newPX = Math.Clamp(pLoc.X - 1, 0, game.map.Row - 1);
+    int newPY = Math.Clamp(pLoc.Y + 2, 0, game.map.Column - 1);
+    int newMX = Math.Clamp(MonsterLocation.X + 1, 0, game.map.Row - 1);
+    int newMY = Math.Clamp(MonsterLocation.Y - 2, 0, game.map.Column - 1);
 
     game.player.playerLocation.X = newPX;
     game.player.playerLocation.Y = newPY;
@@ -407,6 +383,7 @@ public static class ConsoleHelper
   }*/
   public static void BlockLine()
   {
+    Console.ForegroundColor = ConsoleColor.White;
     Console.WriteLine("--------------------------------------------------------------");
   }
 
@@ -422,6 +399,33 @@ public static class ConsoleHelper
     Console.WriteLine("Amoraks roam the caverns. Encountering one is certain death, but you can smell their rotten stench in nearby rooms.");
     Console.WriteLine("You carry with you a bow and a quiver of arrows. You can use them to shoot monsters in the caverns but be warned you have a limited supply.");
     BlockLine();
+  }
+
+  public static string PromptForGameSize()
+  {
+    PrintLine("What size game would you like to play? Valid options are small, medium, or large: ");
+    string response = "";
+    while (true)
+    {
+      response = Console.ReadLine();
+      if (response == null)
+      {
+        PrintLine("Enter something next time! ");
+        continue;
+      }
+      switch (response)
+      {
+        case "small":
+          return response;
+        case "medium":
+          return response;
+        case "large":
+          return response;
+        default:
+          PrintLine("Input a valid game size next time!");
+          break;
+      }
+    }
   }
 
   public static void WinMessage(FountainOfObjects game)
@@ -580,66 +584,25 @@ public class PitSense : ISense
 
 }
 
-public class MaelstromSense : ISense
+public class MonsterSense: ISense
 {
   public bool Sense(FountainOfObjects game)
   {
     Location pLoc = game.player.playerLocation;
-    bool maelstromSensed = false;
+    bool monsterSensed = false;
 
     foreach (Monster monster in game.Monsters)
     {
-      if(monster.GetType() == typeof(Maelstrom))
+      if (monster.GetType() == typeof(Maelstrom))
       {
         Location mLoc = monster.MonsterLocation;
-        maelstromSensed = maelstromSensed || CheckNeighboringRooms(pLoc, mLoc);
+        monsterSensed = monsterSensed || CheckNeighboringRooms(pLoc, mLoc);
       }
     }
-    return maelstromSensed;
+    return monsterSensed;
   }
 
-  public bool CheckNeighboringRooms(Location playerLocation, Location monsterLocation)
-  {
-    bool result = false;
-
-    int xDist = Math.Abs(playerLocation.X - monsterLocation.X);
-    int yDist = Math.Abs(playerLocation.Y - monsterLocation.Y);
-
-    if(xDist == 0 && yDist == 1)
-    {
-      result = true;
-    }
-    else if(xDist == 1 && yDist == 0)
-    {
-      result = true;
-    }
-    else if(xDist == 1 && yDist == 1)
-    {
-      result = true;
-    }
-    return result;
-  }
-
-  public void DisplaySense(FountainOfObjects game) => ConsoleHelper.PrintLine("You hear the growling and groaning of a maelstrom nearby.", ConsoleColor.Cyan);
-}
-
-public class AmarokSense : ISense
-{
-  public bool Sense(FountainOfObjects game)
-  {
-    Location pLoc = game.player.playerLocation;
-    bool amarokSensed = false;
-
-    foreach (Monster monster in game.Monsters)
-    {
-      if (monster.GetType() == typeof(Amarok))
-      {
-        Location mLoc = monster.MonsterLocation;
-        amarokSensed = amarokSensed || CheckNeighboringRooms(pLoc, mLoc);
-      }
-    }
-    return amarokSensed;
-  }
+  public void DisplaySense(FountainOfObjects game) => ConsoleHelper.PrintLine("There's a monster nearby!");
 
   public bool CheckNeighboringRooms(Location playerLocation, Location monsterLocation)
   {
@@ -662,10 +625,47 @@ public class AmarokSense : ISense
     }
     return result;
   }
+}
 
-  public void DisplaySense(FountainOfObjects game) => ConsoleHelper.PrintLine("You hear the growling and groaning of a maelstrom nearby.", ConsoleColor.Cyan);
+public class MaelstromSense : MonsterSense, ISense
+{
+  public new bool Sense(FountainOfObjects game)
+  {
+    Location pLoc = game.player.playerLocation;
+    bool maelstromSensed = false;
 
+    foreach (Monster monster in game.Monsters)
+    {
+      if(monster.GetType() == typeof(Maelstrom))
+      {
+        Location mLoc = monster.MonsterLocation;
+        maelstromSensed = maelstromSensed || CheckNeighboringRooms(pLoc, mLoc);
+      }
+    }
+    return maelstromSensed;
+  }
+  public new void DisplaySense(FountainOfObjects game) => ConsoleHelper.PrintLine("You hear the growling and groaning of a maelstrom nearby.", ConsoleColor.Cyan);
+}
 
+public class AmarokSense : MonsterSense
+{
+  public new bool Sense(FountainOfObjects game)
+  {
+    Location pLoc = game.player.playerLocation;
+    bool amarokSensed = false;
+
+    foreach (Monster monster in game.Monsters)
+    {
+      if (monster.GetType() == typeof(Amarok))
+      {
+        Location mLoc = monster.MonsterLocation;
+        amarokSensed = amarokSensed || CheckNeighboringRooms(pLoc, mLoc);
+      }
+    }
+    return amarokSensed;
+  }
+
+  public new void DisplaySense(FountainOfObjects game) => ConsoleHelper.PrintLine("You hear the growling and groaning of a maelstrom nearby.", ConsoleColor.Cyan);
 }
 
 
@@ -682,6 +682,4 @@ public class Location
   public static bool operator !=(Location a, Location b) => (a.X != b.X) || (a.Y != b.Y);
 };
 public enum Direction { North, East, South, West}
-//TODO Delete/salvage this enum
-public enum Sense { NoSense, Light, Fountain, Pit}
 public enum RoomType { Empty, Entrance, Fountain, Pit}
