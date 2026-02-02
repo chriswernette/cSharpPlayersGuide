@@ -15,14 +15,24 @@ public class FinalBattle
 
   public FinalBattle()
   {
+    string? heroName = "";
+    while (true)
+    {
+      RichConsole.Write("What is the true programmer's name? ");
+      heroName = RichConsole.ReadLine();
+      if(heroName != null && heroName != "")
+        break;
+    }
+    
+    heroName = heroName.ToUpper().Trim();
     heroes = new Character[]
     {
-      new Character("SKELETON", 10, 5)
+      new Character(heroName, 10, 5, true, true)
     };
 
     villains = new Character[]
     {
-      new Character("SKELETON", 10, 5)
+      new Character("SKELETON", 10, 5, false, false)
     };
     currentCommand = new NoCommand();
     TurnCounter = 1;
@@ -37,8 +47,12 @@ public class FinalBattle
       //print who's turn it is,
       foreach (Character c in heroes)
       {
-        RichConsole.WriteLine($"It is {c.Name}'s turn..."); 
-        currentCommand = new NoCommand();
+        RichConsole.WriteLine($"It is {c.Name}'s turn...");
+        if (c.HumanControlled)
+          currentCommand = GetCommand(c);
+        else
+          currentCommand = new NoCommand();
+
         currentCommand.Execute(c);
         currentCommand.Display(c);
       }
@@ -47,7 +61,11 @@ public class FinalBattle
       foreach (Character c in villains)
       {
         RichConsole.WriteLine($"It is {c.Name}'s turn...");
-        currentCommand = new NoCommand();
+        if (c.HumanControlled)
+          currentCommand = GetCommand(c);
+        else
+          currentCommand = new NoCommand();
+
         currentCommand.Execute(c);
         currentCommand.Display(c);
       }
@@ -59,6 +77,47 @@ public class FinalBattle
     return;
   }
 
+  public ICommand GetCommand(Character c)
+  {
+    RichConsole.Write($"What would you like {c.Name} to do? ");
+    string? playerCommand = "";
+    while (true)
+    {
+      playerCommand = RichConsole.ReadLine();
+      if (playerCommand != null && playerCommand != "")
+        break;
+      else
+        RichConsole.Write("Enter something this time! ");
+    }
+    playerCommand = playerCommand.Trim().ToLower();
+
+    switch (playerCommand)
+    {
+      case "attack":
+      case "use item":
+      case "do nothing":
+        return new NoCommand();
+      default:
+        return new NoCommand();
+        break;
+    }
+  }
+
+  public Character[] GetPartyFor(Character c)
+  {
+    if (c.IsHero)
+      return this.heroes;
+    else
+      return this.villains;
+  }
+
+  public Character[] GetEnemyPartyFor(Character c)
+  {
+    if (c.IsHero)
+      return this.villains;
+    else
+      return this.heroes;
+  }
 }
 
 public class Character
@@ -67,13 +126,17 @@ public class Character
   public int MaxHP { get; protected set; }
   public int HP { get; set; }
   public bool IsAlive { get; set; }
+  public bool HumanControlled { get; protected set; }
+  public bool IsHero {  get; protected set; }
 
-  public Character(string name, int maxHP, int startingHP)
+  public Character(string name, int maxHP, int startingHP, bool humanControlled, bool isHero)
   {
     Name = name;
     MaxHP = maxHP;
     HP = startingHP;
     IsAlive = true;
+    HumanControlled = humanControlled;
+    IsHero = isHero;
   }
 }
 
@@ -94,3 +157,19 @@ public class NoCommand : ICommand
     RichConsole.WriteLine($"{character.Name} did NOTHING."); 
   }
 }
+
+public class AttackCommand : ICommand
+{
+  public AttackCommand()
+  {
+
+  }
+
+  public void Execute(Character character) {
+  }
+
+  public void Display(Character character) {
+  }
+}
+
+enum AttackType { Punch, BoneCrunch}

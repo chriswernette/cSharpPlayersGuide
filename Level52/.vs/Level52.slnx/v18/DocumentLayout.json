@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\github\\cSharpPlayersGuide\\Level52\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97F4FDE0-2EA7-4B06-82C7-3B4DFF3496E0}|TheFinalBattle\\TheFinalBattle.csproj|d:\\github\\csharpplayersguide\\level52\\thefinalbattle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97F4FDE0-2EA7-4B06-82C7-3B4DFF3496E0}|TheFinalBattle\\TheFinalBattle.csproj|solutionrelative:thefinalbattle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ED856233-B2E0-D802-9431-0DC881D1E7D3}|TheFinalBattle\\TheFinalBattle.csproj|d:\\github\\csharpplayersguide\\level52\\thefinalbattle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED856233-B2E0-D802-9431-0DC881D1E7D3}|TheFinalBattle\\TheFinalBattle.csproj|solutionrelative:thefinalbattle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,7 +28,7 @@
               "RelativeDocumentMoniker": "TheFinalBattle\\Program.cs",
               "ToolTip": "D:\\github\\cSharpPlayersGuide\\Level52\\TheFinalBattle\\Program.cs",
               "RelativeToolTip": "TheFinalBattle\\Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowDUAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAA8wHYAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-01T13:03:28.731Z",
               "EditorCaption": ""
