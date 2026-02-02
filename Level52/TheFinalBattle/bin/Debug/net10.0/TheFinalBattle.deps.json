@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "TheFinalBattle/1.0.0": {
+        "dependencies": {
+          "CSharpPlayersGuide.RichConsole": "6.0.0"
+        },
+        "runtime": {
+          "TheFinalBattle.dll": {}
+        }
+      },
+      "CSharpPlayersGuide.RichConsole/6.0.0": {
+        "runtime": {
+          "lib/net10.0/CSharpPlayersGuide.RichConsole.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TheFinalBattle/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CSharpPlayersGuide.RichConsole/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xM4lkiJ0WBun3TgvacGXxEq7/+3mwGoJeQra70FfzO5b2DoOhq08/b6Y5lkkbtmMX/ghImE5ednpBAm38dV0ig==",
+      "path": "csharpplayersguide.richconsole/6.0.0",
+      "hashPath": "csharpplayersguide.richconsole.6.0.0.nupkg.sha512"
+    }
+  }
+}
