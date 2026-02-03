@@ -27,12 +27,12 @@ public class FinalBattle
     heroName = heroName.ToUpper().Trim();
     heroes = new Character[]
     {
-      new Character(heroName, 10, 5, true, true)
+      new Player(heroName, 10, 5, true)
     };
 
     villains = new Character[]
     {
-      new Character("SKELETON", 10, 5, false, false)
+      new Skeleton(10, 5, false)
     };
     currentCommand = new NoCommand();
     TurnCounter = 1;
@@ -94,6 +94,7 @@ public class FinalBattle
     switch (playerCommand)
     {
       case "attack":
+        return GetAttack(c);
       case "use item":
       case "do nothing":
         return new NoCommand();
@@ -101,6 +102,24 @@ public class FinalBattle
         return new NoCommand();
         break;
     }
+  }
+
+  public ICommand GetAttack(Character c)
+  {
+    //TODO get list of enemy team
+    Character[] badGuys = GetEnemyPartyFor(c);
+    Character target;
+    ICommand Attack = new NoCommand();
+    AttackType chosenAttack;
+
+
+    Attack = chosenAttack switch
+    {
+      AttackType.Punch      => new PunchAttack(target, c),
+      AttackType.BoneCrunch => new BoneCrunchAttack(target, c),
+      _                     => new NoCommand()
+    };
+
   }
 
   public Character[] GetPartyFor(Character c)
@@ -128,8 +147,9 @@ public class Character
   public bool IsAlive { get; set; }
   public bool HumanControlled { get; protected set; }
   public bool IsHero {  get; protected set; }
+  public AttackType[] AttackList { get; protected set;  } 
 
-  public Character(string name, int maxHP, int startingHP, bool humanControlled, bool isHero)
+  public Character(string name, int maxHP, int startingHP, bool humanControlled, bool isHero, AttackType[] attacks)
   {
     Name = name;
     MaxHP = maxHP;
@@ -137,7 +157,22 @@ public class Character
     IsAlive = true;
     HumanControlled = humanControlled;
     IsHero = isHero;
+    AttackList = attacks;
   }
+}
+
+public class Player : Character
+{
+  public Player(string name, int maxHP, int startingHP, bool humanControlled) :
+    base(name, maxHP, startingHP, humanControlled, true, new AttackType[] { AttackType.Punch })
+  {}
+}
+
+public class Skeleton : Character
+{
+  public Skeleton(int maxHP, int startingHP, bool humanControlled, string name = "SKELETON") :
+   base(name, maxHP, startingHP, humanControlled, false, new AttackType[] { AttackType.BoneCrunch })
+  { }
 }
 
 public interface ICommand 
@@ -160,16 +195,41 @@ public class NoCommand : ICommand
 
 public class AttackCommand : ICommand
 {
-  public AttackCommand()
+  public Character Target { get; private set; }
+  public Character Attacker { get; private set; }
+  AttackType attack;
+  public AttackCommand(Character target, Character attacker, AttackType type)
   {
-
+    Target = target; 
+    Attacker = attacker;
+    attack = type;
   }
 
   public void Execute(Character character) {
+    //TODO, add details of each attack, I think by making different types of attacks it makes more sense, then I can overload them
   }
 
   public void Display(Character character) {
+
+    string attackName = attack switch
+    {
+      AttackType.Punch => "PUNCH",
+      AttackType.BoneCrunch => "BONE CRUNCH",
+      _ => "INVALID ATTACK"
+    };
+    RichConsole.WriteLine($"{Attacker.Name} used {attackName} on {Target.Name}");
   }
 }
 
-enum AttackType { Punch, BoneCrunch}
+public class PunchAttack : AttackCommand
+{
+  public PunchAttack(Character target, Character attacker) : base(target, attacker, AttackType.Punch){ }
+
+}
+
+public class BoneCrunchAttack : AttackCommand
+{
+  public BoneCrunchAttack(Character target, Character attacker): base(target, attacker, AttackType.BoneCrunch) { }
+}
+
+public enum AttackType { Punch, BoneCrunch}
