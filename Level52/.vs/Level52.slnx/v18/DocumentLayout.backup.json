@@ -5,6 +5,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{ED856233-B2E0-D802-9431-0DC881D1E7D3}|TheFinalBattle\\TheFinalBattle.csproj|d:\\github\\csharpplayersguide\\level52\\thefinalbattle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED856233-B2E0-D802-9431-0DC881D1E7D3}|TheFinalBattle\\TheFinalBattle.csproj|solutionrelative:thefinalbattle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED856233-B2E0-D802-9431-0DC881D1E7D3}|TheFinalBattle\\TheFinalBattle.csproj|d:\\github\\csharpplayersguide\\level52\\thefinalbattle\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED856233-B2E0-D802-9431-0DC881D1E7D3}|TheFinalBattle\\TheFinalBattle.csproj|solutionrelative:thefinalbattle\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED856233-B2E0-D802-9431-0DC881D1E7D3}|TheFinalBattle\\TheFinalBattle.csproj|d:\\github\\csharpplayersguide\\level52\\thefinalbattle\\icommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED856233-B2E0-D802-9431-0DC881D1E7D3}|TheFinalBattle\\TheFinalBattle.csproj|solutionrelative:thefinalbattle\\icommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED856233-B2E0-D802-9431-0DC881D1E7D3}|TheFinalBattle\\TheFinalBattle.csproj|d:\\github\\csharpplayersguide\\level52\\thefinalbattle\\attackcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED856233-B2E0-D802-9431-0DC881D1E7D3}|TheFinalBattle\\TheFinalBattle.csproj|solutionrelative:thefinalbattle\\attackcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED856233-B2E0-D802-9431-0DC881D1E7D3}|TheFinalBattle\\TheFinalBattle.csproj|d:\\github\\csharpplayersguide\\level52\\thefinalbattle\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED856233-B2E0-D802-9431-0DC881D1E7D3}|TheFinalBattle\\TheFinalBattle.csproj|solutionrelative:thefinalbattle\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED856233-B2E0-D802-9431-0DC881D1E7D3}|TheFinalBattle\\TheFinalBattle.csproj|d:\\github\\csharpplayersguide\\level52\\thefinalbattle\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED856233-B2E0-D802-9431-0DC881D1E7D3}|TheFinalBattle\\TheFinalBattle.csproj|solutionrelative:thefinalbattle\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,10 +48,71 @@
               "RelativeDocumentMoniker": "TheFinalBattle\\Program.cs",
               "ToolTip": "D:\\github\\cSharpPlayersGuide\\Level52\\TheFinalBattle\\Program.cs",
               "RelativeToolTip": "TheFinalBattle\\Program.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAnwHkAAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAEYBAAAAAAAAAAAkwFQBAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-01T13:03:28.731Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ICommand.cs",
+              "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\Level52\\TheFinalBattle\\ICommand.cs",
+              "RelativeDocumentMoniker": "TheFinalBattle\\ICommand.cs",
+              "ToolTip": "D:\\github\\cSharpPlayersGuide\\Level52\\TheFinalBattle\\ICommand.cs",
+              "RelativeToolTip": "TheFinalBattle\\ICommand.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAmwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T21:34:53.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MenuItem.cs",
+              "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\Level52\\TheFinalBattle\\MenuItem.cs",
+              "RelativeDocumentMoniker": "TheFinalBattle\\MenuItem.cs",
+              "ToolTip": "D:\\github\\cSharpPlayersGuide\\Level52\\TheFinalBattle\\MenuItem.cs",
+              "RelativeToolTip": "TheFinalBattle\\MenuItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T21:26:20.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Item.cs",
+              "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\Level52\\TheFinalBattle\\Item.cs",
+              "RelativeDocumentMoniker": "TheFinalBattle\\Item.cs",
+              "ToolTip": "D:\\github\\cSharpPlayersGuide\\Level52\\TheFinalBattle\\Item.cs",
+              "RelativeToolTip": "TheFinalBattle\\Item.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwDIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T21:14:58.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Character.cs",
+              "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\Level52\\TheFinalBattle\\Character.cs",
+              "RelativeDocumentMoniker": "TheFinalBattle\\Character.cs",
+              "ToolTip": "D:\\github\\cSharpPlayersGuide\\Level52\\TheFinalBattle\\Character.cs",
+              "RelativeToolTip": "TheFinalBattle\\Character.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAYwCkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T21:02:08.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AttackCommand.cs",
+              "DocumentMoniker": "D:\\github\\cSharpPlayersGuide\\Level52\\TheFinalBattle\\AttackCommand.cs",
+              "RelativeDocumentMoniker": "TheFinalBattle\\AttackCommand.cs",
+              "ToolTip": "D:\\github\\cSharpPlayersGuide\\Level52\\TheFinalBattle\\AttackCommand.cs",
+              "RelativeToolTip": "TheFinalBattle\\AttackCommand.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAADwv2EAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T21:01:11.109Z"
             }
           ]
         }
