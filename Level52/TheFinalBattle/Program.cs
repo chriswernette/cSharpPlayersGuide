@@ -186,14 +186,25 @@ public class FinalBattle
     int playerCommand = -1;
     bool validCommand = false;
     Item[] itemList;
+    IEnumerable<Item> itemOptionsEnumerable;
 
     if (c.IsHero)
-      itemList = heroItems;
+    {
+      itemOptionsEnumerable = from h in heroItems
+                              where h.isUsed == false
+                              select h;
+    }
     else
-      itemList = villainItems[waveIndex];
+    {
+      itemOptionsEnumerable = from v in villainItems[waveIndex]
+                              where v.isUsed == false
+                              select v;
+    }
+    itemList = itemOptionsEnumerable.ToArray();
 
-      //action stage
-      MenuBuilder(MenuStage.ActionStage, c, c);
+
+    //action stage
+    MenuBuilder(MenuStage.ActionStage, c, c);
     PrintMenu();
 
     //get intial command type, for now either attack (0) or do nothing (1)
@@ -212,13 +223,15 @@ public class FinalBattle
         RichConsole.WriteLine("Enter something valid next time!");
     }
 
-    switch (playerCommand)
+    playerCommandString = this.menu[playerCommand].Description;
+
+    switch (playerCommandString)
     {
-      case 0:
+      case "Attack":
         return GetAttackCommand(c); // attack stage
-      case 1:
+      case "Use Item":
         return GetItemCommand(c,itemList); // item stage
-      case 2: // need to rework later to add items
+      case "Do Nothing": // need to rework later to add items
       default:
         return new NoCommand();
     }
@@ -226,78 +239,105 @@ public class FinalBattle
 
   public void MenuBuilder(MenuStage stage, Character target, Character attacker)
   {
+    bool itemsAvailable = false;
+    IEnumerable<Item> hasItemsChecker;
+
 
     switch (stage)
-    {
-      case MenuStage.ActionStage: //I maybe need to limit this based on if they have items or not? Like set the use item to false if no items, or not even add to the menu if no items?
-        this.menu = new MenuItem[3]
-          {
-            new MenuItem("Attack", new NoCommand()),
-            new MenuItem("Use Item", new NoCommand()),
-            new MenuItem("Do Nothing", new NoCommand())
-          };
-        break;
+      {
+        case MenuStage.ActionStage: //I maybe need to limit this based on if they have items or not? Like set the use item to false if no items, or not even add to the menu if no items?
+          if (attacker.IsHero)
+            hasItemsChecker = from h in heroItems
+                              where h.isUsed == false
+                              select h;
+          else
+            hasItemsChecker = from v in villainItems[waveIndex]
+                              where v.isUsed == false
+                              select v;
 
-      case MenuStage.TargetStage: // need to get all the targets here
-        Character[] badGuys = GetEnemyPartyFor(attacker);
-        this.menu = new MenuItem[badGuys.Length];
-        int i = 0;
-        foreach (Character badGuy in badGuys)
-        {
-          this.menu[i] = new MenuItem($"{badGuy.Name}", new NoAttack(badGuy, attacker), badGuy.IsAlive);
-          i++;
-        }
-        break;
+          itemsAvailable = hasItemsChecker.Any(); // check if any items left  
 
-      case MenuStage.ItemStage:
-        Item[] itemOptions;
-        if (attacker.IsHero)
-        {
-          this.menu = new MenuItem[heroItems.Length];
-          itemOptions = heroItems;
-        }
-        else
-        {
-          this.menu = new MenuItem[villainItems[waveIndex].Length];
-          itemOptions = villainItems[waveIndex];
-        }
-
-        i = 0;
-        foreach (Item item in itemOptions)
-        {
-          this.menu[i] = new MenuItem($"{item.itemName}", new ItemCommand(attacker, attacker, item), item.isUsed == false);
-          i++;
-        }
-
-        break;
-
-      case MenuStage.AttackTypeStage:
-            AttackType[] attackList = attacker.AttackList;
-            this.menu = new MenuItem[attackList.Length];
-            int j = 0;
-            foreach (AttackType attack in attackList)
-            {
-              switch (attack)
+          if (itemsAvailable)
+            this.menu = new MenuItem[3]
               {
-                case AttackType.BoneCrunch:
-                  this.menu[j] = new MenuItem($"Bone Crunch", new BoneCrunchAttack(target, attacker));
-                  break;
-                case AttackType.Punch:
-                  this.menu[j] = new MenuItem($"Punch", new PunchAttack(target, attacker));
-                  break;
-                case AttackType.Unravel:
-                  this.menu[j] = new MenuItem($"Unravel", new UnravelAttack(target, attacker));
-                  break;
-                default:
-                  break;
-              }
-              j++;
-            }
-            break;
+              new MenuItem("Attack", new NoCommand()),
+              new MenuItem("Use Item", new NoCommand()),
+              new MenuItem("Do Nothing", new NoCommand())
+              };
+          else
+            this.menu = new MenuItem[2]
+              {
+              new MenuItem("Attack", new NoCommand()),
+              new MenuItem("Do Nothing", new NoCommand())
+              };
+          break;
 
-          default:
-            break;
+        case MenuStage.TargetStage: // need to get all the targets here
+          Character[] badGuys = GetEnemyPartyFor(attacker);
+          this.menu = new MenuItem[badGuys.Length];
+          int i = 0;
+          foreach (Character badGuy in badGuys)
+          {
+            this.menu[i] = new MenuItem($"{badGuy.Name}", new NoAttack(badGuy, attacker), badGuy.IsAlive);
+            i++;
           }
+          break;
+
+        case MenuStage.ItemStage:
+          Item[] itemOptions;
+          IEnumerable<Item> itemOptionsEnumerable;
+          if (attacker.IsHero)
+          {
+            itemOptionsEnumerable = from h in heroItems
+                                    where h.isUsed == false
+                                    select h;
+            itemOptions = itemOptionsEnumerable.ToArray();
+          }
+          else
+          {
+            itemOptionsEnumerable = from v in villainItems[waveIndex]
+                                    where v.isUsed == false
+                                    select v;
+            itemOptions = itemOptionsEnumerable.ToArray();
+          }
+
+          this.menu = new MenuItem[itemOptions.Length];
+          i = 0;
+          foreach (Item item in itemOptions)
+          {
+            this.menu[i] = new MenuItem($"{item.itemName}", new ItemCommand(attacker, attacker, item), item.isUsed == false);
+            i++;
+          }
+
+          break;
+
+        case MenuStage.AttackTypeStage:
+          AttackType[] attackList = attacker.AttackList;
+          this.menu = new MenuItem[attackList.Length];
+          int j = 0;
+          foreach (AttackType attack in attackList)
+          {
+            switch (attack)
+            {
+              case AttackType.BoneCrunch:
+                this.menu[j] = new MenuItem($"Bone Crunch", new BoneCrunchAttack(target, attacker));
+                break;
+              case AttackType.Punch:
+                this.menu[j] = new MenuItem($"Punch", new PunchAttack(target, attacker));
+                break;
+              case AttackType.Unravel:
+                this.menu[j] = new MenuItem($"Unravel", new UnravelAttack(target, attacker));
+                break;
+              default:
+                break;
+            }
+            j++;
+          }
+          break;
+
+        default:
+          break;
+      }
   }
 
   public void PrintMenu()
@@ -501,6 +541,14 @@ public class FinalBattle
     party = partyEnumerable.ToArray();
     return party;
   }
+
+  //when the character c is < 50% and there is a potion in their inventory
+  public bool ComputerUseHealthPotion(Character c, Item[] AvailableItemList)
+  {
+
+    return false;
+  }
+
 
   public WinStatus CheckForWin()
   {
