@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 ﻿using CSharpPlayersGuide.RichConsole;
 using System.Reflection.Emit;
+using System.Runtime.Serialization;
 using System.Text;
 
 
@@ -106,23 +107,41 @@ public class FinalBattle
                                            where h.IsAlive
                                            select h;
 
-      IEnumerable<Character> aliveVillains = from v in currentWave
-                                             where v.IsAlive
-                                             select v;
+      IEnumerable<Item> availableHeroItems = from i in heroItems
+                                             where i.isUsed == false
+                                             select i;
 
+      IEnumerable<Character> aliveVillains = from v in currentWave
+                                                where v.IsAlive
+                                                select v;
+
+      IEnumerable<Item> availableVillainItems = from i in villainItems[waveIndex]
+                                                where i.isUsed == false
+                                                select i;
+
+      bool usePotion;
+
+      //TODO this foreach and the foreach below could ber wrapped into a function
       foreach (Character c in aliveHeroes)
       {
-        //RichConsole.WriteLine($"It is {c.Name}'s turn..."); //replace with status function
         PrintStatus(c);
         if (c.HumanControlled)
           currentCommand = GetCommand(c);
         else
         {
-          currentCommand = c.AttackList[0] switch
+          usePotion = ComputerUseHealthPotion(c, availableHeroItems.ToArray());
+          if (usePotion)
           {
-            AttackType.Punch => new PunchAttack(aliveVillains.ToArray()[0], c),
-            _ => new NoAttack(heroes[0], c)
-          };
+            currentCommand = new ItemCommand(c, c, availableHeroItems.ToArray()[0]);
+          }
+          else //TODO make more generic, don't have to use specific attack types
+          {
+            currentCommand = c.AttackList[0] switch
+            {
+              AttackType.Punch => new PunchAttack(aliveVillains.ToArray()[0], c),
+              _ => new NoAttack(heroes[0], c)
+            };
+          }
         }
         currentCommand.Execute(c);
       }
@@ -131,18 +150,25 @@ public class FinalBattle
       //print who's turn it is,
       foreach (Character c in aliveVillains)
       {
-        //RichConsole.WriteLine($"It is {c.Name}'s turn...");
         PrintStatus(c);
         if (c.HumanControlled)
           currentCommand = GetCommand(c);
         else
         {
-          currentCommand = c.AttackList[0] switch
+          usePotion = ComputerUseHealthPotion(c, availableVillainItems.ToArray());
+          if (usePotion)
           {
-            AttackType.BoneCrunch => new BoneCrunchAttack(heroes[0], c), //need to check for aliveHeroes if we add a party..
-            AttackType.Unravel => new UnravelAttack(heroes[0], c),
-            _ => new NoAttack(heroes[0], c)
-          };
+            currentCommand = new ItemCommand(c, c, availableVillainItems.ToArray()[0]);
+          }
+          else
+          {
+            currentCommand = c.AttackList[0] switch
+            {
+              AttackType.BoneCrunch => new BoneCrunchAttack(heroes[0], c), //need to check for aliveHeroes if we add a party..
+              AttackType.Unravel => new UnravelAttack(heroes[0], c),
+              _ => new NoAttack(heroes[0], c)
+            };
+          }
         }
 
         currentCommand.Execute(c);
@@ -543,10 +569,45 @@ public class FinalBattle
   }
 
   //when the character c is < 50% and there is a potion in their inventory
-  public bool ComputerUseHealthPotion(Character c, Item[] AvailableItemList)
+  public bool ComputerUseHealthPotion(Character c, Item[] ItemList)
   {
+    bool usePotion = false;
+    bool potionInItemList = false;
+    bool lessThanFifty = false;
+    float frequency = 0.25F;
+    int period = (int) (1 / frequency); // should equal 4
+    int threshold = 1; //only 0 will be chosen
+    int randomRoll = -1;
+    Random potionRand = new Random();
 
-    return false;
+    //check if there is a potion available in inventory
+    foreach (Item i in ItemList)
+    {
+      if (i.isUsed == false)
+      {
+        if(i.itemName == "Health Potion")
+        {
+          potionInItemList = true;
+        }
+      }
+    }
+    //check if less than 50% HP
+    if ((float)(c.HP) < (float)c.MaxHP / 2.0F)
+    {
+      lessThanFifty = true;
+    }
+
+    if (potionInItemList && lessThanFifty)
+    {
+      //dice roll 25%
+      randomRoll = potionRand.Next(0, period);
+      if (randomRoll < threshold)
+      {
+        usePotion = true;
+      }
+    }
+
+    return usePotion;
   }
 
 

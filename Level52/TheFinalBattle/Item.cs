@@ -36,11 +36,6 @@ public class ItemCommand : ICommand
   }
 }
 
-public class HealthPotionCommand : ItemCommand
-{
-  public HealthPotionCommand(Character user, Character target) : base(user, target, new HealthPotion()) { }
-}
-
 public class HealthPotion : Item
 {
   public HealthPotion() : base(10, ItemType.HelpItem, "Health Potion") { }
