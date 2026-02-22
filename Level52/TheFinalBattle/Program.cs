@@ -11,17 +11,17 @@ game.RunGame();
 
 public class FinalBattle
 {
-  public Character[] heroes;
+  //TODO make Party class that encapsulates characters[][], items[]
+  public Character[] heroes; //TODO make heroes character[1][] multidimensional array of length 1
   public Item[] heroItems;
   public Character[][] villains;
   public Item[][] villainItems;
   public Character[] currentWave;
-  private int _heroHP = 25;
-  public int waveIndex;
-  public int finalWave;
-  public ICommand currentCommand;
-  public int TurnCounter { get; private set; }
-  public MenuItem[] menu;
+  private int _heroHP = 25; //TODO make a static field within the character class, along with skeleton and uncoded one HPs
+  public int waveIndex; //TODO put into the party class, initialize to 0, make a get/set property (auto property)
+  public int finalWave; //TODO, put into the party class, maybe rename it as 
+  public ICommand currentCommand; //TODO remove - I don't really think we need this here, could just be part of run game
+  public MenuItem[] menu; //I think menu does make sense to keep within the FinalBattle class, but we could make it private?
   ComputerControlledOption computerControlledEnum = ComputerControlledOption.ComputerVsComputer;
   //do we need some sort of ID of who's turn it is?
 
@@ -62,29 +62,21 @@ public class FinalBattle
     bool villainControlled = computerControlledEnum == ComputerControlledOption.HumanVsHuman;
 
     heroName = heroName.ToUpper().Trim();
-    heroes = new Character[]
-    {
-      new Player(heroControlled, heroName, _heroHP, _heroHP)
-    };
-    heroItems = new Item[]
-    {
-      new HealthPotion(),
-      new HealthPotion(),
-      new HealthPotion()
-    };
+    heroes = [ Character.CreatePlayer(heroName) ];
+    heroItems = [Item.CreateHealthPotion(), Item.CreateHealthPotion(), Item.CreateHealthPotion()];
 
     waveIndex = 0;
     finalWave = 2;
 
     villains = new Character[finalWave + 1][];
-    villains[0] = new[] { new Skeleton(villainControlled) };
-    villains[1] = new[] { new Skeleton(villainControlled), new Skeleton(villainControlled) };
-    villains[2] = new[] { new UncodedOne(villainControlled) };
+    villains[0] = [ Character.CreateSkeleton() ];
+    villains[1] = [ Character.CreateSkeleton(), Character.CreateSkeleton() ];
+    villains[2] = [ Character.CreateUncodedOne() ];
 
     villainItems = new Item[finalWave + 1][];
-    villainItems[0] = new[] { new HealthPotion() };
-    villainItems[1] = new[] { new HealthPotion() };
-    villainItems[2] = new[] { new HealthPotion() };
+    villainItems[0] = [ Item.CreateHealthPotion() ];
+    villainItems[1] = [ Item.CreateHealthPotion() ];
+    villainItems[2] = [ Item.CreateHealthPotion() ];
 
     currentWave = villains[waveIndex];
     currentCommand = new NoCommand();
@@ -92,7 +84,6 @@ public class FinalBattle
     {
       new MenuItem("", currentCommand, false),
     };
-    TurnCounter = 1;
   }
 
   public void RunGame()
@@ -182,7 +173,6 @@ public class FinalBattle
     if (winner != WinStatus.NoWinner)
       return;
 
-    TurnCounter++;
   }
 }
 
@@ -649,8 +639,5 @@ public class FinalBattle
 }
 
 
-public enum AttackType { NoAttack, Punch, BoneCrunch, Unravel}
-public enum DamageType { NoType, Physical}
 public enum WinStatus { NoWinner, HeroesWon, VillainsWon}
-public enum MenuStage { ActionStage, TargetStage, AttackTypeStage, ItemStage}
 public enum ComputerControlledOption { HumanVsComputer, ComputerVsComputer, HumanVsHuman}

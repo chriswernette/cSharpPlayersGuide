@@ -36,13 +36,9 @@ public class ItemCommand : ICommand
   }
 }
 
-public class HealthPotion : Item
-{
-  public HealthPotion() : base(10, ItemType.HelpItem, "Health Potion") { }
-}
-
 public class Item
 {
+  private static int HealthPotionHP = 10;
   public bool isUsed { get; private set; }
   public int HP { get; private set; }
   public ItemType Type { get; private set; }
@@ -63,6 +59,7 @@ public class Item
     isUsed = false;
     this.itemName = itemName;
   }
+  public static Item CreateHealthPotion() => new Item(HealthPotionHP, ItemType.HelpItem, "Health Potion");
 
   public void UseItem() //one time use
   {

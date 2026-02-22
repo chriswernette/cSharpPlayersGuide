@@ -96,3 +96,6 @@ public class AttackData
   }
 
 }
+
+public enum AttackType { NoAttack, Punch, BoneCrunch, Unravel }
+public enum DamageType { NoType, Physical }

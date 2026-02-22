@@ -2,3 +2,5 @@
 //Not expecting to use this class except for default cases
 
 public record MenuItem(string Description, ICommand Action, bool isEnabled = true);
+
+public enum MenuStage { ActionStage, TargetStage, AttackTypeStage, ItemStage }
