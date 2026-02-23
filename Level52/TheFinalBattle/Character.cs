@@ -13,19 +13,20 @@ public class Character
   public AttackType[] BaseAttackList { get; private set;  } 
   public AttackType[]? ItemAttackList { get; set; } //TODO add this later when we add items that can be equipped to attack such as sword, bow, etc.
 
-  public Character(string name, int maxHP, int startingHP, AttackType[] attacks)
+  public Character(string name, int maxHP, int startingHP, AttackType[] attacks, bool isHero)
   {
     Name = name;
     MaxHP = maxHP;
     HP = startingHP;
     IsAlive = true;
     BaseAttackList = attacks;
+    IsHero = isHero;
   }
 
   public void TakeDamage(int damage) => HP = Math.Clamp(HP - damage,0,MaxHP);
   public void TakeHealing(int healing) => HP = Math.Clamp(HP + healing,0,MaxHP);
 
-  public static Character CreatePlayer(string trueProgrammerName) => new Character(trueProgrammerName, HeroHP, HeroHP, [AttackType.Punch]);
-  public static Character CreateSkeleton() => new Character("SKELETON", SkeletonHP, SkeletonHP, [AttackType.BoneCrunch]);
-  public static Character CreateUncodedOne() => new Character("THE UNCODED ONE", UncodedOneHP, UncodedOneHP, [AttackType.Unravel]);
+  public static Character CreatePlayer(string trueProgrammerName) => new Character(trueProgrammerName, HeroHP, HeroHP, [AttackType.Punch], true);
+  public static Character CreateSkeleton() => new Character("SKELETON", SkeletonHP, SkeletonHP, [AttackType.BoneCrunch], false);
+  public static Character CreateUncodedOne() => new Character("THE UNCODED ONE", UncodedOneHP, UncodedOneHP, [AttackType.Unravel], false);
 }

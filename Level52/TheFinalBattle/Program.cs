@@ -179,8 +179,8 @@ public Character[] heroes; //TODO make heroes character[1][] multidimensional ar
   //print out the allies and enemies list with each of their health. For the current character, put them first and highlight their name in yellow
   public void PrintStatus(Character c)
   {
-    Character[] allies = GetPartyFor(c);
-    Character[] enemies = GetEnemyPartyFor(c);
+    IEnumerable<Character> allies = GetPartyFor(c);
+    IEnumerable<Character> enemies = GetEnemyPartyFor(c);
     RichConsole.WriteLine("==========================================================================");
     RichConsole.WriteLine($"{c.Name}        ( {c.HP}/{c.MaxHP} )", Colors.Aquamarine);
     foreach(Character a in allies)
@@ -196,24 +196,14 @@ public Character[] heroes; //TODO make heroes character[1][] multidimensional ar
   }
 
 
-  public Menu MenuBuilder(MenuStage stage, Character target, Character attacker)
+  public Menu MenuBuilder(MenuStage stage, Character attacker, IEnumerable<Character> targets, IEnumerable<Item> items)
   {
     bool itemsAvailable = false;
-    IEnumerable<Item> hasItemsChecker;
 
     switch (stage)
     {
-      case MenuStage.ActionStage: //I maybe need to limit this based on if they have items or not? Like set the use item to false if no items, or not even add to the menu if no items?
-        if (attacker.IsHero)
-          hasItemsChecker = from h in heroItems
-                            where h.isUsed == false
-                            select h;
-        else
-          hasItemsChecker = from v in villainItems[waveIndex]
-                            where v.isUsed == false
-                            select v;
-
-        itemsAvailable = hasItemsChecker.Any(); // check if any items left  
+      case MenuStage.ActionStage: //I maybe need to limit this based on if they have items or not? Like set the use item to false if no items, or not even add to the menu if no items
+        itemsAvailable = items.Any(); // check if any items left  
 
         if (itemsAvailable)
           this.menuOptions = new MenuItem[3]
@@ -231,65 +221,48 @@ public Character[] heroes; //TODO make heroes character[1][] multidimensional ar
         break;
 
       case MenuStage.TargetStage: // need to get all the targets here
-        Character[] badGuys = GetEnemyPartyFor(attacker);
-        this.menuOptions = new MenuItem[badGuys.Length];
+        int targetCounter = targets.Count();
+        this.menuOptions = new MenuItem[targetCounter];
         int i = 0;
-        foreach (Character badGuy in badGuys)
+        foreach (Character target in targets)
         {
-          this.menuOptions[i] = new MenuItem($"{badGuy.Name}", badGuy.IsAlive);
+          this.menuOptions[i] = new MenuItem($"{target.Name}", target.IsAlive);
           i++;
         }
         break;
 
       case MenuStage.ItemStage:
-        Item[] itemOptions;
-        IEnumerable<Item> itemOptionsEnumerable;
-        if (attacker.IsHero)
-        {
-          itemOptionsEnumerable = from h in heroItems
-                                  where h.isUsed == false
-                                  select h;
-          itemOptions = itemOptionsEnumerable.ToArray();
-        }
-        else
-        {
-          itemOptionsEnumerable = from v in villainItems[waveIndex]
-                                  where v.isUsed == false
-                                  select v;
-          itemOptions = itemOptionsEnumerable.ToArray();
-        }
-
-        this.menuOptions = new MenuItem[itemOptions.Length];
+        int itemCounter = items.Count();
+        this.menuOptions = new MenuItem[itemCounter];
         i = 0;
-        foreach (Item item in itemOptions)
+        foreach (Item item in items)
         {
           this.menuOptions[i] = new MenuItem($"{item.itemData.Name}", item.isUsed == false);
           i++;
         }
-
         break;
 
       case MenuStage.AttackTypeStage:
         AttackType[] attackList = attacker.BaseAttackList;
         this.menuOptions = new MenuItem[attackList.Length];
-        int j = 0;
+        i = 0;
         foreach (AttackType attack in attackList)
         {
           switch (attack)
           {
             case AttackType.BoneCrunch:
-              this.menuOptions[j] = new MenuItem($"Bone Crunch");
+              this.menuOptions[i] = new MenuItem($"Bone Crunch");
               break;
             case AttackType.Punch:
-              this.menuOptions[j] = new MenuItem($"Punch");
+              this.menuOptions[i] = new MenuItem($"Punch");
               break;
             case AttackType.Unravel:
-              this.menuOptions[j] = new MenuItem($"Unravel");
+              this.menuOptions[i] = new MenuItem($"Unravel");
               break;
             default:
               break;
           }
-          j++;
+          i++;
         }
         break;
 
@@ -308,6 +281,8 @@ public Character[] heroes; //TODO make heroes character[1][] multidimensional ar
     bool validCommand = false;
     Item[] itemList;
     IEnumerable<Item> itemOptionsEnumerable;
+    IEnumerable<Character> enemyTargets;
+    IEnumerable<Character> allyTargetsIncludingC;
 
     if (c.IsHero)
     {
@@ -323,10 +298,12 @@ public Character[] heroes; //TODO make heroes character[1][] multidimensional ar
     }
     itemList = itemOptionsEnumerable.ToArray();
 
+    enemyTargets = GetEnemyPartyFor(c);
+    allyTargetsIncludingC = GetPartyForIncludingCharacter(c);
 
     //action stage
-    MenuBuilder(MenuStage.ActionStage, c, c);
-    this.currentMenu.PrintMenu();
+    currentMenu = MenuBuilder(MenuStage.ActionStage, c, enemyTargets, itemOptionsEnumerable);
+    currentMenu.PrintMenu();
 
     //get intial command type, for now either attack (0) or do nothing (1)
     while (true)
@@ -349,9 +326,9 @@ public Character[] heroes; //TODO make heroes character[1][] multidimensional ar
     switch (playerCommandString)
     {
       case "Attack":
-        return GetAttackCommand(c); // attack stage
+        return GetAttackCommand(c, enemyTargets, itemList); // attack stage
       case "Use Item":
-        return GetItemCommand(c,itemList); // item stage
+        return GetItemCommand(c, allyTargetsIncludingC, enemyTargets, itemList); // item stage
       case "Do Nothing": // need to rework later to add items
       default:
         return new NoCommand();
@@ -362,32 +339,29 @@ public Character[] heroes; //TODO make heroes character[1][] multidimensional ar
 
 
 
-  public AttackCommand GetAttackCommand(Character c)
+  public AttackCommand GetAttackCommand(Character c, IEnumerable<Character> enemyParty, IEnumerable<Item> itemList)
   {
-    Character[] badGuys = GetEnemyPartyFor(c);
     Character target;
     AttackCommand attack = new NoAttack(c, c);
 
     //attack stage
-    MenuBuilder(MenuStage.TargetStage, c, c);
+    currentMenu = MenuBuilder(MenuStage.TargetStage, c, enemyParty, itemList);
     RichConsole.WriteLine("Who do you wish to attack? Your options are as follows:");
-    this.currentMenu.PrintMenu();
+    currentMenu.PrintMenu();
 
-    target = GetAttackTarget(badGuys);
+    target = GetTarget(enemyParty);
 
     //MenuStage.AttackTypeStage
-    MenuBuilder(MenuStage.AttackTypeStage, target, c);
+    currentMenu = MenuBuilder(MenuStage.AttackTypeStage, c, enemyParty, itemList);
     RichConsole.WriteLine("What attack do you wish to use? Your options are as follows:");
-    this.currentMenu.PrintMenu();
+    currentMenu.PrintMenu();
     attack = GetAttack(c, target);
 
     return attack;
   }
 
-  public ItemCommand GetItemCommand(Character c, Item[] itemList) // itemlist will have to be the filtered list of items that aren't used
+  public ItemCommand GetItemCommand(Character c, IEnumerable<Character> allyPartyIncludingC, IEnumerable<Character> enemyParty, IEnumerable<Item> itemList) // itemlist will have to be the filtered list of items that aren't used
   {
-    Character[] badGuys = GetEnemyPartyFor(c);
-    Character[] goodGuys = GetPartyForIncludingCharacter(c);
     Character target;
     ItemCommand itemCommand;
     string itemIDString = "";
@@ -395,9 +369,9 @@ public Character[] heroes; //TODO make heroes character[1][] multidimensional ar
     bool validItemChoice = false;
 
     //item stage
-    MenuBuilder(MenuStage.ItemStage, c, c);
+    currentMenu = MenuBuilder(MenuStage.ItemStage, c, enemyParty, itemList);
     RichConsole.WriteLine("What item do you wish to use? Your options are as follows:");
-    this.currentMenu.PrintMenu();
+    currentMenu.PrintMenu();
 
     //this should be a function, copy and pasting this code around instead of reusing!
     //figure out what item out of the list of items they want to use
@@ -417,21 +391,21 @@ public Character[] heroes; //TODO make heroes character[1][] multidimensional ar
       }
     }
 
-    Item itemChoice = itemList[itemID];
+    Item itemChoice = itemList.ToList()[itemID];
 
     //get all the characters in c's party if it's a help item, all characters in enemy party if it's an offensive item
     RichConsole.WriteLine("Who do you want to use the item on?");
     if (itemChoice.itemData.Type == ItemType.HelpItem)
     {
-      MenuBuilder(MenuStage.TargetStage, badGuys[0], badGuys[0]);
-      this.currentMenu.PrintMenu();
-      target = GetAttackTarget(goodGuys);
+      currentMenu = MenuBuilder(MenuStage.TargetStage, c, allyPartyIncludingC, itemList);
+      currentMenu.PrintMenu();
+      target = GetTarget(allyPartyIncludingC);
     }
     else
     {
-      MenuBuilder(MenuStage.TargetStage, goodGuys[0], goodGuys[0]);
-      this.currentMenu.PrintMenu();
-      target = GetAttackTarget(badGuys);
+      currentMenu = MenuBuilder(MenuStage.TargetStage, c, enemyParty, itemList);
+      currentMenu.PrintMenu();
+      target = GetTarget(enemyParty);
     }
 
     itemCommand = new ItemCommand(c, target, itemChoice);
@@ -439,32 +413,33 @@ public Character[] heroes; //TODO make heroes character[1][] multidimensional ar
   }
 
   //rename or make more generic. It is just getting a list of characters to attack or use an item on, not necessarily to attack
-  public Character GetAttackTarget(Character[] enemyList)
+  public Character GetTarget(IEnumerable<Character> cList)
   {
     Character target;
-    int badGuyID = -1;
-    bool validBadGuy = false;
+    int targetID = -1;
+    bool validTarget = false;
+    string targetIDString = "-1";
 
 
     //get the integer position of the bad guy
-    while (validBadGuy == false)
+    while (validTarget == false)
     {
 
-      string badGuyIDString = RichConsole.ReadLine();
-      validBadGuy = Int32.TryParse(badGuyIDString, out badGuyID);
-      validBadGuy = validBadGuy && (badGuyID < this.currentMenu.MenuItems.Length) && (badGuyID >= 0); //in valid range
-      if (validBadGuy)
+      targetIDString = RichConsole.ReadLine();
+      validTarget = Int32.TryParse(targetIDString, out targetID);
+      validTarget = validTarget && (targetID < this.currentMenu.MenuItems.Length) && (targetID >= 0); //in valid range
+      if (validTarget)
       {
-        validBadGuy = validBadGuy && this.currentMenu.MenuItems[badGuyID].isEnabled; // check if bad guy is alive
+        validTarget = validTarget && this.currentMenu.MenuItems[targetID].isEnabled; // check if bad guy is alive
       }
 
-      if (!validBadGuy)
+      if (!validTarget)
       {
         RichConsole.WriteLine("Not a valid choice, try again!");
       }
     }
 
-    target = enemyList[badGuyID];
+    target = cList.ToList()[targetID]; //I think this should convert to a list and then pick the single character out of the list
 
     return target;
   }
@@ -515,9 +490,8 @@ public Character[] heroes; //TODO make heroes character[1][] multidimensional ar
 
   }
 
-  public Character[] GetPartyFor(Character c)
+  public IEnumerable<Character> GetPartyFor(Character c)
   {
-    Character[] party;
     IEnumerable<Character> partyEnumerable;
     if (c.IsHero)
       partyEnumerable = from p in this.heroes
@@ -530,13 +504,11 @@ public Character[] heroes; //TODO make heroes character[1][] multidimensional ar
                         where p!= c
                         select p;
 
-    party = partyEnumerable.ToArray();
-    return party;
+    return partyEnumerable;
   }
 
-  public Character[] GetPartyForIncludingCharacter(Character c)
+  public IEnumerable<Character> GetPartyForIncludingCharacter(Character c)
   {
-    Character[] party;
     IEnumerable<Character> partyEnumerable;
     if (c.IsHero)
       partyEnumerable = from p in this.heroes
@@ -547,13 +519,11 @@ public Character[] heroes; //TODO make heroes character[1][] multidimensional ar
                         where p.IsAlive
                         select p;
 
-    party = partyEnumerable.ToArray();
-    return party;
+    return partyEnumerable;
   }
 
-  public Character[] GetEnemyPartyFor(Character c)
+  public IEnumerable<Character> GetEnemyPartyFor(Character c)
   {
-    Character[] party;
     IEnumerable<Character> partyEnumerable;
     if (c.IsHero)
       partyEnumerable = from p in this.villains[waveIndex]
@@ -565,8 +535,7 @@ public Character[] heroes; //TODO make heroes character[1][] multidimensional ar
                         where p.IsAlive
                         select p;
 
-    party = partyEnumerable.ToArray();
-    return party;
+    return partyEnumerable;
   }
 
   //when the character c is < 50% and there is a potion in their inventory
