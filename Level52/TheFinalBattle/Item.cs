@@ -16,9 +16,9 @@ public class ItemCommand : ICommand
 
   public void Execute(Character character) 
   {
-    if(this.item.Type == ItemType.HelpItem)
+    if(item.itemData.Type == ItemType.HelpItem)
     {
-      this.target.HP = Math.Clamp(this.target.HP + item.HP, 0, this.target.MaxHP);
+      target.TakeHealing(item.itemData.HP);
       Display(character);
       this.item.UseItem();
     }
@@ -30,7 +30,7 @@ public class ItemCommand : ICommand
   }
   public void Display(Character character) 
   {
-    RichConsole.WriteLine($"{user.Name} used {item.itemName} on {target.Name}");
+    RichConsole.WriteLine($"{user.Name} used {item.itemData.Name} on {target.Name}");
     RichConsole.WriteLine($"{target.Name} is now at {target.HP} HP");
     RichConsole.WriteLine();
   }
@@ -40,31 +40,26 @@ public class Item
 {
   private static int HealthPotionHP = 10;
   public bool isUsed { get; private set; }
-  public int HP { get; private set; }
-  public ItemType Type { get; private set; }
-  public string itemName { get; private set; }
-
-  public Item()
+  public ItemData itemData;
+  public Item() // empty item, do we really need this constructor option?
   {
-    HP = 0;
-    Type = ItemType.NoType;
+    this.itemData = new ItemData("", 0, ItemType.NoType);
     isUsed = true;
-    this.itemName = "";
   }
 
-  public Item(int hp, ItemType type, string itemName)
+  public Item(ItemData itemData)
   {
-    HP = hp;
-    Type = type;
+    this.itemData = itemData;
     isUsed = false;
-    this.itemName = itemName;
   }
-  public static Item CreateHealthPotion() => new Item(HealthPotionHP, ItemType.HelpItem, "Health Potion");
+  public static Item CreateHealthPotion() => new Item(new ItemData("Health Potion", HealthPotionHP, ItemType.HelpItem));
 
   public void UseItem() //one time use
   {
     isUsed = true;
   }
 }
+
+public record ItemData(string Name, int HP, ItemType Type);
 
 public enum ItemType { NoType, OffensiveItem, HelpItem}

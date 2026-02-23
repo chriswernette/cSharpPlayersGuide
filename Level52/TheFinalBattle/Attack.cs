@@ -1,19 +1,31 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CSharpPlayersGuide.RichConsole;
+using System.Diagnostics;
 
 public class AttackCommand : ICommand
 {
+  public static int PunchDamage = 1;
+  public static int PunchFrequency = 1; // more like a period than a frequency but oh well
+  public static int BoneCrunchDamage = 1;
+  public static int BoneCrunchFrequency = 2;
+  public static int UnravelDamage = 2;
+  public static int UnravelFrequency = 3;
+
   public Character Target { get; private set; }
   public Character Attacker { get; private set; }
   public AttackData AttackData { get; private set; } 
-  public AttackType Attack { get; private set; }
+  public AttackType AttackType { get; private set; }
   public AttackCommand(Character target, Character attacker, AttackType type, AttackData attackData)
   {
     Target = target; 
     Attacker = attacker;
-    Attack = type;
+    AttackType = type;
     AttackData = attackData; // maybe not relevant for this base class, could make this base class more abstract?
   }
+
+  public static AttackCommand CreatePunchAttack(Character target, Character attacker) => new AttackCommand(target, attacker, AttackType.Punch, new AttackData(PunchDamage, PunchFrequency, DamageType.Physical));
+  public static AttackCommand CreateBoneCrunchAttack(Character target, Character attacker) => new AttackCommand(target, attacker, AttackType.BoneCrunch, new AttackData(BoneCrunchDamage, BoneCrunchFrequency, DamageType.Physical));
+  public static AttackCommand CreateUnravelAttack(Character target, Character attacker) => new AttackCommand(target, attacker, AttackType.Unravel, new AttackData(UnravelDamage, UnravelFrequency, DamageType.Physical));
 
   //TODO strip character? I already have target and attacker stored in the class?
   public void Execute(Character character) {
@@ -21,14 +33,15 @@ public class AttackCommand : ICommand
     int attackDamage = 0;
     bool defeated = false;
 
+    //TODO
     //calculate attack damage, special case for punch attack with 100% hit chance
-    if (AttackData.AttackFrequency == 1) // not sure it's wise to do it like this...
+    if (AttackData.Frequency == 1) // not sure it's wise to do it like this...
       attackDamage = 1;
     else 
-      attackDamage = myRand.Next(AttackData.AttackFrequency);
+      attackDamage = myRand.Next(AttackData.Frequency);
 
     //deal the damage, could be 0
-    Target.HP = Math.Clamp(Target.HP - attackDamage, 0, Target.HP);
+    Target.TakeDamage(attackDamage);
 
     //kill target
     if(Target.HP == 0)
@@ -42,7 +55,7 @@ public class AttackCommand : ICommand
 
   public void Display(int AttackDamage, bool Defeated) {
 
-    string attackName = Attack switch
+    string attackName = AttackType switch
     {
       AttackType.Punch => "PUNCH",
       AttackType.BoneCrunch => "BONE CRUNCH",
@@ -66,36 +79,8 @@ public class NoAttack : AttackCommand
   public NoAttack(Character target, Character attacker) : base(target, attacker, AttackType.NoAttack, new AttackData(0, 0, DamageType.NoType)) { }
 }
 
-public class PunchAttack : AttackCommand
-{
-  public PunchAttack(Character target, Character attacker) : base(target, attacker, AttackType.Punch, new AttackData(1, 1, DamageType.Physical)) { }
-
-}
-public class BoneCrunchAttack : AttackCommand
-{
-  public BoneCrunchAttack(Character target, Character attacker) : base(target, attacker, AttackType.BoneCrunch, new AttackData(1, 2, DamageType.Physical)) { }
-}
-
-public class UnravelAttack : AttackCommand
-{
-  public UnravelAttack(Character target, Character attacker) : base(target, attacker, AttackType.Unravel, new AttackData(2, 3, DamageType.Physical)) { }
-}
-
 //maybe this AttackData should contain the attack type, as well as the amount of damage etc.?
-public class AttackData
-{
-  public int AttackDamage { get; private set; }
-  public int AttackFrequency { get; private set; } // this is the max range fed into rand command
-  public DamageType Type { get; private set; }
-
-  public AttackData(int damage, int frequency, DamageType type)
-  {
-    AttackDamage = damage;
-    AttackFrequency = frequency;
-    Type = type;
-  }
-
-}
+public record AttackData(int Damage, int Frequency, DamageType Type);
 
 public enum AttackType { NoAttack, Punch, BoneCrunch, Unravel }
 public enum DamageType { NoType, Physical }

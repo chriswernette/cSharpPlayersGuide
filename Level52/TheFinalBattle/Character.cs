@@ -5,13 +5,12 @@ public class Character
   private static int SkeletonHP = 5;
   private static int UncodedOneHP = 15;
 
-  public string Name { get; protected set; }
-  public int MaxHP { get; protected set; }
-  public int HP { get; set; }
+  public string Name { get; private set; }
+  public int MaxHP { get; private set; }
+  public int HP { get; private set; }
   public bool IsAlive { get; set; }
-  public bool HumanControlled { get; protected set; }
-  public bool IsHero {  get; protected set; }
-  public AttackType[] BaseAttackList { get; protected set;  } 
+  public bool IsHero {  get; private set; }
+  public AttackType[] BaseAttackList { get; private set;  } 
   public AttackType[]? ItemAttackList { get; set; } //TODO add this later when we add items that can be equipped to attack such as sword, bow, etc.
 
   public Character(string name, int maxHP, int startingHP, AttackType[] attacks)
@@ -22,6 +21,9 @@ public class Character
     IsAlive = true;
     BaseAttackList = attacks;
   }
+
+  public void TakeDamage(int damage) => HP = Math.Clamp(HP - damage,0,MaxHP);
+  public void TakeHealing(int healing) => HP = Math.Clamp(HP + healing,0,MaxHP);
 
   public static Character CreatePlayer(string trueProgrammerName) => new Character(trueProgrammerName, HeroHP, HeroHP, [AttackType.Punch]);
   public static Character CreateSkeleton() => new Character("SKELETON", SkeletonHP, SkeletonHP, [AttackType.BoneCrunch]);

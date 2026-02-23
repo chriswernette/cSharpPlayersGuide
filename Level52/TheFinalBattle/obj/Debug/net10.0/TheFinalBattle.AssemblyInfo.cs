@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TheFinalBattle")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7fd732b7f441c82c65c0b62f5ae7c2040a597f9e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fea48e5ce6da23ed5716655bb3eff32eed19344")]
 [assembly: System.Reflection.AssemblyProductAttribute("TheFinalBattle")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TheFinalBattle")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
