@@ -30,8 +30,8 @@ public class ItemCommand : ICommand
   }
   public void Display(Character character) 
   {
-    RichConsole.WriteLine($"{user.Name} used {item.itemData.Name} on {target.Name}");
-    RichConsole.WriteLine($"{target.Name} is now at {target.HP} HP");
+    RichConsole.WriteLine($"{user.Name} used {item.itemData.Name} on {target.Name}", Colors.Chartreuse);
+    RichConsole.WriteLine($"{target.Name} is now at {target.HP} HP", Colors.ForestGreen);
     RichConsole.WriteLine();
   }
 }
