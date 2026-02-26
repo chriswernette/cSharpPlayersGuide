@@ -51,8 +51,7 @@
               "ViewState": "AgIAAKsAAAAAAAAAAADgv7gAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-01T13:03:28.731Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -78,7 +77,7 @@
               "RelativeDocumentMoniker": "TheFinalBattle\\Item.cs",
               "ToolTip": "D:\\github\\cSharpPlayersGuide\\Level52\\TheFinalBattle\\Item.cs",
               "RelativeToolTip": "TheFinalBattle\\Item.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA0wCEAAABXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-15T21:14:58.588Z",
               "EditorCaption": ""
@@ -93,8 +92,7 @@
               "RelativeToolTip": "TheFinalBattle\\ICommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T21:34:53.413Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-15T21:34:53.413Z"
             },
             {
               "$type": "Document",
@@ -118,8 +116,7 @@
               "RelativeToolTip": "TheFinalBattle\\Character.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAuwB4AAACIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T21:02:08.917Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-15T21:02:08.917Z"
             },
             {
               "$type": "Document",
