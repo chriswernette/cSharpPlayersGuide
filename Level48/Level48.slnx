@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ColoredConsole.Common/ColoredConsole.Common.csproj" />
+  <Project Path="ColoredConsole/ColoredConsole.csproj" />
+  <Project Path="TheGreatHumanizer/TheGreatHumanizer.csproj" />
+</Solution>

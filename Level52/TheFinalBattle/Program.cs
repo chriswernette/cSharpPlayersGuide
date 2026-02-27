@@ -11,22 +11,28 @@ game.RunGame();
 
 public class FinalBattle
 {
-  public Character[] heroes;
+  //TODO make Party class that encapsulates characters[][], items[]
+  public Menu currentMenu;
+  public MenuItem[] menuOptions; //I think menu does make sense to keep within the FinalBattle class, but we could make it private?
+ 
+
+
+public Character[] heroes; //TODO make heroes character[1][] multidimensional array of length 1
   public Item[] heroItems;
   public Character[][] villains;
   public Item[][] villainItems;
   public Character[] currentWave;
-  private int _heroHP = 25;
-  public int waveIndex;
-  public int finalWave;
-  public ICommand currentCommand;
-  public int TurnCounter { get; private set; }
-  public MenuItem[] menu;
+  private int _heroHP = 25; //TODO make a static field within the character class, along with skeleton and uncoded one HPs
+  public int waveIndex; //TODO put into the party class, initialize to 0, make a get/set property (auto property)
+  public int finalWave; //TODO, put into the party class, maybe rename it as 
+  public ICommand currentCommand; //TODO remove - I don't really think we need this here, could just be part of run game
   ComputerControlledOption computerControlledEnum = ComputerControlledOption.ComputerVsComputer;
   //do we need some sort of ID of who's turn it is?
 
   public FinalBattle()
   {
+    menuOptions = [new MenuItem("", false)];
+    currentMenu = new Menu(menuOptions);
     string? heroName = "";
     while (true)
     {
@@ -58,41 +64,26 @@ public class FinalBattle
       }
     }
 
-    bool heroControlled = computerControlledEnum == ComputerControlledOption.HumanVsHuman || computerControlledEnum == ComputerControlledOption.HumanVsComputer;
-    bool villainControlled = computerControlledEnum == ComputerControlledOption.HumanVsHuman;
-
     heroName = heroName.ToUpper().Trim();
-    heroes = new Character[]
-    {
-      new Player(heroControlled, heroName, _heroHP, _heroHP)
-    };
-    heroItems = new Item[]
-    {
-      new HealthPotion(),
-      new HealthPotion(),
-      new HealthPotion()
-    };
+    heroes = [ Character.CreatePlayer(heroName) ];
+    heroItems = [Item.CreateHealthPotion(), Item.CreateHealthPotion(), Item.CreateHealthPotion()];
 
     waveIndex = 0;
     finalWave = 2;
 
     villains = new Character[finalWave + 1][];
-    villains[0] = new[] { new Skeleton(villainControlled) };
-    villains[1] = new[] { new Skeleton(villainControlled), new Skeleton(villainControlled) };
-    villains[2] = new[] { new UncodedOne(villainControlled) };
+    villains[0] = [ Character.CreateSkeleton() ];
+    villains[1] = [ Character.CreateSkeleton(), Character.CreateSkeleton() ];
+    villains[2] = [ Character.CreateUncodedOne() ];
 
     villainItems = new Item[finalWave + 1][];
-    villainItems[0] = new[] { new HealthPotion() };
-    villainItems[1] = new[] { new HealthPotion() };
-    villainItems[2] = new[] { new HealthPotion() };
+    villainItems[0] = [ Item.CreateHealthPotion() ];
+    villainItems[1] = [ Item.CreateHealthPotion() ];
+    villainItems[2] = [ Item.CreateHealthPotion() ];
 
     currentWave = villains[waveIndex];
     currentCommand = new NoCommand();
-    menu = new MenuItem[]
-    {
-      new MenuItem("", currentCommand, false),
-    };
-    TurnCounter = 1;
+    
   }
 
   public void RunGame()
@@ -125,7 +116,7 @@ public class FinalBattle
       foreach (Character c in aliveHeroes)
       {
         PrintStatus(c);
-        if (c.HumanControlled)
+        if ((computerControlledEnum == ComputerControlledOption.HumanVsComputer) || (computerControlledEnum == ComputerControlledOption.HumanVsHuman))
           currentCommand = GetCommand(c);
         else
         {
@@ -136,9 +127,9 @@ public class FinalBattle
           }
           else //TODO make more generic, don't have to use specific attack types
           {
-            currentCommand = c.AttackList[0] switch
+            currentCommand = c.BaseAttackList[0] switch
             {
-              AttackType.Punch => new PunchAttack(aliveVillains.ToArray()[0], c),
+              AttackType.Punch => AttackCommand.CreatePunchAttack(aliveVillains.ToArray()[0], c),
               _ => new NoAttack(heroes[0], c)
             };
           }
@@ -151,7 +142,7 @@ public class FinalBattle
       foreach (Character c in aliveVillains)
       {
         PrintStatus(c);
-        if (c.HumanControlled)
+        if (computerControlledEnum == ComputerControlledOption.HumanVsHuman)
           currentCommand = GetCommand(c);
         else
         {
@@ -162,10 +153,10 @@ public class FinalBattle
           }
           else
           {
-            currentCommand = c.AttackList[0] switch
+            currentCommand = c.BaseAttackList[0] switch
             {
-              AttackType.BoneCrunch => new BoneCrunchAttack(heroes[0], c), //need to check for aliveHeroes if we add a party..
-              AttackType.Unravel => new UnravelAttack(heroes[0], c),
+              AttackType.BoneCrunch => AttackCommand.CreateBoneCrunchAttack(heroes[0], c), //need to check for aliveHeroes if we add a party..
+              AttackType.Unravel => AttackCommand.CreateUnravelAttack(heroes[0], c),
               _ => new NoAttack(heroes[0], c)
             };
           }
@@ -182,15 +173,14 @@ public class FinalBattle
     if (winner != WinStatus.NoWinner)
       return;
 
-    TurnCounter++;
   }
 }
 
   //print out the allies and enemies list with each of their health. For the current character, put them first and highlight their name in yellow
   public void PrintStatus(Character c)
   {
-    Character[] allies = GetPartyFor(c);
-    Character[] enemies = GetEnemyPartyFor(c);
+    IEnumerable<Character> allies = GetPartyFor(c);
+    IEnumerable<Character> enemies = GetEnemyPartyFor(c);
     RichConsole.WriteLine("==========================================================================");
     RichConsole.WriteLine($"{c.Name}        ( {c.HP}/{c.MaxHP} )", Colors.Aquamarine);
     foreach(Character a in allies)
@@ -205,6 +195,84 @@ public class FinalBattle
 
   }
 
+
+  public Menu MenuBuilder(MenuStage stage, Character attacker, IEnumerable<Character> targets, IEnumerable<Item> items)
+  {
+    bool itemsAvailable = false;
+
+    switch (stage)
+    {
+      case MenuStage.ActionStage: //I maybe need to limit this based on if they have items or not? Like set the use item to false if no items, or not even add to the menu if no items
+        itemsAvailable = items.Any(); // check if any items left  
+
+        if (itemsAvailable)
+          this.menuOptions = new MenuItem[3]
+            {
+              new MenuItem("Attack"),
+              new MenuItem("Use Item"),
+              new MenuItem("Do Nothing")
+            };
+        else
+          this.menuOptions = new MenuItem[2]
+            {
+              new MenuItem("Attack"),
+              new MenuItem("Do Nothing")
+            };
+        break;
+
+      case MenuStage.TargetStage: // need to get all the targets here
+        int targetCounter = targets.Count();
+        this.menuOptions = new MenuItem[targetCounter];
+        int i = 0;
+        foreach (Character target in targets)
+        {
+          this.menuOptions[i] = new MenuItem($"{target.Name}", target.IsAlive);
+          i++;
+        }
+        break;
+
+      case MenuStage.ItemStage:
+        int itemCounter = items.Count();
+        this.menuOptions = new MenuItem[itemCounter];
+        i = 0;
+        foreach (Item item in items)
+        {
+          this.menuOptions[i] = new MenuItem($"{item.itemData.Name}", item.isUsed == false);
+          i++;
+        }
+        break;
+
+      case MenuStage.AttackTypeStage:
+        AttackType[] attackList = attacker.BaseAttackList;
+        this.menuOptions = new MenuItem[attackList.Length];
+        i = 0;
+        foreach (AttackType attack in attackList)
+        {
+          switch (attack)
+          {
+            case AttackType.BoneCrunch:
+              this.menuOptions[i] = new MenuItem($"Bone Crunch");
+              break;
+            case AttackType.Punch:
+              this.menuOptions[i] = new MenuItem($"Punch");
+              break;
+            case AttackType.Unravel:
+              this.menuOptions[i] = new MenuItem($"Unravel");
+              break;
+            default:
+              break;
+          }
+          i++;
+        }
+        break;
+
+      default:
+        break;
+    }
+
+    return new Menu(menuOptions);
+  }
+
   public ICommand GetCommand(Character c)
   {
     RichConsole.WriteLine($"What would you like {c.Name} to do? ");
@@ -213,6 +281,8 @@ public class FinalBattle
     bool validCommand = false;
     Item[] itemList;
     IEnumerable<Item> itemOptionsEnumerable;
+    IEnumerable<Character> enemyTargets;
+    IEnumerable<Character> allyTargetsIncludingC;
 
     if (c.IsHero)
     {
@@ -228,10 +298,12 @@ public class FinalBattle
     }
     itemList = itemOptionsEnumerable.ToArray();
 
+    enemyTargets = GetEnemyPartyFor(c);
+    allyTargetsIncludingC = GetPartyForIncludingCharacter(c);
 
     //action stage
-    MenuBuilder(MenuStage.ActionStage, c, c);
-    PrintMenu();
+    currentMenu = MenuBuilder(MenuStage.ActionStage, c, enemyTargets, itemOptionsEnumerable);
+    currentMenu.PrintMenu();
 
     //get intial command type, for now either attack (0) or do nothing (1)
     while (true)
@@ -240,8 +312,8 @@ public class FinalBattle
       validCommand = Int32.TryParse(playerCommandString, out playerCommand); //check if command is a #
       if (validCommand)
       {
-        validCommand = validCommand && playerCommand >= 0 && playerCommand < this.menu.Length; //check if command is in range
-        validCommand = validCommand && this.menu[playerCommand].isEnabled; //check if command is enabled
+        validCommand = validCommand && playerCommand >= 0 && playerCommand < this.currentMenu.MenuItems.Length; //check if command is in range
+        validCommand = validCommand && this.currentMenu.MenuItems[playerCommand].isEnabled; //check if command is enabled
       }
       if (validCommand)
         break;
@@ -249,162 +321,47 @@ public class FinalBattle
         RichConsole.WriteLine("Enter something valid next time!");
     }
 
-    playerCommandString = this.menu[playerCommand].Description;
+    playerCommandString = this.currentMenu.MenuItems[playerCommand].Description;
 
     switch (playerCommandString)
     {
       case "Attack":
-        return GetAttackCommand(c); // attack stage
+        return GetAttackCommand(c, enemyTargets, itemList); // attack stage
       case "Use Item":
-        return GetItemCommand(c,itemList); // item stage
+        return GetItemCommand(c, allyTargetsIncludingC, enemyTargets, itemList); // item stage
       case "Do Nothing": // need to rework later to add items
       default:
         return new NoCommand();
     }
   }
 
-  public void MenuBuilder(MenuStage stage, Character target, Character attacker)
+ 
+
+
+
+  public AttackCommand GetAttackCommand(Character c, IEnumerable<Character> enemyParty, IEnumerable<Item> itemList)
   {
-    bool itemsAvailable = false;
-    IEnumerable<Item> hasItemsChecker;
-
-
-    switch (stage)
-      {
-        case MenuStage.ActionStage: //I maybe need to limit this based on if they have items or not? Like set the use item to false if no items, or not even add to the menu if no items?
-          if (attacker.IsHero)
-            hasItemsChecker = from h in heroItems
-                              where h.isUsed == false
-                              select h;
-          else
-            hasItemsChecker = from v in villainItems[waveIndex]
-                              where v.isUsed == false
-                              select v;
-
-          itemsAvailable = hasItemsChecker.Any(); // check if any items left  
-
-          if (itemsAvailable)
-            this.menu = new MenuItem[3]
-              {
-              new MenuItem("Attack", new NoCommand()),
-              new MenuItem("Use Item", new NoCommand()),
-              new MenuItem("Do Nothing", new NoCommand())
-              };
-          else
-            this.menu = new MenuItem[2]
-              {
-              new MenuItem("Attack", new NoCommand()),
-              new MenuItem("Do Nothing", new NoCommand())
-              };
-          break;
-
-        case MenuStage.TargetStage: // need to get all the targets here
-          Character[] badGuys = GetEnemyPartyFor(attacker);
-          this.menu = new MenuItem[badGuys.Length];
-          int i = 0;
-          foreach (Character badGuy in badGuys)
-          {
-            this.menu[i] = new MenuItem($"{badGuy.Name}", new NoAttack(badGuy, attacker), badGuy.IsAlive);
-            i++;
-          }
-          break;
-
-        case MenuStage.ItemStage:
-          Item[] itemOptions;
-          IEnumerable<Item> itemOptionsEnumerable;
-          if (attacker.IsHero)
-          {
-            itemOptionsEnumerable = from h in heroItems
-                                    where h.isUsed == false
-                                    select h;
-            itemOptions = itemOptionsEnumerable.ToArray();
-          }
-          else
-          {
-            itemOptionsEnumerable = from v in villainItems[waveIndex]
-                                    where v.isUsed == false
-                                    select v;
-            itemOptions = itemOptionsEnumerable.ToArray();
-          }
-
-          this.menu = new MenuItem[itemOptions.Length];
-          i = 0;
-          foreach (Item item in itemOptions)
-          {
-            this.menu[i] = new MenuItem($"{item.itemName}", new ItemCommand(attacker, attacker, item), item.isUsed == false);
-            i++;
-          }
-
-          break;
-
-        case MenuStage.AttackTypeStage:
-          AttackType[] attackList = attacker.AttackList;
-          this.menu = new MenuItem[attackList.Length];
-          int j = 0;
-          foreach (AttackType attack in attackList)
-          {
-            switch (attack)
-            {
-              case AttackType.BoneCrunch:
-                this.menu[j] = new MenuItem($"Bone Crunch", new BoneCrunchAttack(target, attacker));
-                break;
-              case AttackType.Punch:
-                this.menu[j] = new MenuItem($"Punch", new PunchAttack(target, attacker));
-                break;
-              case AttackType.Unravel:
-                this.menu[j] = new MenuItem($"Unravel", new UnravelAttack(target, attacker));
-                break;
-              default:
-                break;
-            }
-            j++;
-          }
-          break;
-
-        default:
-          break;
-      }
-  }
-
-  public void PrintMenu()
-  {
-    int i = 0;
-    foreach (MenuItem item in this.menu)
-    {
-      if (item.isEnabled)
-      {
-        RichConsole.WriteLine($"{i} - {this.menu[i].Description}");
-        i++;
-      }
-    }
-  }
-
-  public AttackCommand GetAttackCommand(Character c)
-  {
-    Character[] badGuys = GetEnemyPartyFor(c);
     Character target;
     AttackCommand attack = new NoAttack(c, c);
 
     //attack stage
-    MenuBuilder(MenuStage.TargetStage, c, c);
+    currentMenu = MenuBuilder(MenuStage.TargetStage, c, enemyParty, itemList);
     RichConsole.WriteLine("Who do you wish to attack? Your options are as follows:");
-    PrintMenu();
+    currentMenu.PrintMenu();
 
-    target = GetAttackTarget(badGuys);
+    target = GetTarget(enemyParty);
 
     //MenuStage.AttackTypeStage
-    MenuBuilder(MenuStage.AttackTypeStage, target, c);
+    currentMenu = MenuBuilder(MenuStage.AttackTypeStage, c, enemyParty, itemList);
     RichConsole.WriteLine("What attack do you wish to use? Your options are as follows:");
-    PrintMenu();
-    attack = GetAttack(c);
+    currentMenu.PrintMenu();
+    attack = GetAttack(c, target);
 
     return attack;
   }
 
-  public ItemCommand GetItemCommand(Character c, Item[] itemList) // itemlist will have to be the filtered list of items that aren't used
+  public ItemCommand GetItemCommand(Character c, IEnumerable<Character> allyPartyIncludingC, IEnumerable<Character> enemyParty, IEnumerable<Item> itemList) // itemlist will have to be the filtered list of items that aren't used
   {
-    Character[] badGuys = GetEnemyPartyFor(c);
-    Character[] goodGuys = GetPartyForIncludingCharacter(c);
     Character target;
     ItemCommand itemCommand;
     string itemIDString = "";
@@ -412,9 +369,9 @@ public class FinalBattle
     bool validItemChoice = false;
 
     //item stage
-    MenuBuilder(MenuStage.ItemStage, c, c);
+    currentMenu = MenuBuilder(MenuStage.ItemStage, c, enemyParty, itemList);
     RichConsole.WriteLine("What item do you wish to use? Your options are as follows:");
-    PrintMenu();
+    currentMenu.PrintMenu();
 
     //this should be a function, copy and pasting this code around instead of reusing!
     //figure out what item out of the list of items they want to use
@@ -422,10 +379,10 @@ public class FinalBattle
     {
       itemIDString = RichConsole.ReadLine();
       validItemChoice = Int32.TryParse(itemIDString, out itemID);
-      validItemChoice = validItemChoice && (itemID < this.menu.Length) && (itemID >= 0); //in valid range
+      validItemChoice = validItemChoice && (itemID < this.currentMenu.MenuItems.Length) && (itemID >= 0); //in valid range
       if (validItemChoice)
       {
-        validItemChoice = validItemChoice && this.menu[itemID].isEnabled; // check if bad guy is alive
+        validItemChoice = validItemChoice && this.currentMenu.MenuItems[itemID].isEnabled; // check if bad guy is alive
       }
 
       if (!validItemChoice)
@@ -434,21 +391,21 @@ public class FinalBattle
       }
     }
 
-    Item itemChoice = itemList[itemID];
+    Item itemChoice = itemList.ToList()[itemID];
 
     //get all the characters in c's party if it's a help item, all characters in enemy party if it's an offensive item
     RichConsole.WriteLine("Who do you want to use the item on?");
-    if (itemChoice.Type == ItemType.HelpItem)
+    if (itemChoice.itemData.Type == ItemType.HelpItem)
     {
-      MenuBuilder(MenuStage.TargetStage, badGuys[0], badGuys[0]);
-      PrintMenu();
-      target = GetAttackTarget(goodGuys);
+      currentMenu = MenuBuilder(MenuStage.TargetStage, c, allyPartyIncludingC, itemList);
+      currentMenu.PrintMenu();
+      target = GetTarget(allyPartyIncludingC);
     }
     else
     {
-      MenuBuilder(MenuStage.TargetStage, goodGuys[0], goodGuys[0]);
-      PrintMenu();
-      target = GetAttackTarget(badGuys);
+      currentMenu = MenuBuilder(MenuStage.TargetStage, c, enemyParty, itemList);
+      currentMenu.PrintMenu();
+      target = GetTarget(enemyParty);
     }
 
     itemCommand = new ItemCommand(c, target, itemChoice);
@@ -456,52 +413,54 @@ public class FinalBattle
   }
 
   //rename or make more generic. It is just getting a list of characters to attack or use an item on, not necessarily to attack
-  public Character GetAttackTarget(Character[] enemyList)
+  public Character GetTarget(IEnumerable<Character> cList)
   {
     Character target;
-    int badGuyID = -1;
-    bool validBadGuy = false;
+    int targetID = -1;
+    bool validTarget = false;
+    string targetIDString = "-1";
 
 
     //get the integer position of the bad guy
-    while (validBadGuy == false)
+    while (validTarget == false)
     {
 
-      string badGuyIDString = RichConsole.ReadLine();
-      validBadGuy = Int32.TryParse(badGuyIDString, out badGuyID);
-      validBadGuy = validBadGuy && (badGuyID < this.menu.Length) && (badGuyID >= 0); //in valid range
-      if (validBadGuy)
+      targetIDString = RichConsole.ReadLine();
+      validTarget = Int32.TryParse(targetIDString, out targetID);
+      validTarget = validTarget && (targetID < this.currentMenu.MenuItems.Length) && (targetID >= 0); //in valid range
+      if (validTarget)
       {
-        validBadGuy = validBadGuy && this.menu[badGuyID].isEnabled; // check if bad guy is alive
+        validTarget = validTarget && this.currentMenu.MenuItems[targetID].isEnabled; // check if bad guy is alive
       }
 
-      if (!validBadGuy)
+      if (!validTarget)
       {
         RichConsole.WriteLine("Not a valid choice, try again!");
       }
     }
 
-    target = enemyList[badGuyID];
+    target = cList.ToList()[targetID]; //I think this should convert to a list and then pick the single character out of the list
 
     return target;
   }
 
   //TODO can I make this code shared with GetAttackTarget? Yes, using "generic methods" page 237 I think
-  public AttackCommand GetAttack(Character c)
+  public AttackCommand GetAttack(Character c, Character t)
   {
-
+    AttackCommand? returnAttack = null;
     int attackID = -1;
+    string attackName = "";
     bool validAttack = false;
 
     while (validAttack == false)
     {
       string attackIDstring = RichConsole.ReadLine();
       validAttack = Int32.TryParse(attackIDstring, out attackID);
-      validAttack = validAttack && (attackID < this.menu.Length) && (attackID >= 0); //in valid range
+      validAttack = validAttack && (attackID < this.currentMenu.MenuItems.Length) && (attackID >= 0); //in valid range
 
       if (validAttack)
       {
-        validAttack = validAttack && this.menu[attackID].isEnabled; // check if attack is enabled, which it should be if it's in the attack list
+        validAttack = validAttack && this.currentMenu.MenuItems[attackID].isEnabled; // check if attack is enabled, which it should be if it's in the attack list
       }
 
       if (!validAttack)
@@ -510,13 +469,29 @@ public class FinalBattle
       }
     }
 
-    return (AttackCommand) menu[attackID].Action;
+    attackName = currentMenu.MenuItems[attackID].Description;
+    switch (attackName)
+    {
+      case "Punch":
+        returnAttack = AttackCommand.CreatePunchAttack(t, c);
+        break;
+      case "Bone Crunch":
+        returnAttack = AttackCommand.CreateBoneCrunchAttack(t, c);
+        break;
+      case "Unravel":
+        returnAttack = AttackCommand.CreateUnravelAttack(t, c);
+        break;
+      default:
+        returnAttack = new NoAttack(t, c);
+        break;
+    }
+
+    return returnAttack;
 
   }
 
-  public Character[] GetPartyFor(Character c)
+  public IEnumerable<Character> GetPartyFor(Character c)
   {
-    Character[] party;
     IEnumerable<Character> partyEnumerable;
     if (c.IsHero)
       partyEnumerable = from p in this.heroes
@@ -529,13 +504,11 @@ public class FinalBattle
                         where p!= c
                         select p;
 
-    party = partyEnumerable.ToArray();
-    return party;
+    return partyEnumerable;
   }
 
-  public Character[] GetPartyForIncludingCharacter(Character c)
+  public IEnumerable<Character> GetPartyForIncludingCharacter(Character c)
   {
-    Character[] party;
     IEnumerable<Character> partyEnumerable;
     if (c.IsHero)
       partyEnumerable = from p in this.heroes
@@ -546,13 +519,11 @@ public class FinalBattle
                         where p.IsAlive
                         select p;
 
-    party = partyEnumerable.ToArray();
-    return party;
+    return partyEnumerable;
   }
 
-  public Character[] GetEnemyPartyFor(Character c)
+  public IEnumerable<Character> GetEnemyPartyFor(Character c)
   {
-    Character[] party;
     IEnumerable<Character> partyEnumerable;
     if (c.IsHero)
       partyEnumerable = from p in this.villains[waveIndex]
@@ -564,8 +535,7 @@ public class FinalBattle
                         where p.IsAlive
                         select p;
 
-    party = partyEnumerable.ToArray();
-    return party;
+    return partyEnumerable;
   }
 
   //when the character c is < 50% and there is a potion in their inventory
@@ -585,7 +555,7 @@ public class FinalBattle
     {
       if (i.isUsed == false)
       {
-        if(i.itemName == "Health Potion")
+        if(i.itemData.Name == "Health Potion")
         {
           potionInItemList = true;
         }
@@ -649,8 +619,5 @@ public class FinalBattle
 }
 
 
-public enum AttackType { NoAttack, Punch, BoneCrunch, Unravel}
-public enum DamageType { NoType, Physical}
 public enum WinStatus { NoWinner, HeroesWon, VillainsWon}
-public enum MenuStage { ActionStage, TargetStage, AttackTypeStage, ItemStage}
 public enum ComputerControlledOption { HumanVsComputer, ComputerVsComputer, HumanVsHuman}
